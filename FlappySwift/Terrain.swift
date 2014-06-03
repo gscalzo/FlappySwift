@@ -17,23 +17,23 @@ class Terrain: NSObject {
         
         
         let node1 = SKSpriteNode(texture: terrainTexture)
-        node1.anchorPoint = CGPointMake(0, 1);
-        node1.position = CGPointMake(0, 0);
+        node1.anchorPoint = CGPointMake(0, 1)
+        node1.position = CGPointMake(0, 0)
 
         let node2 = SKSpriteNode(texture: terrainTexture)
-        node2.anchorPoint = CGPointMake(0, 1);
-        node2.position = CGPointMake(320, 0);
+        node2.anchorPoint = CGPointMake(0, 1)
+        node2.position = CGPointMake(320, 0)
         
         
         
-        let size = CGSizeMake(2*640, 60);
+        let size = CGSizeMake(2*640, 60)
 
         let terrain = SKSpriteNode(texture: terrainTexture, size: size)
 
-        terrain.zPosition = 1;
-        let location = CGPointMake(0.0, 60);
-        terrain.anchorPoint = CGPointMake(0, 1);
-        terrain.position = location;
+        terrain.zPosition = 1
+        let location = CGPointMake(0.0, 60)
+        terrain.anchorPoint = CGPointMake(0, 1)
+        terrain.position = location
         terrain.addChild(node1)
         terrain.addChild(node2)
         parentNode.addChild(terrain)
@@ -45,9 +45,9 @@ class Terrain: NSObject {
 
         terrainBody.physicsBody.dynamic = false
         terrainBody.physicsBody.affectedByGravity = false
-        terrainBody.physicsBody.collisionBitMask = 0;
-//        terrainBody.physicsBody.categoryBitMask = terrainType;
-//        terrainBody.physicsBody.contactTestBitMask = heroType;
+        terrainBody.physicsBody.collisionBitMask = 0
+//        terrainBody.physicsBody.categoryBitMask = terrainType
+//        terrainBody.physicsBody.contactTestBitMask = heroType
         parentNode.addChild(terrainBody)
         
         terrain.runAction(SKAction.repeatActionForever(SKAction.sequence(

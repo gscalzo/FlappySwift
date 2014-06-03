@@ -23,12 +23,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.scaleMode = SKSceneScaleMode.AspectFill
         
-        self.physicsWorld.contactDelegate = self;
-        self.physicsWorld.gravity = CGVectorMake(0, -3);
+        self.physicsWorld.contactDelegate = self
+        self.physicsWorld.gravity = CGVectorMake(0, -3)
         
         self.hero = Hero(imageNamed: "hero1")
         
-        self.hero.position = CGPointMake(350.0, 450.0);
+        self.hero.position = CGPointMake(350.0, 450.0)
         self.addChild(self.hero)
         
         Terrain().create(self)
