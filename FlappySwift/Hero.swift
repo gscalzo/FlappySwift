@@ -8,27 +8,28 @@
 
 import SpriteKit
 
-class Hero: SKSpriteNode {
+class Hero {
+    let node: SKSpriteNode
+    
     init(imageNamed name: String!){
-        super.init(imageNamed: name)
         
-        self.physicsBody = SKPhysicsBody(rectangleOfSize:
-            CGSizeMake(self.size.width, self.size.height))
+        node = SKSpriteNode(imageNamed: name)
+        
+        node.physicsBody = SKPhysicsBody(rectangleOfSize:
+            CGSizeMake(node.size.width, node.size.height))
             
-        self.physicsBody.dynamic = true
+        node.physicsBody.dynamic = true
         self.animate()
     
     }
-    init(texture: SKTexture!)
-    {
-        super.init(texture: texture)
+
+    func position(position: CGPoint) {
+        node.position = position
     }
     
-    init(texture: SKTexture!, color: UIColor!, size: CGSize)
-    {
-        super.init(texture: texture, color: color, size:size)
+    func addTo(scene: SKNode) {
+        scene.addChild(node)
     }
-    
     
     func animate(){
         let animationFrames = [
@@ -37,23 +38,24 @@ class Hero: SKSpriteNode {
         ]
         
 
-        self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)))
+        node.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)))
     }
 
     func update() {
-        if self.physicsBody.velocity.dy > 30.0 {
-            self.zRotation = (3.14/6.0)
-        } else if self.physicsBody.velocity.dy < -100.0 {
-            self.zRotation = -1*(3.14/4.0)
-        } else {
-            self.zRotation = 0.0
+        
+        switch node.physicsBody.velocity.dy {
+            case let dy where dy > 30.0:
+                node.zRotation = (3.14/6.0)
+            case let dy where dy < -100.0:
+                node.zRotation = -1*(3.14/4.0)
+            default:
+                node.zRotation = 0.0
         }
     }
     
-    
     func flap () {
-        self.physicsBody.velocity = CGVectorMake(0, 0)
-        self.physicsBody.applyImpulse(CGVectorMake(0, 7))
+        node.physicsBody.velocity = CGVectorMake(0, 0)
+        node.physicsBody.applyImpulse(CGVectorMake(0, 7))
     }
 
 

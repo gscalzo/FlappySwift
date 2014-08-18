@@ -12,31 +12,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var hero: Hero!
     
-    
     override func didMoveToView(view: SKView) {
         let backgroundTexture = SKTexture(imageNamed:"background")
 
         let background = SKSpriteNode(texture: backgroundTexture, size: self.frame.size)
         background.position =  CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         
-        self.addChild(background)
+        addChild(background)
         
-        self.scaleMode = SKSceneScaleMode.AspectFill
+        scaleMode = SKSceneScaleMode.AspectFill
         
-        self.physicsWorld.contactDelegate = self
-        self.physicsWorld.gravity = CGVectorMake(0, -3)
+        physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVectorMake(0, -3)
         
-        self.hero = Hero(imageNamed: "hero1")
+        hero = Hero(imageNamed: "hero1")
         
-        self.hero.position = CGPointMake(350.0, 450.0)
-        self.addChild(self.hero)
+        hero.position(CGPointMake(350.0, 450.0))
+        hero.addTo(self)
         
         Terrain().create(self)
 
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.hero.flap()
+        hero.flap()
     }
    
     override func update(currentTime: CFTimeInterval) {
