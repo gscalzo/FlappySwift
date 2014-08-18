@@ -14,7 +14,7 @@
 		EE416DD2193D30180080C753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE416DD0193D30180080C753 /* Main.storyboard */; };
 		EE416DD4193D30180080C753 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE416DD3193D30180080C753 /* Images.xcassets */; };
 		EE416DE0193D30180080C753 /* FlappySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DDF193D30180080C753 /* FlappySwiftTests.swift */; };
-		EE416DEA193D3D3D0080C753 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Hero.swift */; };
+		EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Bird.swift */; };
 		EE416DEC193D4CAF0080C753 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Terrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		EE416DD9193D30180080C753 /* FlappySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE416DDE193D30180080C753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE416DDF193D30180080C753 /* FlappySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappySwiftTests.swift; sourceTree = "<group>"; };
-		EE416DE9193D3D3D0080C753 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		EE416DE9193D3D3D0080C753 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		EE416DEB193D4CAF0080C753 /* Terrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 				EE416DCA193D30180080C753 /* GameScene.sks */,
 				EE416DCC193D30180080C753 /* GameScene.swift */,
 				EE416DCE193D30180080C753 /* GameViewController.swift */,
-				EE416DE9193D3D3D0080C753 /* Hero.swift */,
+				EE416DE9193D3D3D0080C753 /* Bird.swift */,
 				EE416DEB193D4CAF0080C753 /* Terrain.swift */,
 				EE416DD0193D30180080C753 /* Main.storyboard */,
 				EE416DD3193D30180080C753 /* Images.xcassets */,
@@ -225,7 +225,7 @@
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE416DEC193D4CAF0080C753 /* Terrain.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
-				EE416DEA193D3D3D0080C753 /* Hero.swift in Sources */,
+				EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +413,7 @@
 				EE416DE5193D30180080C753 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE416DE6193D30180080C753 /* Build configuration list for PBXNativeTarget "FlappySwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				EE416DE8193D30180080C753 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

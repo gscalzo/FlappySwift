@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    var hero: Hero!
+    var bird: Bird!
     
     override func didMoveToView(view: SKView) {
         let backgroundTexture = SKTexture(imageNamed:"background")
@@ -25,21 +25,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVectorMake(0, -3)
         
-        hero = Hero(imageNamed: "hero1")
+        bird = Bird()
         
-        hero.position(CGPointMake(350.0, 450.0))
-        hero.addTo(self)
+        bird.position(CGPointMake(30.0, 400.0))
+        bird.addTo(self)
         
         Terrain().create(self)
 
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        hero.flap()
+        bird.flap()
     }
    
     override func update(currentTime: CFTimeInterval) {
-        self.hero.update()
+        self.bird.update()
     }
     
     
