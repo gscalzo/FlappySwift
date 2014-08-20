@@ -9,12 +9,12 @@
 import UIKit
 import SpriteKit
 
-class Terrain: NSObject {
+class Terrain {
     
     func create(parentNode: SKScene!){
         let terrainTexture = SKTexture(imageNamed:"terrain")
-
         
+        let parentWidth = parentNode.size.width
         
         let node1 = SKSpriteNode(texture: terrainTexture)
         node1.anchorPoint = CGPointMake(0, 1)
@@ -22,11 +22,9 @@ class Terrain: NSObject {
 
         let node2 = SKSpriteNode(texture: terrainTexture)
         node2.anchorPoint = CGPointMake(0, 1)
-        node2.position = CGPointMake(320, 0)
+        node2.position = CGPointMake(parentWidth, 0)
         
-        
-        
-        let size = CGSizeMake(2*640, 60)
+        let size = CGSizeMake(2*parentWidth, 60)
 
         let terrain = SKSpriteNode(texture: terrainTexture, size: size)
 
@@ -37,7 +35,6 @@ class Terrain: NSObject {
         terrain.addChild(node1)
         terrain.addChild(node2)
         parentNode.addChild(terrain)
-        
         
         let terrainBody = SKNode()
         terrainBody.position = CGPointMake(160.0, 35)
@@ -52,7 +49,7 @@ class Terrain: NSObject {
         
         terrain.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
-                SKAction.moveToX(-320, duration: 5.0),
+                SKAction.moveToX(-parentWidth, duration: 5.0),
                 SKAction.moveToX(0, duration: 0)
             ]
             )))
