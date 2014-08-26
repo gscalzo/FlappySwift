@@ -13,24 +13,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var bird: Bird!
     
     override func didMoveToView(view: SKView) {
-        let backgroundTexture = SKTexture(imageNamed:"background")
-
-        let background = SKSpriteNode(texture: backgroundTexture, size: self.frame.size)
-        background.position =  CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        
-        addChild(background)
+//        let backgroundTexture = SKTexture(imageNamed:"background")
+//
+//        let background = SKSpriteNode(texture: backgroundTexture, size: self.frame.size)
+//        println(self.frame.size)
+//        background.position =  CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+//        
+////        addChild(background)
         
         scaleMode = SKSceneScaleMode.AspectFill
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVectorMake(0, -3)
         
-        bird = Bird()
         
+        Background().addTo(self).start()
+        Terrain().addTo(self).start()
+
+        bird = Bird()
         bird.position(CGPointMake(30.0, 400.0))
         bird.addTo(self)
-        
-        Terrain().addTo(self).start()
         
 
     }

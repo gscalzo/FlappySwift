@@ -13,6 +13,9 @@ class Bird {
     
     init(){
         node = SKSpriteNode(imageNamed: "bird1")
+        node.setScale(1.8)
+        node.zPosition = 2.0
+        
         node.physicsBody = SKPhysicsBody(
             rectangleOfSize: node.size)
         

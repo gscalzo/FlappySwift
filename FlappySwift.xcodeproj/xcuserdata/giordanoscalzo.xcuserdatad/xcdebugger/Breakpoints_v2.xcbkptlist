@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlappySwift/Bird.swift"
-            timestampString = "430076515.480274"
+            timestampString = "430769635.999018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "update()"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlappySwift/GameScene.swift"
-            timestampString = "430077771.845747"
+            filePath = "FlappySwift/Background.swift"
+            timestampString = "430768869.469683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "didMoveToView(_:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "addTo(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

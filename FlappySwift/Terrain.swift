@@ -49,7 +49,7 @@ class Terrain {
         
         let terrainTexture = SKTexture(imageNamed:"terrain")
         terrain = SKSpriteNode(texture: terrainTexture, size: size)
-        terrain.zPosition = 1
+//        terrain.zPosition = 1
         
         let location = CGPointMake(0.0, 0)
         terrain.anchorPoint = CGPointMake(0, 0)
