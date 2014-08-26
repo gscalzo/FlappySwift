@@ -17,6 +17,7 @@
 		EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Bird.swift */; };
 		EE416DEC193D4CAF0080C753 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Terrain.swift */; };
 		EE89ED5219AD019C008A1428 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5119AD019C008A1428 /* Background.swift */; };
+		EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5319AD097B008A1428 /* ParallaxNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		EE416DE9193D3D3D0080C753 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		EE416DEB193D4CAF0080C753 /* Terrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
 		EE89ED5119AD019C008A1428 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		EE89ED5319AD097B008A1428 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,15 +87,7 @@
 		EE416DC5193D30180080C753 /* FlappySwift */ = {
 			isa = PBXGroup;
 			children = (
-				EE416DC8193D30180080C753 /* AppDelegate.swift */,
-				EE416DCA193D30180080C753 /* GameScene.sks */,
-				EE416DCC193D30180080C753 /* GameScene.swift */,
-				EE416DCE193D30180080C753 /* GameViewController.swift */,
-				EE416DE9193D3D3D0080C753 /* Bird.swift */,
-				EE416DEB193D4CAF0080C753 /* Terrain.swift */,
-				EE89ED5119AD019C008A1428 /* Background.swift */,
-				EE416DD0193D30180080C753 /* Main.storyboard */,
-				EE416DD3193D30180080C753 /* Images.xcassets */,
+				EE89ED5519AD099B008A1428 /* Src */,
 				EE416DC6193D30180080C753 /* Supporting Files */,
 			);
 			path = FlappySwift;
@@ -102,6 +96,9 @@
 		EE416DC6193D30180080C753 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE416DCA193D30180080C753 /* GameScene.sks */,
+				EE416DD3193D30180080C753 /* Images.xcassets */,
+				EE416DD0193D30180080C753 /* Main.storyboard */,
 				EE416DC7193D30180080C753 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -122,6 +119,20 @@
 				EE416DDE193D30180080C753 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE89ED5519AD099B008A1428 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				EE416DC8193D30180080C753 /* AppDelegate.swift */,
+				EE89ED5119AD019C008A1428 /* Background.swift */,
+				EE416DE9193D3D3D0080C753 /* Bird.swift */,
+				EE416DCC193D30180080C753 /* GameScene.swift */,
+				EE416DCE193D30180080C753 /* GameViewController.swift */,
+				EE89ED5319AD097B008A1428 /* ParallaxNode.swift */,
+				EE416DEB193D4CAF0080C753 /* Terrain.swift */,
+			);
+			name = Src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE416DEC193D4CAF0080C753 /* Terrain.swift in Sources */,
