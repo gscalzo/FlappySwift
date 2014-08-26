@@ -30,7 +30,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bird.position(CGPointMake(30.0, 400.0))
         bird.addTo(self)
         
-        Terrain().create(self)
+        Terrain().addTo(self).start()
+        
 
     }
     
@@ -39,7 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        self.bird.update()
+        bird.update()
     }
     
     

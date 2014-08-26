@@ -10,50 +10,61 @@ import UIKit
 import SpriteKit
 
 class Terrain {
+    private var terrain: SKSpriteNode!
     
-    func create(parentNode: SKScene!){
-        let terrainTexture = SKTexture(imageNamed:"terrain")
+    init() {
+    }
+    
+    func addTo(parentNode: SKScene!) -> Terrain {
         
         let parentWidth = parentNode.size.width
+        let height = CGFloat(60.0)
         
-        let node1 = SKSpriteNode(texture: terrainTexture)
-        node1.anchorPoint = CGPointMake(0, 1)
-        node1.position = CGPointMake(0, 0)
-
-        let node2 = SKSpriteNode(texture: terrainTexture)
-        node2.anchorPoint = CGPointMake(0, 1)
-        node2.position = CGPointMake(parentWidth, 0)
-        
-        let size = CGSizeMake(2*parentWidth, 60)
-
-        let terrain = SKSpriteNode(texture: terrainTexture, size: size)
-
-        terrain.zPosition = 1
-        let location = CGPointMake(0.0, 60)
-        terrain.anchorPoint = CGPointMake(0, 1)
-        terrain.position = location
-        terrain.addChild(node1)
-        terrain.addChild(node2)
-        parentNode.addChild(terrain)
+        createTerrainWidth(parentWidth, height: height, parentNode: parentNode)
         
         let terrainBody = SKNode()
-        terrainBody.position = CGPointMake(160.0, 35)
-        terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(320, 20))
-
+        terrainBody.position = CGPointMake(parentWidth/2.0, height/2)
+        terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(parentWidth, height))
+        
         terrainBody.physicsBody.dynamic = false
         terrainBody.physicsBody.affectedByGravity = false
         terrainBody.physicsBody.collisionBitMask = 0
-//        terrainBody.physicsBody.categoryBitMask = terrainType
-//        terrainBody.physicsBody.contactTestBitMask = heroType
+        //        terrainBody.physicsBody.categoryBitMask = terrainType
+        //        terrainBody.physicsBody.contactTestBitMask = heroType
         parentNode.addChild(terrainBody)
-        
+        return self
+    }
+    
+    func start() {
         terrain.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
-                SKAction.moveToX(-parentWidth, duration: 5.0),
+                SKAction.moveToX(-terrain.size.width/2.0, duration: 5.0),
                 SKAction.moveToX(0, duration: 0)
             ]
             )))
-        
     }
-   
+    
+    private func createTerrainWidth(width: CGFloat, height: CGFloat, parentNode: SKNode) {
+        let size = CGSizeMake(2*width, height)
+        
+        let terrainTexture = SKTexture(imageNamed:"terrain")
+        terrain = SKSpriteNode(texture: terrainTexture, size: size)
+        terrain.zPosition = 1
+        
+        let location = CGPointMake(0.0, 0)
+        terrain.anchorPoint = CGPointMake(0, 0)
+        terrain.position = location
+        terrain.addChild(node(terrainTexture, position: 0))
+        terrain.addChild(node(terrainTexture, position: width))
+        parentNode.addChild(terrain)
+    }
+    
+    private func node(texture: SKTexture, position: CGFloat) -> SKNode {
+        let node = SKSpriteNode(texture: texture)
+        node.anchorPoint = CGPointMake(0, 1)
+        node.position = CGPointMake(position, 0)
+        
+        return node
+    }
+    
 }
