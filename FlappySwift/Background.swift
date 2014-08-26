@@ -16,39 +16,37 @@ class Background {
     }
     
     func addTo(parentNode: SKScene!) -> Background {
-        let parentWidth = parentNode.size.width
+        let width = parentNode.size.width
         let height = parentNode.size.height
         
-        createTerrainWidth(parentWidth, height: height, parentNode: parentNode)
+        createTerrainWidth("background",
+            size: CGSize(width: width, height: height),
+                           parentNode: parentNode)
         return self
     }
     
     func start() {
+        let duration = 20.0
         parallaxNode.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
-                SKAction.moveToX(-parallaxNode.size.width/2.0, duration: 20.0),
+                SKAction.moveToX(-parallaxNode.size.width/2.0, duration: duration),
                 SKAction.moveToX(0, duration: 0)
             ]
             )))
     }
     
-    private func createTerrainWidth(width: CGFloat, height: CGFloat, parentNode: SKNode) {
-        let size = CGSizeMake(2*width, height)
-        let size1 = CGSizeMake(width, height)
-
-        let terrainTexture = SKTexture(imageNamed:"background")
-        parallaxNode = SKSpriteNode(color: UIColor.whiteColor(), size: size)
-//        parallaxNode.zPosition = 1
+    private func createTerrainWidth(imageNamed: String, size: CGSize, parentNode: SKNode) {
+        parallaxNode = SKSpriteNode(color: UIColor.whiteColor(),
+                                      size: CGSize( width: 2*size.width,
+                                                   height: size.height))
         
-        let location = CGPointMake(0.0, 0)
-        parallaxNode.anchorPoint = CGPointMake(0, 0)
-        parallaxNode.position = location
-        parallaxNode.addChild(node(terrainTexture, position: 0, size: size1))
-        parallaxNode.addChild(node(terrainTexture, position: width, size: size1))
+        parallaxNode.addChild(nodeImage(imageNamed, position: 0, size: size))
+        parallaxNode.addChild(nodeImage(imageNamed, position: size.width, size: size))
         parentNode.addChild(parallaxNode)
     }
     
-    private func node(texture: SKTexture, position: CGFloat, size: CGSize) -> SKNode {
+    private func nodeImage(imageNamed: String, position: CGFloat, size: CGSize) -> SKNode {
+        let texture = SKTexture(imageNamed: imageNamed)
         let node = SKSpriteNode(texture: texture, size: size)
         node.anchorPoint = CGPointMake(0, 0)
         node.position = CGPointMake(position, 0)
