@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class Terrain {
-    private var terrain: SKSpriteNode!
+    private var terrain: ParallaxNode!
     
     init() {
     }
@@ -20,7 +20,7 @@ class Terrain {
         let parentWidth = parentNode.size.width
         let height = CGFloat(60.0)
         
-        createTerrainWidth(parentWidth, height: height, parentNode: parentNode)
+        terrain = ParallaxNode(width: parentWidth, height: height, parentNode: parentNode)
         
         let terrainBody = SKNode()
         terrainBody.position = CGPointMake(parentWidth/2.0, height/2)
@@ -36,35 +36,6 @@ class Terrain {
     }
     
     func start() {
-        terrain.runAction(SKAction.repeatActionForever(SKAction.sequence(
-            [
-                SKAction.moveToX(-terrain.size.width/2.0, duration: 5.0),
-                SKAction.moveToX(0, duration: 0)
-            ]
-            )))
+        terrain.start(duration: 5.0)
     }
-    
-    private func createTerrainWidth(width: CGFloat, height: CGFloat, parentNode: SKNode) {
-        let size = CGSizeMake(2*width, height)
-        
-        let terrainTexture = SKTexture(imageNamed:"terrain")
-        terrain = SKSpriteNode(texture: terrainTexture, size: size)
-//        terrain.zPosition = 1
-        
-        let location = CGPointMake(0.0, 0)
-        terrain.anchorPoint = CGPointMake(0, 0)
-        terrain.position = location
-        terrain.addChild(node(terrainTexture, position: 0))
-        terrain.addChild(node(terrainTexture, position: width))
-        parentNode.addChild(terrain)
-    }
-    
-    private func node(texture: SKTexture, position: CGFloat) -> SKNode {
-        let node = SKSpriteNode(texture: texture)
-        node.anchorPoint = CGPointMake(0, 1)
-        node.position = CGPointMake(position, 0)
-        
-        return node
-    }
-    
 }
