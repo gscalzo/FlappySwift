@@ -20,7 +20,6 @@ class Bird {
             rectangleOfSize: node.size)
         
         node.physicsBody.dynamic = true
-        animate()
     }
     
     func position(position: CGPoint) {
@@ -29,6 +28,7 @@ class Bird {
     
     func addTo(scene: SKNode) {
         scene.addChild(node)
+        animate()
     }
     
     
@@ -49,12 +49,14 @@ class Bird {
     }
 
     private func animate(){
-        let animationFrames = [
-            SKTexture(imageNamed:"bird1"),
-            SKTexture(imageNamed:"bird2")
-        ]
+        let animationFrames = ["bird1", "bird2"].map { texName in
+            SKTexture(imageNamed: texName)
+        }
         
-        node.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)))
+        node.runAction(
+            SKAction.repeatActionForever(
+            SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)
+            ))
     }
     
 }
