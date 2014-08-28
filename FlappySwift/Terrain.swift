@@ -6,27 +6,26 @@
 //  Copyright (c) 2014 Effective Code. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
 
 class Terrain {
-    private var terrain: ParallaxNode!
+    private var parallaxNode: ParallaxNode!
     
     init() {
     }
     
     func addTo(parentNode: SKScene!) -> Terrain {
         
-        let parentWidth = parentNode.size.width
+        let width = parentNode.size.width
         let height = CGFloat(60.0)
         
-        terrain = ParallaxNode(width: parentWidth,
+        parallaxNode = ParallaxNode(width: width,
                               height: height,
                         textureNamed: "terrain.png").addTo(parentNode)
         
         let terrainBody = SKNode()
-        terrainBody.position = CGPointMake(parentWidth/2.0, height/2)
-        terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(parentWidth, height))
+        terrainBody.position = CGPointMake(width/2.0, height/2)
+        terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(width, height))
         
         terrainBody.physicsBody.dynamic = false
         terrainBody.physicsBody.affectedByGravity = false
@@ -38,6 +37,6 @@ class Terrain {
     }
     
     func start() {
-        terrain.start(duration: 5.0)
+        parallaxNode.start(duration: 5.0)
     }
 }
