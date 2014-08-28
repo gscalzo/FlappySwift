@@ -20,7 +20,9 @@ class Terrain {
         let parentWidth = parentNode.size.width
         let height = CGFloat(60.0)
         
-        terrain = ParallaxNode(width: parentWidth, height: height, parentNode: parentNode)
+        terrain = ParallaxNode(width: parentWidth,
+                              height: height,
+                        textureNamed: "terrain.png").addTo(parentNode)
         
         let terrainBody = SKNode()
         terrainBody.position = CGPointMake(parentWidth/2.0, height/2)

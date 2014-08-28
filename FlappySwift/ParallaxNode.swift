@@ -10,36 +10,38 @@ import UIKit
 import SpriteKit
 
 class ParallaxNode {
-    private let terrain: SKSpriteNode!
+    private let node: SKSpriteNode!
     
-    init(width: CGFloat, height: CGFloat, parentNode: SKNode) {
+    init(width: CGFloat, height: CGFloat, textureNamed: String) {
         let size = CGSizeMake(2*width, height)
         
-        let terrainTexture = SKTexture(imageNamed:"terrain")
-        terrain = SKSpriteNode(texture: terrainTexture, size: size)
-        //        terrain.zPosition = 1
+        let texture = SKTexture(imageNamed: textureNamed)
+        node = SKSpriteNode(color: UIColor.whiteColor(), size: size)
         
         let location = CGPointMake(0.0, 0)
-        terrain.anchorPoint = CGPointMake(0, 0)
-        terrain.position = location
-        terrain.addChild(node(terrainTexture, position: 0))
-        terrain.addChild(node(terrainTexture, position: width))
-        parentNode.addChild(terrain)
+        node.anchorPoint = CGPointMake(0, 0)
+        node.position = location
+        node.addChild(createNode(texture, position: 0))
+        node.addChild(createNode(texture, position: width))
     }
     
-    private func node(texture: SKTexture, position: CGFloat) -> SKNode {
+    private func createNode(texture: SKTexture, position: CGFloat) -> SKNode {
         let node = SKSpriteNode(texture: texture)
-        node.anchorPoint = CGPointMake(0, 1)
+        node.anchorPoint = CGPointMake(0, 0)
         node.position = CGPointMake(position, 0)
         
         return node
     }
    
+    func addTo(parentNode: SKScene!) -> ParallaxNode {
+        parentNode.addChild(node)
+        return self
+    }
     
     func start(#duration: NSTimeInterval) {
-        terrain.runAction(SKAction.repeatActionForever(SKAction.sequence(
+        node.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
-                SKAction.moveToX(-terrain.size.width/2.0, duration: duration),
+                SKAction.moveToX(-node.size.width/2.0, duration: duration),
                 SKAction.moveToX(0, duration: 0)
             ]
             )))
