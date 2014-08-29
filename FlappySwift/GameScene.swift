@@ -23,7 +23,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bird = Bird()
         bird.position(CGPointMake(30.0, 400.0))
         bird.addTo(self)
-
+        
+        PipePair(centerY: view.center.y).addTo(self).start()
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

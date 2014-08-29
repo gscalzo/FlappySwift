@@ -32,6 +32,11 @@ class ParallaxNode {
         
         return node
     }
+    
+    func zPosition(zPosition: CGFloat) -> ParallaxNode {
+        node.zPosition = zPosition
+        return self
+    }
    
     func addTo(parentNode: SKScene!) -> ParallaxNode {
         parentNode.addChild(node)
@@ -39,6 +44,7 @@ class ParallaxNode {
     }
     
     func start(#duration: NSTimeInterval) {
+//        let distanceToMove = -node.size.width
         node.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
                 SKAction.moveToX(-node.size.width/2.0, duration: duration),
