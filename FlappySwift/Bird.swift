@@ -11,7 +11,7 @@ import SpriteKit
 class Bird {
     private let node: SKSpriteNode
     
-    init(){
+    init() {
         node = SKSpriteNode(imageNamed: "bird1")
         node.setScale(1.8)
         node.zPosition = 2.0
@@ -44,8 +44,8 @@ class Bird {
     }
     
     func flap () {
-        node.physicsBody.velocity = CGVectorMake(0, 0)
-        node.physicsBody.applyImpulse(CGVectorMake(0, 7))
+        node.physicsBody.velocity = CGVector(dx: 0, dy: 0)
+        node.physicsBody.applyImpulse(CGVector(dx: 0, dy: 6))
     }
 
     private func animate(){

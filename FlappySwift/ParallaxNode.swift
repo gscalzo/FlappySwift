@@ -18,8 +18,8 @@ class ParallaxNode {
         let texture = SKTexture(imageNamed: textureNamed)
         node = SKSpriteNode(color: UIColor.whiteColor(), size: size)
         
-        let location = CGPointMake(0.0, 0)
-        node.anchorPoint = CGPointMake(0, 0)
+        let location = CGPoint(x: 0, y: 0)
+        node.anchorPoint = CGPoint(x: 0, y: 0)
         node.position = location
         node.addChild(createNode(texture, position: 0))
         node.addChild(createNode(texture, position: width))
@@ -27,8 +27,8 @@ class ParallaxNode {
     
     private func createNode(texture: SKTexture, position: CGFloat) -> SKNode {
         let node = SKSpriteNode(texture: texture)
-        node.anchorPoint = CGPointMake(0, 0)
-        node.position = CGPointMake(position, 0)
+        node.anchorPoint = CGPoint(x: 0, y: 0)
+        node.position = CGPoint(x: position, y: 0)
         
         return node
     }

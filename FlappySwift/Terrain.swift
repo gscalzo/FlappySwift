@@ -24,8 +24,8 @@ class Terrain {
                         textureNamed: "terrain.png").zPosition(5).addTo(parentNode)
         
         let terrainBody = SKNode()
-        terrainBody.position = CGPointMake(width/2.0, height/2)
-        terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(width, height))
+        terrainBody.position = CGPoint(x: width/2.0, y: height/2)
+        terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: width, height: height))
         
         terrainBody.physicsBody.dynamic = false
         terrainBody.physicsBody.affectedByGravity = false

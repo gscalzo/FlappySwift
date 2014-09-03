@@ -15,17 +15,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
         physicsWorld.contactDelegate = self
-        physicsWorld.gravity = CGVectorMake(0, -3)
+        physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         
         Background().addTo(self).start()
         Terrain().addTo(self).start()
+        Pipes().addTo(self).start()
 
         bird = Bird()
         bird.position(CGPointMake(30.0, 400.0))
-        bird.addTo(self)
-        
-        PipePair(centerY: view.center.y).addTo(self).start()
-        
+        bird.addTo(self)        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

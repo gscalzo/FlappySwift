@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE123B7E19B0F44900BF6652 /* PipePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE123B7D19B0F44900BF6652 /* PipePair.swift */; };
+		EE123B8019B0F88500BF6652 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE123B7F19B0F88500BF6652 /* Pipes.swift */; };
 		EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DC8193D30180080C753 /* AppDelegate.swift */; };
 		EE416DCB193D30180080C753 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE416DCA193D30180080C753 /* GameScene.sks */; };
 		EE416DCD193D30180080C753 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DCC193D30180080C753 /* GameScene.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		EE123B7D19B0F44900BF6652 /* PipePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipePair.swift; sourceTree = "<group>"; };
+		EE123B7F19B0F88500BF6652 /* Pipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
 		EE416DC3193D30180080C753 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE416DC7193D30180080C753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE416DC8193D30180080C753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				EE89ED5319AD097B008A1428 /* ParallaxNode.swift */,
 				EE416DEB193D4CAF0080C753 /* Terrain.swift */,
 				EE123B7D19B0F44900BF6652 /* PipePair.swift */,
+				EE123B7F19B0F88500BF6652 /* Pipes.swift */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
 				EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */,
 				EE89ED5219AD019C008A1428 /* Background.swift in Sources */,
+				EE123B8019B0F88500BF6652 /* Pipes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

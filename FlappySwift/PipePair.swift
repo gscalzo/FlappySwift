@@ -9,25 +9,26 @@
 import SpriteKit
 
 class PipePair {
+    private let gapSize: CGFloat = 50
     private var pipesNode: SKNode!
     private var finalPositionX: CGFloat!
     
     init(centerY: CGFloat){
         pipesNode = SKNode()
         
-        let pipeTopPosition = CGPoint(x: 0, y: centerY + 40)
-        let pipeBottomPosition = CGPoint(x: 0, y: centerY - 40)
+        let pipeTopPosition = CGPoint(x: 0, y: centerY + gapSize)
+        let pipeBottomPosition = CGPoint(x: 0, y: centerY - gapSize)
         
-        let pipe1 = SKSpriteNode(imageNamed: "pipeTop.png")
-        pipe1.anchorPoint = CGPoint(x: 0, y: 0)
-        pipe1.position = pipeTopPosition
-        pipesNode.addChild(pipe1)
+        let pipeTop = SKSpriteNode(imageNamed: "pipeTop.png")
+        pipeTop.anchorPoint = CGPoint(x: 0, y: 0)
+        pipeTop.position = pipeTopPosition
+        pipesNode.addChild(pipeTop)
         
-        let pipe2 = SKSpriteNode(imageNamed: "pipeBottom.png")
-        pipe2.anchorPoint = CGPoint(x: 0, y: 1)
-        pipe2.position = pipeBottomPosition
-        pipesNode.addChild(pipe2)
-        finalPositionX = pipe2.size.width
+        let pipeBottom = SKSpriteNode(imageNamed: "pipeBottom.png")
+        pipeBottom.anchorPoint = CGPoint(x: 0, y: 1)
+        pipeBottom.position = pipeBottomPosition
+        pipesNode.addChild(pipeBottom)
+        finalPositionX = pipeBottom.size.width
     }
     
     func addTo(parentNode: SKScene!) -> PipePair {
@@ -39,11 +40,11 @@ class PipePair {
     }
     
     func start() {
-        pipesNode.runAction(SKAction.repeatActionForever(SKAction.sequence(
+        pipesNode.runAction(SKAction.sequence(
             [
                 SKAction.moveToX(-finalPositionX, duration: 6.0),
                 SKAction.removeFromParent()
             ]
-            )))
+            ))
     }
 }
