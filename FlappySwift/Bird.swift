@@ -20,6 +20,9 @@ class Bird {
             rectangleOfSize: node.size)
         
         node.physicsBody.dynamic = true
+        node.physicsBody.categoryBitMask = BodyType.bird.toRaw()
+        node.physicsBody.collisionBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
+        node.physicsBody.contactTestBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
     }
     
     func position(position: CGPoint) {

@@ -11,8 +11,7 @@ import SpriteKit
 class Pipes {
     var parentNode: SKScene!
     
-    init() {
-        
+    init() {        
     }
     
     func addTo(parentNode: SKScene!) -> Pipes {

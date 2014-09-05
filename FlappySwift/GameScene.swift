@@ -8,6 +8,12 @@
 
 import SpriteKit
 
+enum BodyType : UInt32 {
+    case bird = 1
+    case world = 2
+    case pipe = 4
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var bird: Bird!

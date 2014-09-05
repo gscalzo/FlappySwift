@@ -11,28 +11,43 @@ import SpriteKit
 class PipePair {
     private let gapSize: CGFloat = 50
     private var pipesNode: SKNode!
-    private var finalPositionX: CGFloat!
+    private var finalOffset: CGFloat!
+    private var startingOffset: CGFloat!
     
     init(centerY: CGFloat){
         pipesNode = SKNode()
         
-        let pipeTopPosition = CGPoint(x: 0, y: centerY + gapSize)
-        let pipeBottomPosition = CGPoint(x: 0, y: centerY - gapSize)
-        
         let pipeTop = SKSpriteNode(imageNamed: "pipeTop.png")
-        pipeTop.anchorPoint = CGPoint(x: 0, y: 0)
+        let pipeTopPosition = CGPoint(x: 0, y: centerY + pipeTop.size.height/2 + gapSize)
+        
         pipeTop.position = pipeTopPosition
         pipesNode.addChild(pipeTop)
+        pipeTop.physicsBody = SKPhysicsBody(rectangleOfSize: pipeTop.size)
+        pipeTop.physicsBody.pinned = true
+        pipeTop.physicsBody.dynamic = false
+        pipeTop.physicsBody.affectedByGravity = false
+        pipeTop.physicsBody.collisionBitMask = BodyType.bird.toRaw()
+        pipeTop.physicsBody.categoryBitMask = BodyType.pipe.toRaw()
+        pipeTop.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
+
         
         let pipeBottom = SKSpriteNode(imageNamed: "pipeBottom.png")
-        pipeBottom.anchorPoint = CGPoint(x: 0, y: 1)
+        let pipeBottomPosition = CGPoint(x: 0 , y: centerY - pipeBottom.size.height/2 - gapSize)
         pipeBottom.position = pipeBottomPosition
+        pipeBottom.physicsBody = SKPhysicsBody(rectangleOfSize: pipeBottom.size)
+        pipeBottom.physicsBody.dynamic = false
+        pipeBottom.physicsBody.affectedByGravity = false
+        pipeBottom.physicsBody.collisionBitMask = BodyType.bird.toRaw()
+        pipeBottom.physicsBody.categoryBitMask = BodyType.pipe.toRaw()
+        pipeBottom.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
+
         pipesNode.addChild(pipeBottom)
-        finalPositionX = pipeBottom.size.width
+        finalOffset = -pipeBottom.size.width/2
+        startingOffset = -finalOffset
     }
     
     func addTo(parentNode: SKScene!) -> PipePair {
-        let pipePosition = CGPoint(x: parentNode.size.width, y: 0)
+        let pipePosition = CGPoint(x: parentNode.size.width + startingOffset, y: 0)
         pipesNode.position = pipePosition
         
         parentNode.addChild(pipesNode)
@@ -42,7 +57,7 @@ class PipePair {
     func start() {
         pipesNode.runAction(SKAction.sequence(
             [
-                SKAction.moveToX(-finalPositionX, duration: 6.0),
+                SKAction.moveToX(finalOffset, duration: 6.0),
                 SKAction.removeFromParent()
             ]
             ))
