@@ -12,6 +12,7 @@ enum BodyType : UInt32 {
     case bird = 1
     case world = 2
     case pipe = 4
+    case gap = 8
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -26,29 +27,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Background().addTo(self).start()
         Terrain().addTo(self).start()
         Pipes().addTo(self).start()
-
+        
         bird = Bird()
         bird.position(CGPointMake(30.0, 400.0))
-        bird.addTo(self)        
+        bird.addTo(self)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         bird.flap()
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         bird.update()
     }
     
     
     func didBeginContact(contact: SKPhysicsContact!) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch (contactMask) {
+        case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
+            println("pipe")
+        case BodyType.world.toRaw() | BodyType.bird.toRaw():
+            println("world")
+            
+        default:
+            println("EXPLOSION")
+        }
+        
     }
     
-    func didEndContact(contact: SKPhysicsContact!)
-    {
+    func didEndContact(contact: SKPhysicsContact!) {
     }
     
-
+    
 }
 
 

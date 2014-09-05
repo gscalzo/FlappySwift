@@ -22,7 +22,7 @@ class PipePair {
         pipeTop.position = pipeTopPosition
         pipesNode.addChild(pipeTop)
 
-        
+        // creare funzione builder        
         let pipeBottom = createPipe(imageNamed: "pipeBottom.png")
         let pipeBottomPosition = CGPoint(x: 0 , y: centerY - pipeBottom.size.height/2 - gapSize)
         pipeBottom.position = pipeBottomPosition
@@ -35,12 +35,12 @@ class PipePair {
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
         pipeNode.physicsBody = SKPhysicsBody(rectangleOfSize: pipeNode.size)
-        pipeNode.physicsBody.pinned = true
-        pipeNode.physicsBody.dynamic = false
-        pipeNode.physicsBody.affectedByGravity = false
-        pipeNode.physicsBody.collisionBitMask = BodyType.bird.toRaw()
-        pipeNode.physicsBody.categoryBitMask = BodyType.pipe.toRaw()
-        pipeNode.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
+        pipeNode.physicsBody!.pinned = true
+        pipeNode.physicsBody!.dynamic = false
+        pipeNode.physicsBody!.affectedByGravity = false
+        pipeNode.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
+        pipeNode.physicsBody!.categoryBitMask = BodyType.pipe.toRaw()
+        pipeNode.physicsBody!.contactTestBitMask = BodyType.bird.toRaw()
         return pipeNode
     }
     

@@ -19,10 +19,10 @@ class Bird {
         node.physicsBody = SKPhysicsBody(
             rectangleOfSize: node.size)
         
-        node.physicsBody.dynamic = true
-        node.physicsBody.categoryBitMask = BodyType.bird.toRaw()
-        node.physicsBody.collisionBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
-        node.physicsBody.contactTestBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
+        node.physicsBody!.dynamic = true
+        node.physicsBody!.categoryBitMask = BodyType.bird.toRaw()
+        node.physicsBody!.collisionBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
+        node.physicsBody!.contactTestBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
     }
     
     func position(position: CGPoint) {
@@ -36,7 +36,7 @@ class Bird {
     
     
     func update() {
-        switch node.physicsBody.velocity.dy {
+        switch node.physicsBody!.velocity.dy {
         case let dy where dy > 30.0:
             node.zRotation = (3.14/6.0)
         case let dy where dy < -100.0:
@@ -47,8 +47,8 @@ class Bird {
     }
     
     func flap () {
-        node.physicsBody.velocity = CGVector(dx: 0, dy: 0)
-        node.physicsBody.applyImpulse(CGVector(dx: 0, dy: 6))
+        node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
+        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 6))
     }
 
     private func animate(){

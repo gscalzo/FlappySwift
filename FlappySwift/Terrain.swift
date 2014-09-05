@@ -27,11 +27,11 @@ class Terrain {
         terrainBody.position = CGPoint(x: width/2.0, y: height/2)
         
         terrainBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: width, height: height))
-        terrainBody.physicsBody.dynamic = false
-        terrainBody.physicsBody.affectedByGravity = false
-        terrainBody.physicsBody.collisionBitMask = BodyType.bird.toRaw()
-        terrainBody.physicsBody.categoryBitMask = BodyType.world.toRaw()
-        terrainBody.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
+        terrainBody.physicsBody!.dynamic = false
+        terrainBody.physicsBody!.affectedByGravity = false
+        terrainBody.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
+        terrainBody.physicsBody!.categoryBitMask = BodyType.world.toRaw()
+        terrainBody.physicsBody!.contactTestBitMask = BodyType.bird.toRaw()
         parentNode.addChild(terrainBody)
         return self
     }
