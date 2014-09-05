@@ -17,33 +17,31 @@ class PipePair {
     init(centerY: CGFloat){
         pipesNode = SKNode()
         
-        let pipeTop = SKSpriteNode(imageNamed: "pipeTop.png")
+        let pipeTop = createPipe(imageNamed: "pipeTop.png")
         let pipeTopPosition = CGPoint(x: 0, y: centerY + pipeTop.size.height/2 + gapSize)
-        
         pipeTop.position = pipeTopPosition
         pipesNode.addChild(pipeTop)
-        pipeTop.physicsBody = SKPhysicsBody(rectangleOfSize: pipeTop.size)
-        pipeTop.physicsBody.pinned = true
-        pipeTop.physicsBody.dynamic = false
-        pipeTop.physicsBody.affectedByGravity = false
-        pipeTop.physicsBody.collisionBitMask = BodyType.bird.toRaw()
-        pipeTop.physicsBody.categoryBitMask = BodyType.pipe.toRaw()
-        pipeTop.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
 
         
-        let pipeBottom = SKSpriteNode(imageNamed: "pipeBottom.png")
+        let pipeBottom = createPipe(imageNamed: "pipeBottom.png")
         let pipeBottomPosition = CGPoint(x: 0 , y: centerY - pipeBottom.size.height/2 - gapSize)
         pipeBottom.position = pipeBottomPosition
-        pipeBottom.physicsBody = SKPhysicsBody(rectangleOfSize: pipeBottom.size)
-        pipeBottom.physicsBody.dynamic = false
-        pipeBottom.physicsBody.affectedByGravity = false
-        pipeBottom.physicsBody.collisionBitMask = BodyType.bird.toRaw()
-        pipeBottom.physicsBody.categoryBitMask = BodyType.pipe.toRaw()
-        pipeBottom.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
-
         pipesNode.addChild(pipeBottom)
+        
         finalOffset = -pipeBottom.size.width/2
         startingOffset = -finalOffset
+    }
+    
+    private func createPipe(#imageNamed: String) -> SKSpriteNode {
+        let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+        pipeNode.physicsBody = SKPhysicsBody(rectangleOfSize: pipeNode.size)
+        pipeNode.physicsBody.pinned = true
+        pipeNode.physicsBody.dynamic = false
+        pipeNode.physicsBody.affectedByGravity = false
+        pipeNode.physicsBody.collisionBitMask = BodyType.bird.toRaw()
+        pipeNode.physicsBody.categoryBitMask = BodyType.pipe.toRaw()
+        pipeNode.physicsBody.contactTestBitMask = BodyType.bird.toRaw()
+        return pipeNode
     }
     
     func addTo(parentNode: SKScene!) -> PipePair {
