@@ -19,9 +19,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var screenNode: SKSpriteNode!
     var bird: Bird!
     var actors: [Startable]!
+    var score: Score!
     
     override func didMoveToView(view: SKView) {
-        
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         
@@ -33,6 +33,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let pi = Pipes().addTo(screenNode)
         bird = Bird().addTo(screenNode).position(CGPointMake(30.0, 400.0))
         actors = [bg, te, pi, bird]
+        
+        score = Score().addTo(screenNode)
 
         for actor in actors {
             actor.start()
@@ -73,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
-            println("gap")            
+            score.increase()
         default:
             return
         }
