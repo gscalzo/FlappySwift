@@ -38,6 +38,10 @@ class Bird : Startable {
         return self
     }
     
+    func position() -> CGPoint{
+        return node.position
+    }
+    
     func addTo(scene: SKSpriteNode) -> Bird{
         scene.addChild(node)
         return self

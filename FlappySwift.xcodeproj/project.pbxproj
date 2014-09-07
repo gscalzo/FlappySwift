@@ -18,6 +18,10 @@
 		EE416DE0193D30180080C753 /* FlappySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DDF193D30180080C753 /* FlappySwiftTests.swift */; };
 		EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Bird.swift */; };
 		EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Ground.swift */; };
+		EE707C1519BC890C00D39D6D /* SKEmitterNode+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE707C1419BC890C00D39D6D /* SKEmitterNode+FlappySwift.swift */; };
+		EE715F6919BC851D00F086DE /* explosionUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6719BC851D00F086DE /* explosionUp.sks */; };
+		EE715F6A19BC851D00F086DE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6819BC851D00F086DE /* spark.png */; };
+		EE715F6C19BC855900F086DE /* ExplosionDown.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6B19BC855900F086DE /* ExplosionDown.sks */; };
 		EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D319BC4B1A002625D7 /* Startable.swift */; };
 		EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */; };
 		EE7EF9DA19BC6458002625D7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D919BC6458002625D7 /* Score.swift */; };
@@ -52,6 +56,10 @@
 		EE416DDF193D30180080C753 /* FlappySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappySwiftTests.swift; sourceTree = "<group>"; };
 		EE416DE9193D3D3D0080C753 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		EE416DEB193D4CAF0080C753 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		EE707C1419BC890C00D39D6D /* SKEmitterNode+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+FlappySwift.swift"; sourceTree = "<group>"; };
+		EE715F6719BC851D00F086DE /* explosionUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosionUp.sks; sourceTree = "<group>"; };
+		EE715F6819BC851D00F086DE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		EE715F6B19BC855900F086DE /* ExplosionDown.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionDown.sks; sourceTree = "<group>"; };
 		EE7EF9D319BC4B1A002625D7 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
 		EE7EF9D919BC6458002625D7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -112,6 +120,9 @@
 				EE416DD3193D30180080C753 /* Images.xcassets */,
 				EE416DD0193D30180080C753 /* Main.storyboard */,
 				EE416DC7193D30180080C753 /* Info.plist */,
+				EE715F6719BC851D00F086DE /* explosionUp.sks */,
+				EE715F6819BC851D00F086DE /* spark.png */,
+				EE715F6B19BC855900F086DE /* ExplosionDown.sks */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */,
+				EE707C1419BC890C00D39D6D /* SKEmitterNode+FlappySwift.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -249,7 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE715F6A19BC851D00F086DE /* spark.png in Resources */,
+				EE715F6919BC851D00F086DE /* explosionUp.sks in Resources */,
 				EE416DD4193D30180080C753 /* Images.xcassets in Resources */,
+				EE715F6C19BC855900F086DE /* ExplosionDown.sks in Resources */,
 				EE416DCB193D30180080C753 /* GameScene.sks in Resources */,
 				EE416DD2193D30180080C753 /* Main.storyboard in Resources */,
 			);
@@ -281,6 +296,7 @@
 				EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */,
 				EE89ED5219AD019C008A1428 /* Background.swift in Sources */,
 				EE7EF9DA19BC6458002625D7 /* Score.swift in Sources */,
+				EE707C1519BC890C00D39D6D /* SKEmitterNode+FlappySwift.swift in Sources */,
 				EE123B8019B0F88500BF6652 /* Pipes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

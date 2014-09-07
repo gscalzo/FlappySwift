@@ -44,6 +44,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         bird.flap()
+                    explode()
+
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -76,11 +78,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
             score.increase()
+//            explode()
         default:
             return
         }
     }
+
+    private func explosionUp() {
+        let emitterName = "explosionUp"
+        let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
+        fireEmmitter.position = bird.position()
+        screenNode.addChild(fireEmmitter)
     
+        fireEmmitter.runAction(SKAction.sequence(
+        [
+            SKAction.moveByX(0, y: 1000, duration: 1),
+            SKAction.removeFromParent()
+        ]))
+    }
+    
+    private func explosionDown() {
+        let emitterName = "ExplosionDown"
+        let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
+        fireEmmitter.position = bird.position()
+        screenNode.addChild(fireEmmitter)
+    
+        fireEmmitter.runAction(SKAction.sequence(
+        [
+            SKAction.moveByX(0, y: -1000, duration: 1),
+            SKAction.removeFromParent()
+        ]))
+    }
+    
+    private func explode() {
+        explosionUp()
+        explosionDown()
+    }
     
 }
 
