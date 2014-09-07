@@ -15,18 +15,18 @@ class ParallaxNode {
     init(width: CGFloat, height: CGFloat, textureNamed: String) {
         let size = CGSizeMake(2*width, height)
         
-        let texture = SKTexture(imageNamed: textureNamed)
         node = SKSpriteNode(color: UIColor.whiteColor(), size: size)
-        
+
         let location = CGPoint(x: 0, y: 0)
         node.anchorPoint = CGPoint(x: 0, y: 0)
         node.position = location
-        node.addChild(createNode(texture, position: 0))
-        node.addChild(createNode(texture, position: width))
+        node.addChild(createNode(textureNamed, position: 0))
+        node.addChild(createNode(textureNamed, position: width))
     }
     
-    private func createNode(texture: SKTexture, position: CGFloat) -> SKNode {
-        let node = SKSpriteNode(texture: texture)
+    private func createNode(textureNamed: String, position: CGFloat) -> SKNode {
+        let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
+        node.lightingBitMask = BodyType.bird.toRaw()
         node.anchorPoint = CGPoint(x: 0, y: 0)
         node.position = CGPoint(x: position, y: 0)
         
@@ -44,7 +44,6 @@ class ParallaxNode {
     }
     
     func start(#duration: NSTimeInterval) {
-//        let distanceToMove = -node.size.width
         node.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
                 SKAction.moveToX(-node.size.width/2.0, duration: duration),

@@ -50,6 +50,7 @@ class PipePair {
     
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+        pipeNode.shadowCastBitMask = BodyType.bird.toRaw()
         pipeNode.physicsBody = SKPhysicsBody(rectangleOfSize: pipeNode.size)
         pipeNode.physicsBody!.dynamic = false
         pipeNode.physicsBody!.affectedByGravity = false
