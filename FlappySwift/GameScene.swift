@@ -28,11 +28,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
         addChild(screenNode)
         
-        let textures = Textures.classic()
+        let textures = Textures.cave()
         let bg = Background(texture: textures.background).addTo(screenNode)
         let te = Ground(texture: textures.ground).addTo(screenNode)
-        let pi = Pipes(textures: textures.pipes).addTo(screenNode)
         bird = Bird(textures: textures.bird).addTo(screenNode).position(CGPointMake(30.0, 400.0))
+        let pi = Pipes(textures: textures.pipes).addTo(screenNode)
         actors = [bg, te, pi, bird]
         
         score = Score().addTo(screenNode)

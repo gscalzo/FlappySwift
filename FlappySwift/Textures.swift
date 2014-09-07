@@ -22,4 +22,12 @@ struct Textures {
             pipes: ["pipeTop.png", "pipeBottom.png"],
             bird: ["bird1", "bird2"])
     }
+
+    static func cave() -> Textures {
+        return Textures(
+            background: "cave_background.png",
+            ground: "cave_ground.png",
+            pipes: ["cave_pipeTop.png", "cave_pipeBottom.png"],
+            bird: ["bird1", "bird2"])
+    }
 }
