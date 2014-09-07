@@ -8,28 +8,16 @@
 
 import SpriteKit
 
-class Pipes {
+class Pipes : Startable {
     var parentNode: SKScene!
+    var createActionKey = "createActionKey"
     
-    init() {        
+    init() {
     }
     
     func addTo(parentNode: SKScene!) -> Pipes {
         self.parentNode = parentNode
         return self
-    }
-    
-    func start() {
-        parentNode.runAction(
-            SKAction.repeatActionForever(
-                SKAction.sequence(
-                    [
-                        SKAction.runBlock({ () -> Void in
-                            self.createNewPipe()
-                        }),
-                        SKAction.waitForDuration(3)
-                    ]
-                )))
     }
     
     private func createNewPipe() {
@@ -39,4 +27,34 @@ class Pipes {
     private func centerPipes() -> CGFloat {
         return parentNode.size.height/2 - 100 + 20 * CGFloat(arc4random_uniform(10))
     }
+    
+    func start() -> Startable {
+        let createAction = SKAction.repeatActionForever(
+            SKAction.sequence(
+                [
+                    SKAction.runBlock { () -> Void in
+                        self.createNewPipe()
+                    },
+                    SKAction.waitForDuration(3)
+                ]
+            ) )
+        
+        parentNode.runAction(createAction, withKey: createActionKey)
+        
+        return self
+    }
+    
+    func stop() -> Startable {
+        parentNode.removeActionForKey(createActionKey)
+        
+        let pipeNodes = parentNode.children.filter { (node: AnyObject?) -> Bool in
+             (node as SKNode).name == PipePair.kind
+        }
+        for pipe in pipeNodes {
+            pipe.removeAllActions()
+        }
+        return self
+    }
+    
+    
 }

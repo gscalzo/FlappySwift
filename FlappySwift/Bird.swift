@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Bird {
+class Bird : Startable {
     private let node: SKSpriteNode
     
     init() {
@@ -21,19 +21,21 @@ class Bird {
         
         node.physicsBody!.dynamic = true
         node.physicsBody!.categoryBitMask = BodyType.bird.toRaw()
-        node.physicsBody!.collisionBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
-        node.physicsBody!.contactTestBitMask = BodyType.world.toRaw() | BodyType.pipe.toRaw()
+        node.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
+        node.physicsBody!.contactTestBitMask = BodyType.world.toRaw() |
+                                                BodyType.pipe.toRaw() |
+                                                BodyType.gap.toRaw()
     }
     
-    func position(position: CGPoint) {
+    func position(position: CGPoint) -> Bird{
         node.position = position
+        return self
     }
     
-    func addTo(scene: SKNode) {
+    func addTo(scene: SKNode) -> Bird{
         scene.addChild(node)
-        animate()
+        return self
     }
-    
     
     func update() {
         switch node.physicsBody!.velocity.dy {
@@ -46,11 +48,26 @@ class Bird {
         }
     }
     
-    func flap () {
+    func flap() {
         node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
         node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 6))
     }
-
+    
+    func fallOff() {
+        node.runAction(SKAction.falloffTo(10, duration: 1))
+    }
+    
+    func start() -> Startable {
+        animate()
+        return self
+    }
+    
+    func stop() -> Startable {
+        node.physicsBody!.dynamic = false
+        node.removeAllActions()
+        return self
+    }
+    
     private func animate(){
         let animationFrames = ["bird1", "bird2"].map { texName in
             SKTexture(imageNamed: texName)

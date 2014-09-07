@@ -9,6 +9,10 @@
 import SpriteKit
 
 class PipePair {
+    
+//    class let kind : String = "PIPES" // class variables not yet supported
+    class var kind : String { get {return "PIPES"} }
+    
     private let gapSize: CGFloat = 50
     private var pipesNode: SKNode!
     private var finalOffset: CGFloat!
@@ -16,7 +20,8 @@ class PipePair {
     
     init(centerY: CGFloat){
         pipesNode = SKNode()
-        
+        pipesNode.name = PipePair.kind
+
         let pipeTop = createPipe(imageNamed: "pipeTop.png")
         let pipeTopPosition = CGPoint(x: 0, y: centerY + pipeTop.size.height/2 + gapSize)
         pipeTop.position = pipeTopPosition
@@ -28,6 +33,18 @@ class PipePair {
         pipeBottom.position = pipeBottomPosition
         pipesNode.addChild(pipeBottom)
         
+        
+        let gapNode = SKSpriteNode(color: UIColor.redColor(),
+            size: CGSize(width: pipeBottom.size.width
+            , height: gapSize*2))
+        gapNode.position = CGPoint(x: 0, y: centerY)
+        pipesNode.addChild(gapNode)
+        gapNode.physicsBody = SKPhysicsBody(rectangleOfSize: gapNode.size)
+        gapNode.physicsBody!.dynamic = false
+        gapNode.physicsBody!.affectedByGravity = false
+        gapNode.physicsBody!.categoryBitMask = BodyType.gap.toRaw()
+        gapNode.physicsBody!.collisionBitMask = BodyType.gap.toRaw()
+        
         finalOffset = -pipeBottom.size.width/2
         startingOffset = -finalOffset
     }
@@ -35,12 +52,10 @@ class PipePair {
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
         pipeNode.physicsBody = SKPhysicsBody(rectangleOfSize: pipeNode.size)
-        pipeNode.physicsBody!.pinned = true
         pipeNode.physicsBody!.dynamic = false
         pipeNode.physicsBody!.affectedByGravity = false
-        pipeNode.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
         pipeNode.physicsBody!.categoryBitMask = BodyType.pipe.toRaw()
-        pipeNode.physicsBody!.contactTestBitMask = BodyType.bird.toRaw()
+        pipeNode.physicsBody!.collisionBitMask = BodyType.pipe.toRaw()
         return pipeNode
     }
     

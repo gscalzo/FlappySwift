@@ -52,4 +52,9 @@ class ParallaxNode {
             ]
             )))
     }
+    
+    func stop() {
+        node.removeAllActions()
+    }
+    
 }

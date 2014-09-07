@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Background {
+class Background : Startable {
     private var parallaxNode: ParallaxNode!
     
     init() {
@@ -25,7 +25,14 @@ class Background {
         return self
     }
     
-    func start() {
+    func start() -> Startable {
         parallaxNode.start(duration: 20.0)
+        return self
     }
+
+    func stop() -> Startable {
+        parallaxNode.stop()
+        return self
+    }
+    
 }

@@ -17,7 +17,8 @@
 		EE416DD4193D30180080C753 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE416DD3193D30180080C753 /* Images.xcassets */; };
 		EE416DE0193D30180080C753 /* FlappySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DDF193D30180080C753 /* FlappySwiftTests.swift */; };
 		EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Bird.swift */; };
-		EE416DEC193D4CAF0080C753 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Terrain.swift */; };
+		EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Ground.swift */; };
+		EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D319BC4B1A002625D7 /* Startable.swift */; };
 		EE89ED5219AD019C008A1428 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5119AD019C008A1428 /* Background.swift */; };
 		EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5319AD097B008A1428 /* ParallaxNode.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +48,8 @@
 		EE416DDE193D30180080C753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE416DDF193D30180080C753 /* FlappySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappySwiftTests.swift; sourceTree = "<group>"; };
 		EE416DE9193D3D3D0080C753 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
-		EE416DEB193D4CAF0080C753 /* Terrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
+		EE416DEB193D4CAF0080C753 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		EE7EF9D319BC4B1A002625D7 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		EE89ED5119AD019C008A1428 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EE89ED5319AD097B008A1428 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,18 +127,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EE7EF9D519BC4E60002625D7 /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				EE89ED5119AD019C008A1428 /* Background.swift */,
+				EE416DE9193D3D3D0080C753 /* Bird.swift */,
+				EE416DEB193D4CAF0080C753 /* Ground.swift */,
+				EE89ED5319AD097B008A1428 /* ParallaxNode.swift */,
+				EE123B7D19B0F44900BF6652 /* PipePair.swift */,
+				EE123B7F19B0F88500BF6652 /* Pipes.swift */,
+				EE7EF9D319BC4B1A002625D7 /* Startable.swift */,
+			);
+			name = Actors;
+			sourceTree = "<group>";
+		};
 		EE89ED5519AD099B008A1428 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				EE7EF9D519BC4E60002625D7 /* Actors */,
 				EE416DC8193D30180080C753 /* AppDelegate.swift */,
-				EE89ED5119AD019C008A1428 /* Background.swift */,
-				EE416DE9193D3D3D0080C753 /* Bird.swift */,
 				EE416DCC193D30180080C753 /* GameScene.swift */,
 				EE416DCE193D30180080C753 /* GameViewController.swift */,
-				EE89ED5319AD097B008A1428 /* ParallaxNode.swift */,
-				EE416DEB193D4CAF0080C753 /* Terrain.swift */,
-				EE123B7D19B0F44900BF6652 /* PipePair.swift */,
-				EE123B7F19B0F88500BF6652 /* Pipes.swift */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -241,11 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */,
 				EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE123B7E19B0F44900BF6652 /* PipePair.swift in Sources */,
-				EE416DEC193D4CAF0080C753 /* Terrain.swift in Sources */,
+				EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
 				EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */,
 				EE89ED5219AD019C008A1428 /* Background.swift in Sources */,

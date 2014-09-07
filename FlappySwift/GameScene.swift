@@ -18,19 +18,22 @@ enum BodyType : UInt32 {
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var bird: Bird!
+    var actors: [Startable]!
     
     override func didMoveToView(view: SKView) {
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         
-        Background().addTo(self).start()
-        Terrain().addTo(self).start()
-        Pipes().addTo(self).start()
-        
-        bird = Bird()
-        bird.position(CGPointMake(30.0, 400.0))
-        bird.addTo(self)
+        let bg = Background().addTo(self)
+        let te = Ground().addTo(self)
+        let pi = Pipes().addTo(self)
+        bird = Bird().addTo(self).position(CGPointMake(30.0, 400.0))
+        actors = [bg, te, pi, bird]
+
+        for actor in actors {
+            actor.start()
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -41,23 +44,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bird.update()
     }
     
-    
     func didBeginContact(contact: SKPhysicsContact!) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
             println("pipe")
+            bird.fallOff()
         case BodyType.world.toRaw() | BodyType.bird.toRaw():
-            println("world")
+            for actor in actors {
+                actor.stop()
+            }
             
         default:
-            println("EXPLOSION")
+            return
         }
         
     }
     
     func didEndContact(contact: SKPhysicsContact!) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch (contactMask) {
+        case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
+            println("gap")            
+        default:
+            return
+        }
     }
     
     
