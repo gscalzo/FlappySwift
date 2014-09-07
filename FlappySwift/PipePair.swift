@@ -18,17 +18,16 @@ class PipePair {
     private var finalOffset: CGFloat!
     private var startingOffset: CGFloat!
     
-    init(centerY: CGFloat){
+    init(textures: [String], centerY: CGFloat){
         pipesNode = SKNode()
         pipesNode.name = PipePair.kind
 
-        let pipeTop = createPipe(imageNamed: "pipeTop.png")
+        let pipeTop = createPipe(imageNamed: textures[0])
         let pipeTopPosition = CGPoint(x: 0, y: centerY + pipeTop.size.height/2 + gapSize)
         pipeTop.position = pipeTopPosition
         pipesNode.addChild(pipeTop)
 
-        // creare funzione builder        
-        let pipeBottom = createPipe(imageNamed: "pipeBottom.png")
+        let pipeBottom = createPipe(imageNamed: textures[1])
         let pipeBottomPosition = CGPoint(x: 0 , y: centerY - pipeBottom.size.height/2 - gapSize)
         pipeBottom.position = pipeBottomPosition
         pipesNode.addChild(pipeBottom)

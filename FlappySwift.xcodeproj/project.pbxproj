@@ -21,6 +21,7 @@
 		EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D319BC4B1A002625D7 /* Startable.swift */; };
 		EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */; };
 		EE7EF9DA19BC6458002625D7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D919BC6458002625D7 /* Score.swift */; };
+		EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9DB19BC6D0A002625D7 /* Textures.swift */; };
 		EE89ED5219AD019C008A1428 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5119AD019C008A1428 /* Background.swift */; };
 		EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5319AD097B008A1428 /* ParallaxNode.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		EE7EF9D319BC4B1A002625D7 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
 		EE7EF9D919BC6458002625D7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		EE7EF9DB19BC6D0A002625D7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		EE89ED5119AD019C008A1428 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EE89ED5319AD097B008A1428 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 				EE416DC8193D30180080C753 /* AppDelegate.swift */,
 				EE416DCC193D30180080C753 /* GameScene.swift */,
 				EE416DCE193D30180080C753 /* GameViewController.swift */,
+				EE7EF9DB19BC6D0A002625D7 /* Textures.swift */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
 				EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */,
+				EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */,
 				EE89ED5219AD019C008A1428 /* Background.swift in Sources */,
 				EE7EF9DA19BC6458002625D7 /* Score.swift in Sources */,
 				EE123B8019B0F88500BF6652 /* Pipes.swift in Sources */,

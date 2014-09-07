@@ -10,8 +10,10 @@ import SpriteKit
 
 class Ground : Startable {
     private var parallaxNode: ParallaxNode!
+    private let texture: String
     
-    init() {
+    init(texture: String) {
+        self.texture = texture
     }
     
     func addTo(parentNode: SKSpriteNode!) -> Ground {
@@ -21,7 +23,7 @@ class Ground : Startable {
         
         parallaxNode = ParallaxNode(width: width,
                               height: height,
-                        textureNamed: "ground.png").zPosition(5).addTo(parentNode)
+                        textureNamed: texture).zPosition(5).addTo(parentNode)
         
         let groundBody = SKNode()
         groundBody.position = CGPoint(x: width/2.0, y: height/2)

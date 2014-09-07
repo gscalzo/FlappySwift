@@ -10,8 +10,10 @@ import SpriteKit
 
 class Background : Startable {
     private var parallaxNode: ParallaxNode!
-    
-    init() {
+    private let texture: String
+
+    init(texture: String) {
+        self.texture = texture
     }
     
     func addTo(parentNode: SKSpriteNode!) -> Background {
@@ -20,7 +22,7 @@ class Background : Startable {
         
         parallaxNode = ParallaxNode(width: width,
             height: height,
-            textureNamed: "background.png").addTo(parentNode)
+            textureNamed: texture).addTo(parentNode)
 
         return self
     }

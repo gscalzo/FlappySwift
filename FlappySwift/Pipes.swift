@@ -9,10 +9,12 @@
 import SpriteKit
 
 class Pipes : Startable {
-    var parentNode: SKSpriteNode!
-    var createActionKey = "createActionKey"
+    private var parentNode: SKSpriteNode!
+    private var createActionKey = "createActionKey"
+    private let textures: [String]
     
-    init() {
+    init(textures: [String]) {
+        self.textures = textures
     }
     
     func addTo(parentNode: SKSpriteNode) -> Pipes {
@@ -21,7 +23,7 @@ class Pipes : Startable {
     }
     
     private func createNewPipe() {
-        PipePair(centerY: centerPipes()).addTo(parentNode).start()
+        PipePair(textures: textures, centerY: centerPipes()).addTo(parentNode).start()
     }
     
     private func centerPipes() -> CGFloat {

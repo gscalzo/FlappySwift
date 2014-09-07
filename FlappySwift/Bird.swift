@@ -11,9 +11,12 @@ import SpriteKit
 class Bird : Startable {
     private let node: SKSpriteNode
     private var dying = false
+    private let textures: [String]
     
-    init() {
-        node = SKSpriteNode(imageNamed: "bird1")
+    init(textures: [String]) {
+        self.textures = textures
+        
+        node = SKSpriteNode(imageNamed: textures[0])
         node.setScale(1.8)
         node.zPosition = 2.0
         
@@ -73,7 +76,7 @@ class Bird : Startable {
     }
     
     private func animate(){
-        let animationFrames = ["bird1", "bird2"].map { texName in
+        let animationFrames = textures.map { texName in
             SKTexture(imageNamed: texName)
         }
         
