@@ -54,8 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
-            println("pipe")
-            bird.fallOff()
+            bird.pushDown()
         case BodyType.world.toRaw() | BodyType.bird.toRaw():
             for actor in actors {
                 actor.stop()

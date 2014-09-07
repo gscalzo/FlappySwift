@@ -10,6 +10,7 @@ import SpriteKit
 
 class Bird : Startable {
     private let node: SKSpriteNode
+    private var dying = false
     
     init() {
         node = SKSpriteNode(imageNamed: "bird1")
@@ -49,12 +50,15 @@ class Bird : Startable {
     }
     
     func flap() {
-        node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
-        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 6))
+        if !dying {
+            node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
+            node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 6))
+        }
     }
     
-    func fallOff() {
-        node.runAction(SKAction.falloffTo(10, duration: 1))
+    func pushDown() {
+        dying = true
+        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: -10))
     }
     
     func start() -> Startable {
