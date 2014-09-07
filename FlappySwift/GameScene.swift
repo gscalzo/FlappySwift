@@ -16,7 +16,7 @@ enum BodyType : UInt32 {
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    
+    var screenNode: SKSpriteNode!
     var bird: Bird!
     var actors: [Startable]!
     
@@ -25,10 +25,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         
-        let bg = Background().addTo(self)
-        let te = Ground().addTo(self)
-        let pi = Pipes().addTo(self)
-        bird = Bird().addTo(self).position(CGPointMake(30.0, 400.0))
+        screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
+        addChild(screenNode)
+        
+        let bg = Background().addTo(screenNode)
+        let te = Ground().addTo(screenNode)
+        let pi = Pipes().addTo(screenNode)
+        bird = Bird().addTo(screenNode).position(CGPointMake(30.0, 400.0))
         actors = [bg, te, pi, bird]
 
         for actor in actors {
@@ -55,6 +58,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             for actor in actors {
                 actor.stop()
             }
+            
+            let shakeAction = SKAction.shake(0.1, amplitudeX: 20)
+            screenNode.runAction(shakeAction)
             
         default:
             return

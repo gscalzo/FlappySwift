@@ -14,7 +14,7 @@ class Background : Startable {
     init() {
     }
     
-    func addTo(parentNode: SKScene!) -> Background {
+    func addTo(parentNode: SKSpriteNode!) -> Background {
         let width = parentNode.size.width
         let height = parentNode.size.height
         

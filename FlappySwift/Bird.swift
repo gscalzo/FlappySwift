@@ -32,7 +32,7 @@ class Bird : Startable {
         return self
     }
     
-    func addTo(scene: SKNode) -> Bird{
+    func addTo(scene: SKSpriteNode) -> Bird{
         scene.addChild(node)
         return self
     }

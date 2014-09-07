@@ -34,7 +34,7 @@ class PipePair {
         pipesNode.addChild(pipeBottom)
         
         
-        let gapNode = SKSpriteNode(color: UIColor.redColor(),
+        let gapNode = SKSpriteNode(color: UIColor.clearColor(),
             size: CGSize(width: pipeBottom.size.width
             , height: gapSize*2))
         gapNode.position = CGPoint(x: 0, y: centerY)
@@ -59,7 +59,7 @@ class PipePair {
         return pipeNode
     }
     
-    func addTo(parentNode: SKScene!) -> PipePair {
+    func addTo(parentNode: SKSpriteNode) -> PipePair {
         let pipePosition = CGPoint(x: parentNode.size.width + startingOffset, y: 0)
         pipesNode.position = pipePosition
         

@@ -14,7 +14,7 @@ class Ground : Startable {
     init() {
     }
     
-    func addTo(parentNode: SKScene!) -> Ground {
+    func addTo(parentNode: SKSpriteNode!) -> Ground {
         
         let width = parentNode.size.width
         let height = CGFloat(60.0)

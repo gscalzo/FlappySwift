@@ -9,13 +9,13 @@
 import SpriteKit
 
 class Pipes : Startable {
-    var parentNode: SKScene!
+    var parentNode: SKSpriteNode!
     var createActionKey = "createActionKey"
     
     init() {
     }
     
-    func addTo(parentNode: SKScene!) -> Pipes {
+    func addTo(parentNode: SKSpriteNode) -> Pipes {
         self.parentNode = parentNode
         return self
     }

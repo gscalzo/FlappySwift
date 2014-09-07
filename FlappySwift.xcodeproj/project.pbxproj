@@ -19,6 +19,7 @@
 		EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Bird.swift */; };
 		EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Ground.swift */; };
 		EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D319BC4B1A002625D7 /* Startable.swift */; };
+		EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */; };
 		EE89ED5219AD019C008A1428 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5119AD019C008A1428 /* Background.swift */; };
 		EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5319AD097B008A1428 /* ParallaxNode.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		EE416DE9193D3D3D0080C753 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		EE416DEB193D4CAF0080C753 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		EE7EF9D319BC4B1A002625D7 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
+		EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
 		EE89ED5119AD019C008A1428 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EE89ED5319AD097B008A1428 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,9 +143,18 @@
 			name = Actors;
 			sourceTree = "<group>";
 		};
+		EE7EF9D619BC5C93002625D7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		EE89ED5519AD099B008A1428 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				EE7EF9D619BC5C93002625D7 /* Extensions */,
 				EE7EF9D519BC4E60002625D7 /* Actors */,
 				EE416DC8193D30180080C753 /* AppDelegate.swift */,
 				EE416DCC193D30180080C753 /* GameScene.swift */,
@@ -254,6 +265,7 @@
 			files = (
 				EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */,
 				EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */,
+				EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE123B7E19B0F44900BF6652 /* PipePair.swift in Sources */,

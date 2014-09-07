@@ -38,7 +38,7 @@ class ParallaxNode {
         return self
     }
    
-    func addTo(parentNode: SKScene!) -> ParallaxNode {
+    func addTo(parentNode: SKSpriteNode) -> ParallaxNode {
         parentNode.addChild(node)
         return self
     }
