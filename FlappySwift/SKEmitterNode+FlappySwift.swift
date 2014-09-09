@@ -8,13 +8,7 @@
 
 import SpriteKit
 
-// from https://developer.apple.com/library/prerelease/ios/samplecode/Adventure-Swift/Listings/Adventure_Adventure_Shared_Utilities_GraphicsUtilities_swift.html#//apple_ref/doc/uid/TP40014639-Adventure_Adventure_Shared_Utilities_GraphicsUtilities_swift-DontLinkElementID_19
-
 extension SKEmitterNode {
-//    class func emitterNodeWithName(name: String) -> SKEmitterNode {
-//        return NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource(name, ofType: "sks")!) as SKEmitterNode
-//    }
-    
     class func emitterNodeWithName(name : NSString) -> SKEmitterNode
     {
         let path = NSBundle.mainBundle().pathForResource(name, ofType: "sks")

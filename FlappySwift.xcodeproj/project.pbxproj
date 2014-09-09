@@ -153,8 +153,8 @@
 				EE89ED5319AD097B008A1428 /* ParallaxNode.swift */,
 				EE123B7D19B0F44900BF6652 /* PipePair.swift */,
 				EE123B7F19B0F88500BF6652 /* Pipes.swift */,
-				EE7EF9D319BC4B1A002625D7 /* Startable.swift */,
 				EE7EF9D919BC6458002625D7 /* Score.swift */,
+				EE7EF9D319BC4B1A002625D7 /* Startable.swift */,
 			);
 			name = Actors;
 			sourceTree = "<group>";

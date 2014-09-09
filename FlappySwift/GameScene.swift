@@ -31,7 +31,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let textures = Textures.cave()
         let bg = Background(texture: textures.background).addTo(screenNode)
         let te = Ground(texture: textures.ground).addTo(screenNode)
-        bird = Bird(textures: textures.bird).addTo(screenNode).position(CGPointMake(30.0, 400.0))
+        bird = Bird(textures: textures.bird).addTo(screenNode)
+        bird.position = CGPointMake(30.0, 400.0)
         let pi = Pipes(textures: textures.pipes).addTo(screenNode)
         actors = [bg, te, pi, bird]
         
@@ -87,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func explosionUp() {
         let emitterName = "explosionUp"
         let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
-        fireEmmitter.position = bird.position()
+        fireEmmitter.position = bird.position
         screenNode.addChild(fireEmmitter)
     
         fireEmmitter.runAction(SKAction.sequence(
@@ -100,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func explosionDown() {
         let emitterName = "ExplosionDown"
         let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
-        fireEmmitter.position = bird.position()
+        fireEmmitter.position = bird.position
         screenNode.addChild(fireEmmitter)
     
         fireEmmitter.runAction(SKAction.sequence(

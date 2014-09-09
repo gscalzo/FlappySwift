@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Ground : Startable {
+class Ground  {
     private var parallaxNode: ParallaxNode!
     private let texture: String
     
@@ -17,7 +17,6 @@ class Ground : Startable {
     }
     
     func addTo(parentNode: SKSpriteNode!) -> Ground {
-        
         let width = parentNode.size.width
         let height = CGFloat(60.0)
         
@@ -36,7 +35,9 @@ class Ground : Startable {
         parentNode.addChild(groundBody)
         return self
     }
+}
 
+extension Ground : Startable {
     func start() -> Startable {
         parallaxNode.start(duration: 5.0)
         return self
@@ -46,5 +47,4 @@ class Ground : Startable {
         parallaxNode.stop()
         return self
     }
-    
 }

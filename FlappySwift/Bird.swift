@@ -9,44 +9,66 @@
 import SpriteKit
 
 class Bird : Startable {
-    private let node: SKSpriteNode
+    private let node: SKSpriteNode!
     private var dying = false
     private let textures: [String]
     
+    var position : CGPoint {
+        set { node.position = newValue }
+        get { return node.position }
+    }
+    
     init(textures: [String]) {
         self.textures = textures
-        
-        node = SKSpriteNode(imageNamed: textures[0])
-        node.setScale(1.8)
-        node.zPosition = 2.0
-        
-        node.physicsBody = SKPhysicsBody(
-            rectangleOfSize: node.size)
-        
-        node.physicsBody!.dynamic = true
-        node.physicsBody!.categoryBitMask = BodyType.bird.toRaw()
-        node.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
-        node.physicsBody!.contactTestBitMask = BodyType.world.toRaw() |
-                                                BodyType.pipe.toRaw() |
-                                                BodyType.gap.toRaw()
+        node = createNode()
         
         addLightEmitter()
-    }
-    
-    func position(position: CGPoint) -> Bird{
-        node.position = position
-        return self
-    }
-    
-    func position() -> CGPoint{
-        return node.position
     }
     
     func addTo(scene: SKSpriteNode) -> Bird{
         scene.addChild(node)
         return self
     }
+
+}
+
+// Creators
+extension Bird {
+    private func createNode() -> SKSpriteNode {
+        let birdNode = SKSpriteNode(imageNamed: textures[0])
+        birdNode.setScale(1.8)
+        birdNode.zPosition = 2.0
+        
+        birdNode.physicsBody = SKPhysicsBody(
+            rectangleOfSize: birdNode.size)
+        
+        birdNode.physicsBody!.dynamic = true
+        birdNode.physicsBody!.categoryBitMask = BodyType.bird.toRaw()
+        birdNode.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
+        birdNode.physicsBody!.contactTestBitMask = BodyType.world.toRaw() |
+            BodyType.pipe.toRaw() |
+            BodyType.gap.toRaw()
+        return birdNode
+    }
     
+}
+
+// Startable
+extension Bird : Startable {
+    func start() -> Startable {
+        animate()
+        return self
+    }
+    
+    func stop() -> Startable {
+        node.physicsBody!.dynamic = false
+        node.removeAllActions()
+        return self
+    }
+}
+
+// Actions
+extension Bird {
     func update() {
         switch node.physicsBody!.velocity.dy {
         case let dy where dy > 30.0:
@@ -69,17 +91,10 @@ class Bird : Startable {
         dying = true
         node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: -10))
     }
-    
-    func start() -> Startable {
-        animate()
-        return self
-    }
-    
-    func stop() -> Startable {
-        node.physicsBody!.dynamic = false
-        node.removeAllActions()
-        return self
-    }
+}
+
+// Private
+extension Bird {
     
     private func animate(){
         let animationFrames = textures.map { texName in
@@ -88,10 +103,13 @@ class Bird : Startable {
         
         node.runAction(
             SKAction.repeatActionForever(
-            SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)
+                SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)
             ))
     }
-    
+}
+
+// Light
+extension Bird {
     private func addLightEmitter() {
         let light = SKLightNode()
         light.categoryBitMask = BodyType.bird.toRaw()
@@ -102,3 +120,4 @@ class Bird : Startable {
         node.addChild(light)
     }
 }
+

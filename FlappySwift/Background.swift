@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Background : Startable {
+class Background {
     private var parallaxNode: ParallaxNode!
     private let texture: String
 
@@ -26,15 +26,17 @@ class Background : Startable {
 
         return self
     }
-    
+}
+
+
+extension Background : Startable {
     func start() -> Startable {
         parallaxNode.start(duration: 20.0)
         return self
     }
-
+    
     func stop() -> Startable {
         parallaxNode.stop()
         return self
     }
-    
 }
