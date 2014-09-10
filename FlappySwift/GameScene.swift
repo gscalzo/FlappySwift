@@ -16,10 +16,10 @@ enum BodyType : UInt32 {
 }
 
 class GameScene: SKScene {
-    var screenNode: SKSpriteNode!
-    var bird: Bird!
-    var actors: [Startable]!
-    var score: Score!
+    private var screenNode: SKSpriteNode!
+    private var bird: Bird!
+    private var actors: [Startable]!
+    private var score: Score!
     
     override func didMoveToView(view: SKView) {
         physicsWorld.contactDelegate = self
@@ -92,35 +92,21 @@ extension GameScene: SKPhysicsContactDelegate {
 
 // Explosion
 extension GameScene {
-    private func explosionUp() {
-        let emitterName = "explosionUp"
+    private func explosion(#emitterName: String, finalYPosition: CGFloat) {
         let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
         fireEmmitter.position = bird.position
         screenNode.addChild(fireEmmitter)
         
         fireEmmitter.runAction(SKAction.sequence(
             [
-                SKAction.moveByX(0, y: 1000, duration: 1),
-                SKAction.removeFromParent()
-            ]))
-    }
-    
-    private func explosionDown() {
-        let emitterName = "ExplosionDown"
-        let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
-        fireEmmitter.position = bird.position
-        screenNode.addChild(fireEmmitter)
-        
-        fireEmmitter.runAction(SKAction.sequence(
-            [
-                SKAction.moveByX(0, y: -1000, duration: 1),
+                SKAction.moveByX(0, y: finalYPosition, duration: 1),
                 SKAction.removeFromParent()
             ]))
     }
     
     private func explode() {
-        explosionUp()
-        explosionDown()
+        explosion(emitterName: "explosionUp", finalYPosition: 1000)
+        explosion(emitterName: "ExplosionDown", finalYPosition: -1000)
     }
 }
 
