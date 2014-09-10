@@ -22,6 +22,7 @@
 		EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC919C05CF200598F17 /* Background.swift */; };
 		EEFA7ACD19C05CF200598F17 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACA19C05CF200598F17 /* Ground.swift */; };
 		EEFA7ACE19C05CF200598F17 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */; };
+		EEFA7AD019C0605500598F17 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACF19C0605500598F17 /* Bird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		EEFA7AC919C05CF200598F17 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EEFA7ACA19C05CF200598F17 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
+		EEFA7ACF19C0605500598F17 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		EEFA7AC019C0599100598F17 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				EEFA7ACF19C0605500598F17 /* Bird.swift */,
 				EEFA7AC919C05CF200598F17 /* Background.swift */,
 				EEFA7ACA19C05CF200598F17 /* Ground.swift */,
 				EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */,
@@ -265,6 +268,7 @@
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
 				EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */,
+				EEFA7AD019C0605500598F17 /* Bird.swift in Sources */,
 				EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
