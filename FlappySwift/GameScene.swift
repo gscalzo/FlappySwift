@@ -8,12 +8,20 @@
 
 import SpriteKit
 
+enum BodyType : UInt32 {
+    case bird  = 1 // (1 << 0)
+    case world = 2 // (1 << 1)
+    case pipe  = 4 // (1 << 2)
+    case gap   = 8 // (1 << 3)
+}
+
 class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
     private var actors: [Startable]!
     private var bird: Bird!
 
     override func didMoveToView(view: SKView) {
+        physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
 
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
@@ -36,9 +44,36 @@ class GameScene: SKScene {
         bird.update()
     }
     
-    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         bird.flap()
+    }
+}
+
+// Contacts
+extension GameScene: SKPhysicsContactDelegate {
+    func didBeginContact(contact: SKPhysicsContact!) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch (contactMask) {
+        case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
+            println("Contact with a pipe")
+        case BodyType.world.toRaw() | BodyType.bird.toRaw():
+            println("Contact with ground")
+        default:
+            return
+        }
+        
+    }
+    
+    func didEndContact(contact: SKPhysicsContact!) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch (contactMask) {
+        case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
+            println("Contact with gap")
+        default:
+            return
+        }
     }
 }
 

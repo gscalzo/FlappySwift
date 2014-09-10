@@ -35,8 +35,15 @@ extension Bird {
         birdNode.setScale(1.8)
         birdNode.zPosition = 2.0
         
-        birdNode.physicsBody = SKPhysicsBody(rectangleOfSize: birdNode.size)
-        birdNode.physicsBody!.dynamic = true
+        birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size) {
+            body in
+            body.dynamic = true
+            body.categoryBitMask    = BodyType.bird.toRaw()
+            body.collisionBitMask   = BodyType.bird.toRaw()
+            body.contactTestBitMask = BodyType.world.toRaw() |
+                BodyType.pipe.toRaw() |
+                BodyType.gap.toRaw()
+        }
 
         return birdNode
     }

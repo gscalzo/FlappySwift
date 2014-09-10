@@ -63,12 +63,26 @@ class PipePair {
 extension PipePair {
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+        pipeNode.physicsBody = SKPhysicsBody.rectSize(pipeNode.size) {
+            body in
+            body.dynamic           = false
+            body.affectedByGravity = false
+            body.categoryBitMask   = BodyType.pipe.toRaw()
+            body.collisionBitMask  = BodyType.pipe.toRaw()
+        }
         return pipeNode
     }
     
     private func createGap(#size: CGSize) -> SKSpriteNode {
         let gapNode = SKSpriteNode(color: UIColor.clearColor(),
             size: size)
+        gapNode.physicsBody = SKPhysicsBody.rectSize(size) {
+            body in
+            body.dynamic = false
+            body.affectedByGravity = false
+            body.categoryBitMask = BodyType.gap.toRaw()
+            body.collisionBitMask = BodyType.gap.toRaw()
+        }
         return gapNode
     }
 }

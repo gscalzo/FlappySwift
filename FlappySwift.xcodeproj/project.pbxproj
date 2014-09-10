@@ -20,6 +20,7 @@
 		EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9DB19BC6D0A002625D7 /* Textures.swift */; };
 		EEF05D5B19C0F3F3004A929B /* PipePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05D5919C0F3F3004A929B /* PipePair.swift */; };
 		EEF05D5C19C0F3F3004A929B /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05D5A19C0F3F3004A929B /* Pipes.swift */; };
+		EEF05D5F19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05D5E19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift */; };
 		EEFA7AC219C059A200598F17 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC119C059A200598F17 /* Startable.swift */; };
 		EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC919C05CF200598F17 /* Background.swift */; };
 		EEFA7ACD19C05CF200598F17 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACA19C05CF200598F17 /* Ground.swift */; };
@@ -55,6 +56,7 @@
 		EE7EF9DB19BC6D0A002625D7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		EEF05D5919C0F3F3004A929B /* PipePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipePair.swift; sourceTree = "<group>"; };
 		EEF05D5A19C0F3F3004A929B /* Pipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
+		EEF05D5E19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKPhysicsBody+FlappySwift.swift"; sourceTree = "<group>"; };
 		EEFA7AC119C059A200598F17 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		EEFA7AC919C05CF200598F17 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EEFA7ACA19C05CF200598F17 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		EE89ED5519AD099B008A1428 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				EEF05D5D19C0F61A004A929B /* Extensions */,
 				EEFA7AC019C0599100598F17 /* Actors */,
 				EE416DC8193D30180080C753 /* AppDelegate.swift */,
 				EE416DCC193D30180080C753 /* GameScene.swift */,
@@ -148,6 +151,14 @@
 				EE7EF9DB19BC6D0A002625D7 /* Textures.swift */,
 			);
 			name = Src;
+			sourceTree = "<group>";
+		};
+		EEF05D5D19C0F61A004A929B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEF05D5E19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		EEFA7AC019C0599100598F17 /* Actors */ = {
@@ -268,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEFA7ACE19C05CF200598F17 /* ParallaxNode.swift in Sources */,
+				EEF05D5F19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift in Sources */,
 				EEFA7AC219C059A200598F17 /* Startable.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
 				EEF05D5B19C0F3F3004A929B /* PipePair.swift in Sources */,
