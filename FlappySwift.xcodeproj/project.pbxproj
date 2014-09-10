@@ -28,6 +28,7 @@
 		EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9DB19BC6D0A002625D7 /* Textures.swift */; };
 		EE89ED5219AD019C008A1428 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5119AD019C008A1428 /* Background.swift */; };
 		EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5319AD097B008A1428 /* ParallaxNode.swift */; };
+		EEFA7ABF19C0406600598F17 /* SKPhysicsBody+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ABE19C0406600598F17 /* SKPhysicsBody+FlappySwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		EE7EF9DB19BC6D0A002625D7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		EE89ED5119AD019C008A1428 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EE89ED5319AD097B008A1428 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
+		EEFA7ABE19C0406600598F17 /* SKPhysicsBody+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKPhysicsBody+FlappySwift.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */,
 				EE707C1419BC890C00D39D6D /* SKEmitterNode+FlappySwift.swift */,
+				EEFA7ABE19C0406600598F17 /* SKPhysicsBody+FlappySwift.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */,
+				EEFA7ABF19C0406600598F17 /* SKPhysicsBody+FlappySwift.swift in Sources */,
 				EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */,
 				EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
