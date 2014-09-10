@@ -15,7 +15,7 @@ enum BodyType : UInt32 {
     case gap = 8
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene {
     var screenNode: SKSpriteNode!
     var bird: Bird!
     var actors: [Startable]!
@@ -43,16 +43,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        bird.flap()
-                    explode()
-
-    }
-    
     override func update(currentTime: CFTimeInterval) {
         bird.update()
     }
     
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        bird.flap()
+        explode()
+    }
+    
+    
+}
+
+// Contacts
+extension GameScene: SKPhysicsContactDelegate {
     func didBeginContact(contact: SKPhysicsContact!) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
@@ -79,23 +84,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
             score.increase()
-//            explode()
         default:
             return
         }
     }
+}
 
+// Explosion
+extension GameScene {
     private func explosionUp() {
         let emitterName = "explosionUp"
         let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
         fireEmmitter.position = bird.position
         screenNode.addChild(fireEmmitter)
-    
+        
         fireEmmitter.runAction(SKAction.sequence(
-        [
-            SKAction.moveByX(0, y: 1000, duration: 1),
-            SKAction.removeFromParent()
-        ]))
+            [
+                SKAction.moveByX(0, y: 1000, duration: 1),
+                SKAction.removeFromParent()
+            ]))
     }
     
     private func explosionDown() {
@@ -103,19 +110,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let fireEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
         fireEmmitter.position = bird.position
         screenNode.addChild(fireEmmitter)
-    
+        
         fireEmmitter.runAction(SKAction.sequence(
-        [
-            SKAction.moveByX(0, y: -1000, duration: 1),
-            SKAction.removeFromParent()
-        ]))
+            [
+                SKAction.moveByX(0, y: -1000, duration: 1),
+                SKAction.removeFromParent()
+            ]))
     }
     
     private func explode() {
         explosionUp()
         explosionDown()
     }
-    
 }
 
 
