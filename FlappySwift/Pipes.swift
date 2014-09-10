@@ -8,9 +8,10 @@
 
 import SpriteKit
 
-class Pipes : Startable {
+class Pipes {
+    private class var createActionKey : String { get {return "createActionKey"} }
+
     private var parentNode: SKSpriteNode!
-    private var createActionKey = "createActionKey"
     private let textures: [String]
     
     init(textures: [String]) {
@@ -22,14 +23,10 @@ class Pipes : Startable {
         return self
     }
     
-    private func createNewPipe() {
-        PipePair(textures: textures, centerY: centerPipes()).addTo(parentNode).start()
-    }
-    
-    private func centerPipes() -> CGFloat {
-        return parentNode.size.height/2 - 100 + 20 * CGFloat(arc4random_uniform(10))
-    }
-    
+}
+
+// Startable
+extension Pipes : Startable {
     func start() -> Startable {
         let createAction = SKAction.repeatActionForever(
             SKAction.sequence(
@@ -41,13 +38,13 @@ class Pipes : Startable {
                 ]
             ) )
         
-        parentNode.runAction(createAction, withKey: createActionKey)
+        parentNode.runAction(createAction, withKey: Pipes.createActionKey)
         
         return self
     }
     
     func stop() -> Startable {
-        parentNode.removeActionForKey(createActionKey)
+        parentNode.removeActionForKey(Pipes.createActionKey)
         
         let pipeNodes = parentNode.children.filter { (node: AnyObject?) -> Bool in
              (node as SKNode).name == PipePair.kind
@@ -57,6 +54,15 @@ class Pipes : Startable {
         }
         return self
     }
+}
+
+
+extension Pipes {
+    private func createNewPipe() {
+        PipePair(textures: textures, centerY: centerPipes()).addTo(parentNode).start()
+    }
     
-    
+    private func centerPipes() -> CGFloat {
+        return parentNode.size.height/2 - 100 + 20 * CGFloat(arc4random_uniform(10))
+    }
 }

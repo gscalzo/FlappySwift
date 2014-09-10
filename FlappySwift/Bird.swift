@@ -29,25 +29,26 @@ class Bird : Startable {
         scene.addChild(node)
         return self
     }
-
 }
 
 // Creators
 extension Bird {
     private func createNode() -> SKSpriteNode {
-        let birdNode = SKSpriteNode(imageNamed: textures[0])
+        let birdNode = SKSpriteNode(imageNamed: textures.first!)
         birdNode.setScale(1.8)
         birdNode.zPosition = 2.0
         
-        birdNode.physicsBody = SKPhysicsBody(
-            rectangleOfSize: birdNode.size)
         
-        birdNode.physicsBody!.dynamic = true
-        birdNode.physicsBody!.categoryBitMask = BodyType.bird.toRaw()
-        birdNode.physicsBody!.collisionBitMask = BodyType.bird.toRaw()
-        birdNode.physicsBody!.contactTestBitMask = BodyType.world.toRaw() |
-            BodyType.pipe.toRaw() |
-            BodyType.gap.toRaw()
+        birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size) {
+            body in
+            body.dynamic = true
+            body.categoryBitMask    = BodyType.bird.toRaw()
+            body.collisionBitMask   = BodyType.bird.toRaw()
+            body.contactTestBitMask = BodyType.world.toRaw() |
+                                      BodyType.pipe.toRaw() |
+                                      BodyType.gap.toRaw()
+        }
+
         return birdNode
     }
     
@@ -95,7 +96,6 @@ extension Bird {
 
 // Private
 extension Bird {
-    
     private func animate(){
         let animationFrames = textures.map { texName in
             SKTexture(imageNamed: texName)

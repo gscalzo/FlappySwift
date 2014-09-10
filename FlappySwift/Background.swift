@@ -28,7 +28,7 @@ class Background {
     }
 }
 
-
+// Startable
 extension Background : Startable {
     func start() -> Startable {
         parallaxNode.start(duration: 20.0)
