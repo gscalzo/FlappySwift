@@ -10,22 +10,20 @@ import SpriteKit
 
 class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
-    
+    private var actors: [Startable]!
+
     override func didMoveToView(view: SKView) {
         
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
-        addChild(screenNode)
+        addChild(screenNode)        
         
-        let backgroundNode = SKSpriteNode(imageNamed: "background")
-        backgroundNode.anchorPoint = CGPointZero
-        backgroundNode.position = CGPointZero
-        screenNode.addChild(backgroundNode)
+        let bg = Background(textureNamed: "background").addTo(screenNode)
+        let te = Ground(textureNamed: "ground").addTo(screenNode)
+        actors = [bg, te]
         
-        let groundNode = SKSpriteNode(imageNamed: "ground")
-        groundNode.anchorPoint = CGPointZero
-        groundNode.position = CGPointZero
-        screenNode.addChild(groundNode)
-        
+        for actor in actors {
+            actor.start()
+        }
     }
     
     override func update(currentTime: CFTimeInterval) {

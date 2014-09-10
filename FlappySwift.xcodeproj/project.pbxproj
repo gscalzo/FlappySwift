@@ -18,6 +18,10 @@
 		EE715F6A19BC851D00F086DE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6819BC851D00F086DE /* spark.png */; };
 		EE715F6C19BC855900F086DE /* ExplosionDown.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6B19BC855900F086DE /* ExplosionDown.sks */; };
 		EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9DB19BC6D0A002625D7 /* Textures.swift */; };
+		EEFA7AC219C059A200598F17 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC119C059A200598F17 /* Startable.swift */; };
+		EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC919C05CF200598F17 /* Background.swift */; };
+		EEFA7ACD19C05CF200598F17 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACA19C05CF200598F17 /* Ground.swift */; };
+		EEFA7ACE19C05CF200598F17 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		EE715F6819BC851D00F086DE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		EE715F6B19BC855900F086DE /* ExplosionDown.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionDown.sks; sourceTree = "<group>"; };
 		EE7EF9DB19BC6D0A002625D7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
+		EEFA7AC119C059A200598F17 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
+		EEFA7AC919C05CF200598F17 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		EEFA7ACA19C05CF200598F17 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,12 +135,24 @@
 		EE89ED5519AD099B008A1428 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				EEFA7AC019C0599100598F17 /* Actors */,
 				EE416DC8193D30180080C753 /* AppDelegate.swift */,
 				EE416DCC193D30180080C753 /* GameScene.swift */,
 				EE416DCE193D30180080C753 /* GameViewController.swift */,
 				EE7EF9DB19BC6D0A002625D7 /* Textures.swift */,
 			);
 			name = Src;
+			sourceTree = "<group>";
+		};
+		EEFA7AC019C0599100598F17 /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				EEFA7AC919C05CF200598F17 /* Background.swift */,
+				EEFA7ACA19C05CF200598F17 /* Ground.swift */,
+				EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */,
+				EEFA7AC119C059A200598F17 /* Startable.swift */,
+			);
+			name = Actors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,10 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFA7ACE19C05CF200598F17 /* ParallaxNode.swift in Sources */,
+				EEFA7AC219C059A200598F17 /* Startable.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
+				EEFA7ACD19C05CF200598F17 /* Ground.swift in Sources */,
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
 				EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */,
+				EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
