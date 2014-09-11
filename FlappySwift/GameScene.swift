@@ -19,6 +19,7 @@ class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
     private var actors: [Startable]!
     private var bird: Bird!
+    private var score: Score!
 
     override func didMoveToView(view: SKView) {
         physicsWorld.contactDelegate = self
@@ -34,7 +35,9 @@ class GameScene: SKScene {
 
         let pi = Pipes(textureNames: ["pipeTop.png", "pipeBottom.png"]).addTo(screenNode)
         actors = [bg, te, pi, bird]
-        
+
+        score = Score().addTo(screenNode)
+
         for actor in actors {
             actor.start()
         }
@@ -57,8 +60,15 @@ extension GameScene: SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
             println("Contact with a pipe")
+            bird.pushDown()
         case BodyType.world.toRaw() | BodyType.bird.toRaw():
             println("Contact with ground")
+            for actor in actors {
+                actor.stop()
+            }
+            
+            let shakeAction = SKAction.shake(0.1, amplitudeX: 20)
+            screenNode.runAction(shakeAction)
         default:
             return
         }
@@ -71,6 +81,7 @@ extension GameScene: SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
             println("Contact with gap")
+            score.increase()
         default:
             return
         }

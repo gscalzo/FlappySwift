@@ -11,6 +11,7 @@ import SpriteKit
 class Bird : Startable {
     private let node: SKSpriteNode!
     private let textureNames: [String]
+    private var dying = false
     
     var position : CGPoint {
         set { node.position = newValue }
@@ -78,8 +79,15 @@ extension Bird {
     }
     
     func flap() {
-        node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
-        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 6))
+        if !dying {
+            node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
+            node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 6))
+        }
+    }
+    
+    func pushDown() {
+        dying = true
+        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: -10))
     }
 }
 
