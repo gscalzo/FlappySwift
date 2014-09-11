@@ -21,6 +21,7 @@ class Bird : Startable {
     init(textureNames: [String]) {
         self.textureNames = textureNames
         node = createNode()
+        addLightEmitter()
     }
     
     func addTo(scene: SKSpriteNode) -> Bird{
@@ -104,5 +105,19 @@ extension Bird {
             ))
     }
 }
+
+// Light
+extension Bird {
+    private func addLightEmitter() {
+        let light = SKLightNode()
+        light.categoryBitMask = BodyType.bird.toRaw()
+        light.falloff = 1
+        light.ambientColor = UIColor.whiteColor()
+        light.lightColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        light.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        node.addChild(light)
+    }
+}
+
 
 

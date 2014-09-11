@@ -63,6 +63,7 @@ class PipePair {
 extension PipePair {
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+        pipeNode.shadowCastBitMask = BodyType.bird.toRaw()
         pipeNode.physicsBody = SKPhysicsBody.rectSize(pipeNode.size) {
             body in
             body.dynamic           = false
