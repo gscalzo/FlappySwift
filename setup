@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ $# -lt 1 ] ; then
+    for remote in `git branch -r `; do git branch --track $remote; done
+else
+    git checkout step0$1
+fi
