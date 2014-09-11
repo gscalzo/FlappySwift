@@ -9,10 +9,11 @@
 import SpriteKit
 
 enum BodyType : UInt32 {
-    case bird  = 1 // (1 << 0)
-    case world = 2 // (1 << 1)
-    case pipe  = 4 // (1 << 2)
-    case gap   = 8 // (1 << 3)
+    case bird  = 1  // (1 << 0)
+    case world = 2  // (1 << 1)
+    case pipe  = 4  // (1 << 2)
+    case gap   = 8  // (1 << 3)
+    case bomb  = 16 // (1 << 4)
 }
 
 class GameScene: SKScene {
@@ -48,7 +49,10 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        bird.flap()
+        switch touches.count {
+            case 1: bird.flap()
+            default: shoot()
+        }
     }
 }
 
@@ -58,6 +62,13 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
+        case BodyType.pipe.toRaw() |  BodyType.bomb.toRaw():
+            println("Contact with a bomb")
+            if contact.bodyA.categoryBitMask == BodyType.pipe.toRaw() {
+                explode(pipe: contact.bodyA.node as SKSpriteNode)
+            } else {
+                explode(pipe: contact.bodyB.node as SKSpriteNode)
+            }
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
             println("Contact with a pipe")
             bird.pushDown()
@@ -87,4 +98,45 @@ extension GameScene: SKPhysicsContactDelegate {
         }
     }
 }
+
+// Explosion
+extension GameScene {
+    private func shoot(#emitterName: String, finalYPosition: CGFloat) {
+        let fireBoltEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
+        fireBoltEmmitter.position = bird.position
+        fireBoltEmmitter.physicsBody = SKPhysicsBody.rectSize(CGSize(width: 20, height: 20)) {
+            body in
+            body.dynamic = true
+            body.categoryBitMask    = BodyType.bomb.toRaw()
+            body.collisionBitMask   = BodyType.bomb.toRaw()
+            body.contactTestBitMask = BodyType.pipe.toRaw()
+        }
+        screenNode.addChild(fireBoltEmmitter)
+        
+        fireBoltEmmitter.runAction(SKAction.sequence(
+            [
+                SKAction.moveByX(500, y: 100, duration: 1),
+                SKAction.removeFromParent()
+            ]))
+    }
+    
+    private func shoot() {
+        shoot(emitterName: "fireBolt", finalYPosition: 1000)
+    }
+    
+    private func explode(#pipe: SKSpriteNode) {
+        let explosionEmmitter = SKEmitterNode.emitterNodeWithName("explosion")
+        let x = pipe.parent!.position.x
+        let y = pipe.position.y
+        explosionEmmitter.position = CGPoint(x: x, y: y)
+        screenNode.addChild(explosionEmmitter)
+        
+        pipe.runAction(SKAction.sequence(
+            [
+                SKAction.fadeAlphaTo(0, duration: 0.1),
+                SKAction.removeFromParent()
+            ]))
+    }
+}
+
 

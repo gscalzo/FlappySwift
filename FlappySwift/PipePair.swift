@@ -33,7 +33,7 @@ class PipePair {
                 
         let gapNode = createGap(size: CGSize(
                                         width: pipeBottom.size.width,
-                                        height: gapSize*2))
+                                        height: 600))
         gapNode.position = CGPoint(x: 0, y: centerY)
         pipesNode.addChild(gapNode)
         
