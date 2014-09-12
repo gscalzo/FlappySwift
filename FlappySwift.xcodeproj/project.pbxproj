@@ -236,6 +236,7 @@
 				TargetAttributes = {
 					EE416DC2193D30180080C753 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = S2SVQZ2HDR;
 					};
 					EE416DD8193D30180080C753 = {
 						CreatedOnToolsVersion = 6.0;
