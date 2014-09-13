@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Bird : Startable {
+class Bird {
     private let node: SKSpriteNode!
     private let textureNames: [String]
     
@@ -40,7 +40,6 @@ extension Bird {
 
         return birdNode
     }
-    
 }
 
 // Startable

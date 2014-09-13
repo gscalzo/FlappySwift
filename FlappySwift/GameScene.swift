@@ -19,7 +19,7 @@ class GameScene: SKScene {
         addChild(screenNode)        
         
         Background(textureNamed: "background").addTo(screenNode).start()
-        let te = Ground(textureNamed: "ground").addTo(screenNode).start()
+        Ground(textureNamed: "ground").addTo(screenNode).start()
         bird = Bird(textureNames: ["bird1", "bird2"]).addTo(screenNode)
         bird.position = CGPointMake(30.0, 400.0)
         bird.start()
