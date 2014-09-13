@@ -41,7 +41,7 @@ extension Bird {
             body.dynamic = true
             body.categoryBitMask    = BodyType.bird.toRaw()
             body.collisionBitMask   = BodyType.bird.toRaw()
-            body.contactTestBitMask = BodyType.world.toRaw() |
+            body.contactTestBitMask = BodyType.ground.toRaw() |
                 BodyType.pipe.toRaw() |
                 BodyType.gap.toRaw()
         }
