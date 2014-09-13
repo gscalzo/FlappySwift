@@ -9,6 +9,7 @@
 import SpriteKit
 
 class Pipes {
+    // class let createActionKey = "createActionKey" // class variables not yet supported
     private class var createActionKey : String { get {return "createActionKey"} }
 
     private var parentNode: SKSpriteNode!
@@ -22,7 +23,6 @@ class Pipes {
         self.parentNode = parentNode
         return self
     }
-    
 }
 
 // Startable
@@ -31,7 +31,7 @@ extension Pipes : Startable {
         let createAction = SKAction.repeatActionForever(
             SKAction.sequence(
                 [
-                    SKAction.runBlock { () -> Void in
+                    SKAction.runBlock {
                         self.createNewPipe()
                     },
                     SKAction.waitForDuration(3)

@@ -9,7 +9,7 @@
 import SpriteKit
 
 class PipePair {    
-//    class let kind : String = "PIPES" // class variables not yet supported
+//    class let kind = "PIPES" // class variables not yet supported
     class var kind : String { get {return "PIPES"} }
     
     private let gapSize: CGFloat = 50
