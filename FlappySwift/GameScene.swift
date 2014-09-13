@@ -10,7 +10,6 @@ import SpriteKit
 
 class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
-    private var actors: [Startable]!
     private var bird: Bird!
 
     override func didMoveToView(view: SKView) {
@@ -19,16 +18,11 @@ class GameScene: SKScene {
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
         addChild(screenNode)        
         
-        let bg = Background(textureNamed: "background").addTo(screenNode)
-        let te = Ground(textureNamed: "ground").addTo(screenNode)
+        Background(textureNamed: "background").addTo(screenNode).start()
+        let te = Ground(textureNamed: "ground").addTo(screenNode).start()
         bird = Bird(textureNames: ["bird1", "bird2"]).addTo(screenNode)
         bird.position = CGPointMake(30.0, 400.0)
-
-        actors = [bg, te, bird]
-        
-        for actor in actors {
-            actor.start()
-        }
+        bird.start()
     }
     
     override func update(currentTime: CFTimeInterval) {
