@@ -17,8 +17,8 @@ enum BodyType : UInt32 {
 
 class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
-    private var actors: [Startable]!
     private var bird: Bird!
+    private var dbgLbl: SKLabelNode!
 
     override func didMoveToView(view: SKView) {
         physicsWorld.contactDelegate = self
@@ -27,17 +27,14 @@ class GameScene: SKScene {
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
         addChild(screenNode)        
         
-        let bg = Background(textureNamed: "background").addTo(screenNode)
-        let te = Ground(textureNamed: "ground").addTo(screenNode)
+        Background(textureNamed: "background").addTo(screenNode).start()
+        Ground(textureNamed: "ground").addTo(screenNode).start()
         bird = Bird(textureNames: ["bird1", "bird2"]).addTo(screenNode)
         bird.position = CGPointMake(30.0, 400.0)
+        bird.start()
 
-        let pi = Pipes(textureNames: ["pipeTop.png", "pipeBottom.png"]).addTo(screenNode)
-        actors = [bg, te, pi, bird]
-        
-        for actor in actors {
-            actor.start()
-        }
+        Pipes(textureNames: ["pipeTop.png", "pipeBottom.png"]).addTo(screenNode).start()
+        dbgLbl = addDbgLbTo(screenNode)
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -56,9 +53,9 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
-            println("Contact with a pipe")
+            log("Contact with a pipe")
         case BodyType.world.toRaw() | BodyType.bird.toRaw():
-            println("Contact with ground")
+            log("Contact with ground")
         default:
             return
         }
@@ -70,10 +67,28 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
-            println("Contact with gap")
+            log("Exit from gap")
         default:
             return
         }
     }
 }
 
+extension GameScene {
+    private func addDbgLbTo(parentNode: SKSpriteNode) -> SKLabelNode {
+        let lbl = SKLabelNode(text: "--")
+        lbl.zPosition = 6
+        lbl.fontName = "MarkerFelt-Wide"
+        lbl.fontSize = 30
+        lbl.fontColor = UIColor.blackColor()
+        lbl.position = CGPoint(x: parentNode.size.width/2, y:  30)
+        parentNode.addChild(lbl)
+        return lbl
+    }
+    
+    private func log(msg: String) {
+        dbgLbl.text = msg
+        println(msg)
+    }
+
+}
