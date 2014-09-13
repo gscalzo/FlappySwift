@@ -29,14 +29,14 @@ class Ground  {
         //        groundBody.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: width, height: height))
         //        groundBody.physicsBody!.dynamic = false
         //        groundBody.physicsBody!.affectedByGravity = false
-        //        groundBody.physicsBody!.categoryBitMask = BodyType.world.toRaw()
-        //        groundBody.physicsBody!.collisionBitMask = BodyType.world.toRaw()
+        //        groundBody.physicsBody!.categoryBitMask = BodyType.ground.toRaw()
+        //        groundBody.physicsBody!.collisionBitMask = BodyType.ground.toRaw()
         
         groundBody.physicsBody = SKPhysicsBody.rectSize(CGSize(width: width, height: height)){ body in
             body.dynamic = false
             body.affectedByGravity = false
-            body.categoryBitMask = BodyType.world.toRaw()
-            body.collisionBitMask = BodyType.world.toRaw()
+            body.categoryBitMask = BodyType.ground.toRaw()
+            body.collisionBitMask = BodyType.ground.toRaw()
         }
         
         parentNode.addChild(groundBody)

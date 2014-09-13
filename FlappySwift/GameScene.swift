@@ -9,10 +9,10 @@
 import SpriteKit
 
 enum BodyType : UInt32 {
-    case bird  = 1 // (1 << 0)
-    case world = 2 // (1 << 1)
-    case pipe  = 4 // (1 << 2)
-    case gap   = 8 // (1 << 3)
+    case bird   = 1 // (1 << 0)
+    case ground = 2 // (1 << 1)
+    case pipe   = 4 // (1 << 2)
+    case gap    = 8 // (1 << 3)
 }
 
 class GameScene: SKScene {
@@ -54,7 +54,7 @@ extension GameScene: SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
             log("Contact with a pipe")
-        case BodyType.world.toRaw() | BodyType.bird.toRaw():
+        case BodyType.ground.toRaw() | BodyType.bird.toRaw():
             log("Contact with ground")
         default:
             return
