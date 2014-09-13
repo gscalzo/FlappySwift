@@ -29,12 +29,12 @@ class GameScene: SKScene {
         addChild(screenNode)        
         
         let bg = Background(textureNamed: "background").addTo(screenNode)
-        let te = Ground(textureNamed: "ground").addTo(screenNode)
+        let gr = Ground(textureNamed: "ground").addTo(screenNode)
         bird = Bird(textureNames: ["bird1", "bird2"]).addTo(screenNode)
         bird.position = CGPointMake(30.0, 400.0)
 
         let pi = Pipes(textureNames: ["pipeTop.png", "pipeBottom.png"]).addTo(screenNode)
-        actors = [bg, te, pi, bird]
+        actors = [bg, gr, pi, bird]
 
         score = Score().addTo(screenNode)
 
@@ -59,10 +59,8 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
-            println("Contact with a pipe")
             bird.pushDown()
         case BodyType.ground.toRaw() | BodyType.bird.toRaw():
-            println("Contact with ground")
             for actor in actors {
                 actor.stop()
             }
@@ -80,7 +78,6 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
-            println("Contact with gap")
             score.increase()
         default:
             return
