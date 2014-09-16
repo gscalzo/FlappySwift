@@ -8,8 +8,7 @@
 
 import SpriteKit
 
-class PipePair {
-    
+class PipePair {    
 //    class let kind : String = "PIPES" // class variables not yet supported
     class var kind : String { get {return "PIPES"} }
     
@@ -18,45 +17,28 @@ class PipePair {
     private var finalOffset: CGFloat!
     private var startingOffset: CGFloat!
     
-    init(centerY: CGFloat){
+    init(textures: [String], centerY: CGFloat){
         pipesNode = SKNode()
         pipesNode.name = PipePair.kind
 
-        let pipeTop = createPipe(imageNamed: "pipeTop.png")
+        let pipeTop = createPipe(imageNamed: textures[0])
         let pipeTopPosition = CGPoint(x: 0, y: centerY + pipeTop.size.height/2 + gapSize)
         pipeTop.position = pipeTopPosition
         pipesNode.addChild(pipeTop)
 
-        // creare funzione builder        
-        let pipeBottom = createPipe(imageNamed: "pipeBottom.png")
+        let pipeBottom = createPipe(imageNamed: textures[1])
         let pipeBottomPosition = CGPoint(x: 0 , y: centerY - pipeBottom.size.height/2 - gapSize)
         pipeBottom.position = pipeBottomPosition
         pipesNode.addChild(pipeBottom)
-        
-        
-        let gapNode = SKSpriteNode(color: UIColor.clearColor(),
-            size: CGSize(width: pipeBottom.size.width
-            , height: gapSize*2))
+                
+        let gapNode = createGap(size: CGSize(
+                                        width: pipeBottom.size.width,
+                                        height: 600))
         gapNode.position = CGPoint(x: 0, y: centerY)
         pipesNode.addChild(gapNode)
-        gapNode.physicsBody = SKPhysicsBody(rectangleOfSize: gapNode.size)
-        gapNode.physicsBody!.dynamic = false
-        gapNode.physicsBody!.affectedByGravity = false
-        gapNode.physicsBody!.categoryBitMask = BodyType.gap.toRaw()
-        gapNode.physicsBody!.collisionBitMask = BodyType.gap.toRaw()
         
         finalOffset = -pipeBottom.size.width/2
         startingOffset = -finalOffset
-    }
-    
-    private func createPipe(#imageNamed: String) -> SKSpriteNode {
-        let pipeNode = SKSpriteNode(imageNamed: imageNamed)
-        pipeNode.physicsBody = SKPhysicsBody(rectangleOfSize: pipeNode.size)
-        pipeNode.physicsBody!.dynamic = false
-        pipeNode.physicsBody!.affectedByGravity = false
-        pipeNode.physicsBody!.categoryBitMask = BodyType.pipe.toRaw()
-        pipeNode.physicsBody!.collisionBitMask = BodyType.pipe.toRaw()
-        return pipeNode
     }
     
     func addTo(parentNode: SKSpriteNode) -> PipePair {
@@ -74,5 +56,34 @@ class PipePair {
                 SKAction.removeFromParent()
             ]
             ))
+    }
+}
+
+// Creators
+extension PipePair {
+    private func createPipe(#imageNamed: String) -> SKSpriteNode {
+        let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+        pipeNode.shadowCastBitMask = BodyType.bird.toRaw()
+        pipeNode.physicsBody = SKPhysicsBody.rectSize(pipeNode.size) {
+            body in
+            body.dynamic           = false
+            body.affectedByGravity = false
+            body.categoryBitMask   = BodyType.pipe.toRaw()
+            body.collisionBitMask  = BodyType.pipe.toRaw()
+        }
+        return pipeNode
+    }
+    
+    private func createGap(#size: CGSize) -> SKSpriteNode {
+        let gapNode = SKSpriteNode(color: UIColor.clearColor(),
+            size: size)
+        gapNode.physicsBody = SKPhysicsBody.rectSize(size) {
+            body in
+            body.dynamic = false
+            body.affectedByGravity = false
+            body.categoryBitMask = BodyType.gap.toRaw()
+            body.collisionBitMask = BodyType.gap.toRaw()
+        }
+        return gapNode
     }
 }

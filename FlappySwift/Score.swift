@@ -12,9 +12,7 @@ class Score {
     private var score: SKLabelNode!
     private var currentScore = 0
     
-    init(){
-        
-    }
+    init(){}
     
     func addTo(parentNode: SKSpriteNode) -> Score {
         score = SKLabelNode(text: "\(currentScore)")

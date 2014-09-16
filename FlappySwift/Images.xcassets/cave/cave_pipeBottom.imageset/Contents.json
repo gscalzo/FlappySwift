@@ -7,7 +7,11 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "start.png"
+      "filename" : "cave_pipeBottom.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

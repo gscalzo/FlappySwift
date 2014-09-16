@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE123B7E19B0F44900BF6652 /* PipePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE123B7D19B0F44900BF6652 /* PipePair.swift */; };
-		EE123B8019B0F88500BF6652 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE123B7F19B0F88500BF6652 /* Pipes.swift */; };
 		EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DC8193D30180080C753 /* AppDelegate.swift */; };
 		EE416DCB193D30180080C753 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE416DCA193D30180080C753 /* GameScene.sks */; };
 		EE416DCD193D30180080C753 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DCC193D30180080C753 /* GameScene.swift */; };
@@ -16,13 +14,22 @@
 		EE416DD2193D30180080C753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE416DD0193D30180080C753 /* Main.storyboard */; };
 		EE416DD4193D30180080C753 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE416DD3193D30180080C753 /* Images.xcassets */; };
 		EE416DE0193D30180080C753 /* FlappySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DDF193D30180080C753 /* FlappySwiftTests.swift */; };
-		EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DE9193D3D3D0080C753 /* Bird.swift */; };
-		EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE416DEB193D4CAF0080C753 /* Ground.swift */; };
-		EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D319BC4B1A002625D7 /* Startable.swift */; };
-		EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */; };
-		EE7EF9DA19BC6458002625D7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9D919BC6458002625D7 /* Score.swift */; };
-		EE89ED5219AD019C008A1428 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5119AD019C008A1428 /* Background.swift */; };
-		EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89ED5319AD097B008A1428 /* ParallaxNode.swift */; };
+		EE6148BB19C223A8009B820A /* SKEmitterNode+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6148BA19C223A8009B820A /* SKEmitterNode+FlappySwift.swift */; };
+		EE715F6919BC851D00F086DE /* explosionUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6719BC851D00F086DE /* explosionUp.sks */; };
+		EE715F6A19BC851D00F086DE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6819BC851D00F086DE /* spark.png */; };
+		EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9DB19BC6D0A002625D7 /* Textures.swift */; };
+		EE859EC219C24EC600A29619 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE859EC119C24EC600A29619 /* explosion.sks */; };
+		EEC0A70519C213AE00703B0F /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0A70419C213AE00703B0F /* Score.swift */; };
+		EEC0A70719C2140900703B0F /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0A70619C2140900703B0F /* SKAction+FlappySwift.swift */; };
+		EEE3FF7E19C24BB50013057E /* fireBolt.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEE3FF7D19C24BB50013057E /* fireBolt.sks */; };
+		EEF05D5B19C0F3F3004A929B /* PipePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05D5919C0F3F3004A929B /* PipePair.swift */; };
+		EEF05D5C19C0F3F3004A929B /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05D5A19C0F3F3004A929B /* Pipes.swift */; };
+		EEF05D5F19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05D5E19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift */; };
+		EEFA7AC219C059A200598F17 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC119C059A200598F17 /* Startable.swift */; };
+		EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AC919C05CF200598F17 /* Background.swift */; };
+		EEFA7ACD19C05CF200598F17 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACA19C05CF200598F17 /* Ground.swift */; };
+		EEFA7ACE19C05CF200598F17 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */; };
+		EEFA7AD019C0605500598F17 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACF19C0605500598F17 /* Bird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE123B7D19B0F44900BF6652 /* PipePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipePair.swift; sourceTree = "<group>"; };
-		EE123B7F19B0F88500BF6652 /* Pipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
 		EE416DC3193D30180080C753 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE416DC7193D30180080C753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE416DC8193D30180080C753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,13 +54,22 @@
 		EE416DD9193D30180080C753 /* FlappySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE416DDE193D30180080C753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE416DDF193D30180080C753 /* FlappySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappySwiftTests.swift; sourceTree = "<group>"; };
-		EE416DE9193D3D3D0080C753 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
-		EE416DEB193D4CAF0080C753 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
-		EE7EF9D319BC4B1A002625D7 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
-		EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
-		EE7EF9D919BC6458002625D7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		EE89ED5119AD019C008A1428 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
-		EE89ED5319AD097B008A1428 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
+		EE6148BA19C223A8009B820A /* SKEmitterNode+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+FlappySwift.swift"; sourceTree = "<group>"; };
+		EE715F6719BC851D00F086DE /* explosionUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosionUp.sks; sourceTree = "<group>"; };
+		EE715F6819BC851D00F086DE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		EE7EF9DB19BC6D0A002625D7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
+		EE859EC119C24EC600A29619 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
+		EEC0A70419C213AE00703B0F /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		EEC0A70619C2140900703B0F /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
+		EEE3FF7D19C24BB50013057E /* fireBolt.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fireBolt.sks; sourceTree = "<group>"; };
+		EEF05D5919C0F3F3004A929B /* PipePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipePair.swift; sourceTree = "<group>"; };
+		EEF05D5A19C0F3F3004A929B /* Pipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
+		EEF05D5E19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKPhysicsBody+FlappySwift.swift"; sourceTree = "<group>"; };
+		EEFA7AC119C059A200598F17 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
+		EEFA7AC919C05CF200598F17 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		EEFA7ACA19C05CF200598F17 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
+		EEFA7ACF19C0605500598F17 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +124,10 @@
 				EE416DD3193D30180080C753 /* Images.xcassets */,
 				EE416DD0193D30180080C753 /* Main.storyboard */,
 				EE416DC7193D30180080C753 /* Info.plist */,
+				EE715F6719BC851D00F086DE /* explosionUp.sks */,
+				EE715F6819BC851D00F086DE /* spark.png */,
+				EEE3FF7D19C24BB50013057E /* fireBolt.sks */,
+				EE859EC119C24EC600A29619 /* explosion.sks */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,39 +149,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EE7EF9D519BC4E60002625D7 /* Actors */ = {
+		EE89ED5519AD099B008A1428 /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				EE89ED5119AD019C008A1428 /* Background.swift */,
-				EE416DE9193D3D3D0080C753 /* Bird.swift */,
-				EE416DEB193D4CAF0080C753 /* Ground.swift */,
-				EE89ED5319AD097B008A1428 /* ParallaxNode.swift */,
-				EE123B7D19B0F44900BF6652 /* PipePair.swift */,
-				EE123B7F19B0F88500BF6652 /* Pipes.swift */,
-				EE7EF9D319BC4B1A002625D7 /* Startable.swift */,
-				EE7EF9D919BC6458002625D7 /* Score.swift */,
+				EEF05D5D19C0F61A004A929B /* Extensions */,
+				EEFA7AC019C0599100598F17 /* Actors */,
+				EE416DC8193D30180080C753 /* AppDelegate.swift */,
+				EE416DCC193D30180080C753 /* GameScene.swift */,
+				EE416DCE193D30180080C753 /* GameViewController.swift */,
+				EE7EF9DB19BC6D0A002625D7 /* Textures.swift */,
 			);
-			name = Actors;
+			name = Src;
 			sourceTree = "<group>";
 		};
-		EE7EF9D619BC5C93002625D7 /* Extensions */ = {
+		EEF05D5D19C0F61A004A929B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EE7EF9D719BC5CAF002625D7 /* SKAction+FlappySwift.swift */,
+				EE6148BA19C223A8009B820A /* SKEmitterNode+FlappySwift.swift */,
+				EEC0A70619C2140900703B0F /* SKAction+FlappySwift.swift */,
+				EEF05D5E19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		EE89ED5519AD099B008A1428 /* Src */ = {
+		EEFA7AC019C0599100598F17 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
-				EE7EF9D619BC5C93002625D7 /* Extensions */,
-				EE7EF9D519BC4E60002625D7 /* Actors */,
-				EE416DC8193D30180080C753 /* AppDelegate.swift */,
-				EE416DCC193D30180080C753 /* GameScene.swift */,
-				EE416DCE193D30180080C753 /* GameViewController.swift */,
+				EEC0A70419C213AE00703B0F /* Score.swift */,
+				EEF05D5919C0F3F3004A929B /* PipePair.swift */,
+				EEF05D5A19C0F3F3004A929B /* Pipes.swift */,
+				EEFA7ACF19C0605500598F17 /* Bird.swift */,
+				EEFA7AC919C05CF200598F17 /* Background.swift */,
+				EEFA7ACA19C05CF200598F17 /* Ground.swift */,
+				EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */,
+				EEFA7AC119C059A200598F17 /* Startable.swift */,
 			);
-			name = Src;
+			name = Actors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +236,7 @@
 				TargetAttributes = {
 					EE416DC2193D30180080C753 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = S2SVQZ2HDR;
 					};
 					EE416DD8193D30180080C753 = {
 						CreatedOnToolsVersion = 6.0;
@@ -246,7 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE3FF7E19C24BB50013057E /* fireBolt.sks in Resources */,
+				EE715F6A19BC851D00F086DE /* spark.png in Resources */,
+				EE715F6919BC851D00F086DE /* explosionUp.sks in Resources */,
 				EE416DD4193D30180080C753 /* Images.xcassets in Resources */,
+				EE859EC219C24EC600A29619 /* explosion.sks in Resources */,
 				EE416DCB193D30180080C753 /* GameScene.sks in Resources */,
 				EE416DD2193D30180080C753 /* Main.storyboard in Resources */,
 			);
@@ -266,18 +292,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE7EF9D419BC4B1A002625D7 /* Startable.swift in Sources */,
-				EE89ED5419AD097B008A1428 /* ParallaxNode.swift in Sources */,
-				EE7EF9D819BC5CAF002625D7 /* SKAction+FlappySwift.swift in Sources */,
+				EEFA7ACE19C05CF200598F17 /* ParallaxNode.swift in Sources */,
+				EEF05D5F19C0F629004A929B /* SKPhysicsBody+FlappySwift.swift in Sources */,
+				EEFA7AC219C059A200598F17 /* Startable.swift in Sources */,
+				EEC0A70719C2140900703B0F /* SKAction+FlappySwift.swift in Sources */,
 				EE416DCD193D30180080C753 /* GameScene.swift in Sources */,
+				EEF05D5B19C0F3F3004A929B /* PipePair.swift in Sources */,
+				EEFA7ACD19C05CF200598F17 /* Ground.swift in Sources */,
+				EE6148BB19C223A8009B820A /* SKEmitterNode+FlappySwift.swift in Sources */,
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
-				EE123B7E19B0F44900BF6652 /* PipePair.swift in Sources */,
-				EE416DEC193D4CAF0080C753 /* Ground.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
-				EE416DEA193D3D3D0080C753 /* Bird.swift in Sources */,
-				EE89ED5219AD019C008A1428 /* Background.swift in Sources */,
-				EE7EF9DA19BC6458002625D7 /* Score.swift in Sources */,
-				EE123B8019B0F88500BF6652 /* Pipes.swift in Sources */,
+				EEC0A70519C213AE00703B0F /* Score.swift in Sources */,
+				EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */,
+				EEF05D5C19C0F3F3004A929B /* Pipes.swift in Sources */,
+				EEFA7AD019C0605500598F17 /* Bird.swift in Sources */,
+				EEFA7ACC19C05CF200598F17 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

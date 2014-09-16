@@ -8,10 +8,12 @@
 
 import SpriteKit
 
-class Background : Startable {
+class Background {
     private var parallaxNode: ParallaxNode!
-    
-    init() {
+    private let textureName: String
+
+    init(textureNamed textureName: String) {
+        self.textureName = textureName
     }
     
     func addTo(parentNode: SKSpriteNode!) -> Background {
@@ -20,19 +22,21 @@ class Background : Startable {
         
         parallaxNode = ParallaxNode(width: width,
             height: height,
-            textureNamed: "background.png").addTo(parentNode)
+            textureNamed: textureName).addTo(parentNode)
 
         return self
     }
-    
+}
+
+// Startable
+extension Background : Startable {
     func start() -> Startable {
         parallaxNode.start(duration: 20.0)
         return self
     }
-
+    
     func stop() -> Startable {
         parallaxNode.stop()
         return self
     }
-    
 }
