@@ -7,4 +7,4 @@ Used as example for the presentation
 
 ## What if Michael Bay directed Flappy Bird?
 
-![screenshot 1](https://raw2.github.com/gscalzo/FlappySwift/master/flappybay.gif)
+![screenshot 1](https://github.com/gscalzo/FlappySwift/blob/master/flappybay.gif)
