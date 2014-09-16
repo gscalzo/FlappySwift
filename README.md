@@ -1,6 +1,10 @@
 FlappySwift
 ===============
 
-A very basic, in progress, Flappy Bird clone in Swift and Sprite Kit
+A very basic, Flappy Bird clone in Swift and Sprite Kit.
+Used as example for the presentation
+![How to clone Flappy Bird in Swift | http://www.slideshare.net/giordano/how-to-clone-flappy-bird-in-swift]
 
-![screenshot 1](https://raw2.github.com/gscalzo/FlappySwift/master/screenshot1.png)
+## What if Michael Bay directed Flappy Bird?
+
+![screenshot 1](https://raw2.github.com/gscalzo/FlappySwift/master/flappybay.gif)
