@@ -40,11 +40,11 @@ extension Bird {
         birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size) {
             body in
             body.dynamic = true
-            body.categoryBitMask    = BodyType.bird.toRaw()
-            body.collisionBitMask   = BodyType.bird.toRaw()
-            body.contactTestBitMask = BodyType.ground.toRaw() |
-                BodyType.pipe.toRaw() |
-                BodyType.gap.toRaw()
+            body.categoryBitMask    = BodyType.bird.rawValue
+            body.collisionBitMask   = BodyType.bird.rawValue
+            body.contactTestBitMask = BodyType.ground.rawValue |
+                BodyType.pipe.rawValue |
+                BodyType.gap.rawValue
         }
 
         return birdNode
@@ -110,7 +110,7 @@ extension Bird {
 extension Bird {
     private func addLightEmitter() {
         let light = SKLightNode()
-        light.categoryBitMask = BodyType.bird.toRaw()
+        light.categoryBitMask = BodyType.bird.rawValue
         light.falloff = 1
         light.ambientColor = UIColor.whiteColor()
         light.lightColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)

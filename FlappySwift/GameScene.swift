@@ -62,17 +62,17 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
-        case BodyType.pipe.toRaw() |  BodyType.bomb.toRaw():
+        case BodyType.pipe.rawValue |  BodyType.bomb.rawValue:
             println("Contact with a bomb")
-            if contact.bodyA.categoryBitMask == BodyType.pipe.toRaw() {
+            if contact.bodyA.categoryBitMask == BodyType.pipe.rawValue {
                 explode(pipe: contact.bodyA.node as SKSpriteNode)
             } else {
                 explode(pipe: contact.bodyB.node as SKSpriteNode)
             }
-        case BodyType.pipe.toRaw() |  BodyType.bird.toRaw():
+        case BodyType.pipe.rawValue |  BodyType.bird.rawValue:
             println("Contact with a pipe")
             bird.pushDown()
-        case BodyType.ground.toRaw() | BodyType.bird.toRaw():
+        case BodyType.ground.rawValue | BodyType.bird.rawValue:
             println("Contact with ground")
             for actor in actors {
                 actor.stop()
@@ -90,7 +90,7 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
-        case BodyType.gap.toRaw() |  BodyType.bird.toRaw():
+        case BodyType.gap.rawValue |  BodyType.bird.rawValue:
             println("Contact with gap")
             score.increase()
         default:
@@ -107,9 +107,9 @@ extension GameScene {
         fireBoltEmmitter.physicsBody = SKPhysicsBody.rectSize(CGSize(width: 20, height: 20)) {
             body in
             body.dynamic = true
-            body.categoryBitMask    = BodyType.bomb.toRaw()
-            body.collisionBitMask   = BodyType.bomb.toRaw()
-            body.contactTestBitMask = BodyType.pipe.toRaw()
+            body.categoryBitMask    = BodyType.bomb.rawValue
+            body.collisionBitMask   = BodyType.bomb.rawValue
+            body.contactTestBitMask = BodyType.pipe.rawValue
         }
         screenNode.addChild(fireBoltEmmitter)
         

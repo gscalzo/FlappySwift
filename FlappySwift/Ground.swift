@@ -29,8 +29,8 @@ class Ground  {
         groundBody.physicsBody = SKPhysicsBody.rectSize(CGSize(width: width, height: height)){ body in
             body.dynamic = false
             body.affectedByGravity = false
-            body.categoryBitMask = BodyType.ground.toRaw()
-            body.collisionBitMask = BodyType.ground.toRaw()
+            body.categoryBitMask = BodyType.ground.rawValue
+            body.collisionBitMask = BodyType.ground.rawValue
         }
         
         parentNode.addChild(groundBody)

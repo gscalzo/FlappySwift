@@ -63,13 +63,13 @@ class PipePair {
 extension PipePair {
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
-        pipeNode.shadowCastBitMask = BodyType.bird.toRaw()
+        pipeNode.shadowCastBitMask = BodyType.bird.rawValue
         pipeNode.physicsBody = SKPhysicsBody.rectSize(pipeNode.size) {
             body in
             body.dynamic           = false
             body.affectedByGravity = false
-            body.categoryBitMask   = BodyType.pipe.toRaw()
-            body.collisionBitMask  = BodyType.pipe.toRaw()
+            body.categoryBitMask   = BodyType.pipe.rawValue
+            body.collisionBitMask  = BodyType.pipe.rawValue
         }
         return pipeNode
     }
@@ -81,8 +81,8 @@ extension PipePair {
             body in
             body.dynamic = false
             body.affectedByGravity = false
-            body.categoryBitMask = BodyType.gap.toRaw()
-            body.collisionBitMask = BodyType.gap.toRaw()
+            body.categoryBitMask = BodyType.gap.rawValue
+            body.collisionBitMask = BodyType.gap.rawValue
         }
         return gapNode
     }

@@ -25,7 +25,7 @@ class ParallaxNode {
     
     private func createNode(textureNamed: String, x: CGFloat) -> SKNode {
         let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
-                node.lightingBitMask = BodyType.bird.toRaw()
+                node.lightingBitMask = BodyType.bird.rawValue
         node.anchorPoint = CGPointZero
         node.position = CGPoint(x: x, y: 0)
         

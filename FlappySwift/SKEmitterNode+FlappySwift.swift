@@ -13,8 +13,8 @@ extension SKEmitterNode {
     {
         let path = NSBundle.mainBundle().pathForResource(name, ofType: "sks")
         
-        var sceneData = NSData.dataWithContentsOfFile(path!, options: .DataReadingMappedIfSafe, error: nil)
-        var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+        var sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)
+        var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData!)
         
         archiver.setClass(SKEmitterNode.self, forClassName: "SKEditorScene")
         let node = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as SKEmitterNode?
