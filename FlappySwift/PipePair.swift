@@ -32,12 +32,12 @@ class PipePair {
         pipesNode.addChild(pipeBottom)
                 
         let gapNode = createGap(size: CGSize(
-                                        width: pipeBottom.size.width,
+                                        width: pipeBottom.size.width/2,
                                         height: 600))
         gapNode.position = CGPoint(x: 0, y: centerY)
         pipesNode.addChild(gapNode)
         
-        finalOffset = -pipeBottom.size.width/2
+        finalOffset = -pipeBottom.size.width
         startingOffset = -finalOffset
     }
     
@@ -64,7 +64,8 @@ extension PipePair {
     private func createPipe(#imageNamed: String) -> SKSpriteNode {
         let pipeNode = SKSpriteNode(imageNamed: imageNamed)
         pipeNode.shadowCastBitMask = BodyType.bird.rawValue
-        pipeNode.physicsBody = SKPhysicsBody.rectSize(pipeNode.size) {
+        let size = CGSize(width: pipeNode.size.width, height: pipeNode.size.height)
+        pipeNode.physicsBody = SKPhysicsBody.rectSize(size) {
             body in
             body.dynamic           = false
             body.affectedByGravity = false

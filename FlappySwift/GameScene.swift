@@ -29,13 +29,14 @@ class GameScene: SKScene {
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
         addChild(screenNode)        
         
-        let textures = Textures.cave()
-        let bg = Background(textureNamed: textures.background).addTo(screenNode)
+        let textures = Textures.book()
+        let sk = Background(textureNamed: textures.sky, duration:60.0).addTo(screenNode)
+        let bg = Background(textureNamed: textures.background, duration:20.0).addTo(screenNode)
         let te = Ground(textureNamed: textures.ground).addTo(screenNode)
         bird = Bird(textureNames: textures.bird).addTo(screenNode)
         bird.position = CGPointMake(30.0, 400.0)
         let pi = Pipes(textureNames: textures.pipes).addTo(screenNode)
-        actors = [bg, te, pi, bird]
+        actors = [sk, bg, te, pi, bird]
 
         score = Score().addTo(screenNode)
 

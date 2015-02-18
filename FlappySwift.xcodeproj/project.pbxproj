@@ -19,6 +19,7 @@
 		EE715F6A19BC851D00F086DE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE715F6819BC851D00F086DE /* spark.png */; };
 		EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EF9DB19BC6D0A002625D7 /* Textures.swift */; };
 		EE859EC219C24EC600A29619 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE859EC119C24EC600A29619 /* explosion.sks */; };
+		EEBF2CA61A92BD0000DA904E /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF2CA51A92BD0000DA904E /* Sky.swift */; };
 		EEC0A70519C213AE00703B0F /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0A70419C213AE00703B0F /* Score.swift */; };
 		EEC0A70719C2140900703B0F /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0A70619C2140900703B0F /* SKAction+FlappySwift.swift */; };
 		EEE3FF7E19C24BB50013057E /* fireBolt.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEE3FF7D19C24BB50013057E /* fireBolt.sks */; };
@@ -59,6 +60,7 @@
 		EE715F6819BC851D00F086DE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		EE7EF9DB19BC6D0A002625D7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		EE859EC119C24EC600A29619 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
+		EEBF2CA51A92BD0000DA904E /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
 		EEC0A70419C213AE00703B0F /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EEC0A70619C2140900703B0F /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
 		EEE3FF7D19C24BB50013057E /* fireBolt.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fireBolt.sks; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				EEFA7ACA19C05CF200598F17 /* Ground.swift */,
 				EEFA7ACB19C05CF200598F17 /* ParallaxNode.swift */,
 				EEFA7AC119C059A200598F17 /* Startable.swift */,
+				EEBF2CA51A92BD0000DA904E /* Sky.swift */,
 			);
 			name = Actors;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				EE416DCF193D30180080C753 /* GameViewController.swift in Sources */,
 				EE416DC9193D30180080C753 /* AppDelegate.swift in Sources */,
 				EEC0A70519C213AE00703B0F /* Score.swift in Sources */,
+				EEBF2CA61A92BD0000DA904E /* Sky.swift in Sources */,
 				EE7EF9DC19BC6D0A002625D7 /* Textures.swift in Sources */,
 				EEF05D5C19C0F3F3004A929B /* Pipes.swift in Sources */,
 				EEFA7AD019C0605500598F17 /* Bird.swift in Sources */,

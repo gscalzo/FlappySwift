@@ -20,9 +20,7 @@ class Ground  {
         let width = parentNode.size.width
         let height = CGFloat(60.0)
         
-        parallaxNode = ParallaxNode(width: width,
-                              height: height,
-                        textureNamed: textureName).zPosition(5).addTo(parentNode)
+        parallaxNode = ParallaxNode(textureNamed: textureName).zPosition(5).addTo(parentNode)
         let groundBody = SKNode()
         groundBody.position = CGPoint(x: width/2.0, y: height/2)
         

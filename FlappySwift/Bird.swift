@@ -21,7 +21,7 @@ class Bird : Startable {
     init(textureNames: [String]) {
         self.textureNames = textureNames
         node = createNode()
-        addLightEmitter()
+//        addLightEmitter()
     }
     
     func addTo(scene: SKSpriteNode) -> Bird{
@@ -34,7 +34,7 @@ class Bird : Startable {
 extension Bird {
     private func createNode() -> SKSpriteNode {
         let birdNode = SKSpriteNode(imageNamed: textureNames.first!)
-        birdNode.setScale(1.8)
+        birdNode.setScale(0.9)
         birdNode.zPosition = 2.0
         
         birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size) {
@@ -101,7 +101,7 @@ extension Bird {
         
         node.runAction(
             SKAction.repeatActionForever(
-                SKAction.animateWithTextures(animationFrames, timePerFrame: 0.1)
+                SKAction.animateWithTextures(animationFrames, timePerFrame: 0.5)
             ))
     }
 }

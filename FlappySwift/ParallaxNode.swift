@@ -12,22 +12,25 @@ import SpriteKit
 class ParallaxNode {
     private let node: SKSpriteNode!
     
-    init(width: CGFloat, height: CGFloat, textureNamed: String) {
-        let size = CGSizeMake(2*width, height)
+    init(textureNamed: String) {
+        
+        let firstNode = createNode(textureNamed, x: 0)
+        let size = CGSizeMake(2*firstNode.size.width, firstNode.size.height)
         
         node = SKSpriteNode(color: UIColor.whiteColor(), size: size)
 
         node.anchorPoint = CGPointZero
         node.position = CGPointZero
-        node.addChild(createNode(textureNamed, x: 0))
-        node.addChild(createNode(textureNamed, x: width))
+        node.addChild(firstNode)
+        node.addChild(createNode(textureNamed, x: firstNode.size.width))
     }
     
-    private func createNode(textureNamed: String, x: CGFloat) -> SKNode {
+    private func createNode(textureNamed: String, x: CGFloat) -> SKSpriteNode {
         let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
-                node.lightingBitMask = BodyType.bird.rawValue
+//                node.lightingBitMask = BodyType.bird.rawValue
         node.anchorPoint = CGPointZero
         node.position = CGPoint(x: x, y: 0)
+        
         
         return node
     }
