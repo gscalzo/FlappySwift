@@ -33,6 +33,12 @@ private extension Bird {
     func createNode() -> SKSpriteNode {
         let birdNode = SKSpriteNode(imageNamed: textureNames.first!)
         birdNode.zPosition = 2.0
+        birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size) {
+            body in
+            body.dynamic = true
+            return
+        }
+
         return birdNode
     }
 }
@@ -51,6 +57,11 @@ extension Bird : Startable {
 
 // Actions
 extension Bird {
+    func flap() {
+        node.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
+        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 8))
+    }
+    
     func update() {
         switch node.physicsBody!.velocity.dy {
         case let dy where dy > 30.0:
