@@ -32,7 +32,7 @@ extension Pipes : Startable {
             SKAction.sequence(
                 [
                     SKAction.runBlock {
-                        self.createNewPipeNode()
+                        self.createNewPipesNode()
                     },
                     SKAction.waitForDuration(3)
                 ]
@@ -55,7 +55,7 @@ extension Pipes : Startable {
 
 //MARK: Private
 private extension Pipes {
-    func createNewPipeNode() {
+    func createNewPipesNode() {
         PipesNode(topPipeTexture: topPipeTexture, bottomPipeTexture:bottomPipeTexture, centerY: centerPipes()).addTo(parentNode).start()
     }
     

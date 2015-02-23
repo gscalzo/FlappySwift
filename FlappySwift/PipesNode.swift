@@ -38,6 +38,7 @@ class PipesNode{
         let pipePosition = CGPoint(x: parentNode.size.width + startingOffset, y: 0)
         pipesNode.position = pipePosition
         pipesNode.zPosition = 4
+        //...
         
         parentNode.addChild(pipesNode)
         return self
