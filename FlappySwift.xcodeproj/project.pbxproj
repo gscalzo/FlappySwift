@@ -22,6 +22,8 @@
 		EECD56991A96400D00EAFC65 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD56981A96400D00EAFC65 /* ParallaxNode.swift */; };
 		EEE231821A9AB72100F248BA /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE231811A9AB72100F248BA /* Bird.swift */; };
 		EEE231841A9ABDA400F248BA /* SKPhysicsBody+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE231831A9ABDA400F248BA /* SKPhysicsBody+FlappySwift.swift */; };
+		EEE472D21A9BDEF600EB6916 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE472D11A9BDEF600EB6916 /* Pipes.swift */; };
+		EEE472D41A9BE08500EB6916 /* PipesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE472D31A9BE08500EB6916 /* PipesNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		EECD56981A96400D00EAFC65 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
 		EEE231811A9AB72100F248BA /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		EEE231831A9ABDA400F248BA /* SKPhysicsBody+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKPhysicsBody+FlappySwift.swift"; sourceTree = "<group>"; };
+		EEE472D11A9BDEF600EB6916 /* Pipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
+		EEE472D31A9BE08500EB6916 /* PipesNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipesNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				EECD568F1A963F4000EAFC65 /* Background.swift */,
 				EECD56911A963F4000EAFC65 /* Startable.swift */,
 				EEE231811A9AB72100F248BA /* Bird.swift */,
+				EEE472D11A9BDEF600EB6916 /* Pipes.swift */,
+				EEE472D31A9BE08500EB6916 /* PipesNode.swift */,
 			);
 			name = Actors;
 			sourceTree = "<group>";
@@ -329,12 +335,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECD56991A96400D00EAFC65 /* ParallaxNode.swift in Sources */,
+				EEE472D21A9BDEF600EB6916 /* Pipes.swift in Sources */,
 				EEE231841A9ABDA400F248BA /* SKPhysicsBody+FlappySwift.swift in Sources */,
 				EEBF6FBF1A954FF100C6D0D2 /* GameScene.swift in Sources */,
 				EEBF6FC11A954FF100C6D0D2 /* GameViewController.swift in Sources */,
 				EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */,
 				EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */,
 				EECD56951A963F4000EAFC65 /* Startable.swift in Sources */,
+				EEE472D41A9BE08500EB6916 /* PipesNode.swift in Sources */,
 				EEE231821A9AB72100F248BA /* Bird.swift in Sources */,
 				EECD56931A963F4000EAFC65 /* Background.swift in Sources */,
 			);

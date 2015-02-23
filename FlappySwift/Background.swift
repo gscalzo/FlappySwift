@@ -11,7 +11,11 @@ import SpriteKit
 class Background {
     private let parallaxNode: ParallaxNode
     private let duration: Double
-
+    
+    func zPosition(zPosition: CGFloat) {
+        parallaxNode.zPosition(zPosition)
+    }
+    
     init(textureNamed textureName: String, duration: Double) {
         parallaxNode = ParallaxNode(textureNamed: textureName)
         self.duration = duration
