@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Effective Code. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 
 protocol Startable {

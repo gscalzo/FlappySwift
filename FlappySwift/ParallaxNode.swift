@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Effective Code. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
 
 class ParallaxNode {
