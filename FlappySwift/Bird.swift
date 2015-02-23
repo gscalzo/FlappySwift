@@ -33,10 +33,8 @@ private extension Bird {
     func createNode() -> SKSpriteNode {
         let birdNode = SKSpriteNode(imageNamed: textureNames.first!)
         birdNode.zPosition = 2.0
-        
         return birdNode
     }
-    
 }
 
 // Startable
@@ -63,7 +61,6 @@ extension Bird {
             node.zRotation = 0.0
         }
     }
-    
 }
 
 // Private
