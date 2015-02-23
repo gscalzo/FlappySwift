@@ -20,6 +20,7 @@
 		EECD56931A963F4000EAFC65 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD568F1A963F4000EAFC65 /* Background.swift */; };
 		EECD56951A963F4000EAFC65 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD56911A963F4000EAFC65 /* Startable.swift */; };
 		EECD56991A96400D00EAFC65 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD56981A96400D00EAFC65 /* ParallaxNode.swift */; };
+		EEE231821A9AB72100F248BA /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE231811A9AB72100F248BA /* Bird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		EECD568F1A963F4000EAFC65 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		EECD56911A963F4000EAFC65 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		EECD56981A96400D00EAFC65 /* ParallaxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxNode.swift; sourceTree = "<group>"; };
+		EEE231811A9AB72100F248BA /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				EECD56971A96400000EAFC65 /* Nodes */,
 				EECD568F1A963F4000EAFC65 /* Background.swift */,
 				EECD56911A963F4000EAFC65 /* Startable.swift */,
+				EEE231811A9AB72100F248BA /* Bird.swift */,
 			);
 			name = Actors;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */,
 				EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */,
 				EECD56951A963F4000EAFC65 /* Startable.swift in Sources */,
+				EEE231821A9AB72100F248BA /* Bird.swift in Sources */,
 				EECD56931A963F4000EAFC65 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
