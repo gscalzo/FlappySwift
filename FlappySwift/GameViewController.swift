@@ -32,16 +32,12 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         skView.frame = view.bounds
         view.addSubview(skView)
-
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             scene.size = skView.frame.size
             skView.showsFPS = true
             skView.showsNodeCount = true
-            
             skView.ignoresSiblingOrder = true
-            
             scene.scaleMode = .AspectFill
-            
             skView.presentScene(scene)
         }
     }

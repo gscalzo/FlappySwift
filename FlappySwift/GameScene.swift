@@ -17,7 +17,8 @@ class GameScene: SKScene {
         addChild(screenNode)
         let sky = Background(textureNamed: "sky", duration:60.0).addTo(screenNode)
         let city = Background(textureNamed: "city", duration:20.0).addTo(screenNode)
-        actors = [sky, city]
+        let ground = Background(textureNamed: "ground", duration:5.0).addTo(screenNode)
+        actors = [sky, city, ground]
         
         for actor in actors {
             actor.start()
