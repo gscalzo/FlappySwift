@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
         view.addSubview(skView)
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             scene.size = skView.frame.size
+            skView.showsPhysics = true
             skView.showsFPS = true
             skView.showsNodeCount = true
             skView.ignoresSiblingOrder = true

@@ -36,7 +36,11 @@ private extension Bird {
         birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size) {
             body in
             body.dynamic = true
-            return
+            body.categoryBitMask    = BodyType.bird.rawValue
+            body.collisionBitMask   = BodyType.bird.rawValue
+            body.contactTestBitMask = BodyType.ground.rawValue |
+                BodyType.pipe.rawValue |
+                BodyType.gap.rawValue
         }
 
         return birdNode
