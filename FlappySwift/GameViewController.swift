@@ -27,19 +27,31 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     private let skView = SKView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         skView.frame = view.bounds
         view.addSubview(skView)
+        createTheScene()
+    }
+    private func createTheScene() {
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             scene.size = skView.frame.size
-            skView.showsPhysics = true
+//            skView.showsPhysics = true
             skView.showsFPS = true
             skView.showsNodeCount = true
             skView.ignoresSiblingOrder = true
             scene.scaleMode = .AspectFill
-            skView.presentScene(scene)
+            
+            scene.onPlayAgainPressed = {[weak self] in
+                self?.createTheScene()
+                return
+            }
+            scene.onCancelPressed = {[weak self] in
+                self?.dismissViewControllerAnimated(true, completion: nil)
+                return
+            }
+            self.skView.presentScene(scene)
         }
-    }
+    }    
 }

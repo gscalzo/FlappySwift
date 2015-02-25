@@ -4,6 +4,7 @@
 target 'FlappySwift' do
   pod 'Cartography', '~> 0.1'
   pod 'HTPressableButton', '~> 1.3.1'
+  pod 'SIAlertView'
 end
 
 target 'FlappySwiftTests' do

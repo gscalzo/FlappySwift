@@ -3,13 +3,16 @@ PODS:
   - HTPressableButton (1.3.1):
     - HTPressableButton/All (= 1.3.1)
   - HTPressableButton/All (1.3.1)
+  - SIAlertView (1.3)
 
 DEPENDENCIES:
   - Cartography (~> 0.1)
   - HTPressableButton (~> 1.3.1)
+  - SIAlertView
 
 SPEC CHECKSUMS:
   Cartography: 82082ab11fbb158499ca8d05ac74e18ae26da01d
   HTPressableButton: 8ac2184c6d0b9a0d78aaa1727acf51e4365fa1d2
+  SIAlertView: d00609a1faa9d82f17b9f0b4eede64e84a577b10
 
 COCOAPODS: 0.36.0.beta.1

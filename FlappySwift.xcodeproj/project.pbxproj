@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC2D00B83189F43C52911733 /* Pods_FlappySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A734709FCDBABAB12ADEDF /* Pods_FlappySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E50821A9561D100CC5198 /* MenuViewController.swift */; };
+		EEB782B91A9D448C00811E2B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB782B81A9D448C00811E2B /* Score.swift */; };
 		EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */; };
 		EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */; };
 		EEBF6FBF1A954FF100C6D0D2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBE1A954FF100C6D0D2 /* GameScene.swift */; };
@@ -41,6 +42,7 @@
 		86C3B2B182562AE17329E6B8 /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
 		8B89CB76BB132EC06824620F /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3E50821A9561D100CC5198 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		EEB782B81A9D448C00811E2B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBF6FB91A954FF100C6D0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				EEE231811A9AB72100F248BA /* Bird.swift */,
 				EEE472D11A9BDEF600EB6916 /* Pipes.swift */,
 				EEE472D31A9BE08500EB6916 /* PipesNode.swift */,
+				EEB782B81A9D448C00811E2B /* Score.swift */,
 			);
 			name = Actors;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				EECD56951A963F4000EAFC65 /* Startable.swift in Sources */,
 				EEE472D41A9BE08500EB6916 /* PipesNode.swift in Sources */,
 				EEE231821A9AB72100F248BA /* Bird.swift in Sources */,
+				EEB782B91A9D448C00811E2B /* Score.swift in Sources */,
 				EECD56931A963F4000EAFC65 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

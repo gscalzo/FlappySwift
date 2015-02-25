@@ -47,8 +47,10 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Cartography.framework'
   install_framework 'HTPressableButton.framework'
+  install_framework 'SIAlertView.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Cartography.framework'
   install_framework 'HTPressableButton.framework'
+  install_framework 'SIAlertView.framework'
 fi
