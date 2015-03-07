@@ -21,10 +21,11 @@ class GameScene: SKScene {
     private var bird: Bird!
     private var actors: [Startable]!
     private var score = Score()
+    var gameCenter: GameCenter?
     
     var onPlayAgainPressed:(()->Void)!
     var onCancelPressed:(()->Void)!
-
+    
     override func didMoveToView(view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
@@ -94,6 +95,9 @@ extension GameScene: SKPhysicsContactDelegate {
             }
             let shakeAction = SKAction.shake(0.1, amplitudeX: 20, amplitudeY: 20)
             screenNode.runAction(shakeAction)
+            if let gameCenter = gameCenter{
+                gameCenter.reportScore(score.currentScore)
+            }
             execAfter(1) {
                 self.askToPlayAgain()
             }

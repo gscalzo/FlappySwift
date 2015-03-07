@@ -27,6 +27,7 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     private let skView = SKView()
+    var gameCenter: GameCenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class GameViewController: UIViewController {
     }
     private func createTheScene() {
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+            scene.gameCenter = gameCenter
             scene.size = skView.frame.size
 //            skView.showsPhysics = true
             skView.showsFPS = true
