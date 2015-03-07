@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		BC2D00B83189F43C52911733 /* Pods_FlappySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A734709FCDBABAB12ADEDF /* Pods_FlappySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E50821A9561D100CC5198 /* MenuViewController.swift */; };
+		EE4A00821AAB98C400925811 /* punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00811AAB98C400925811 /* punch.wav */; };
+		EE4A00841AAB9B9700925811 /* flap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00831AAB9B9700925811 /* flap.wav */; };
+		EE4A00861AAB9CDC00925811 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A00851AAB9CDC00925811 /* MusicPlayer.swift */; };
+		EE4A00881AAB9E8900925811 /* Pamgaea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00871AAB9E8900925811 /* Pamgaea.mp3 */; };
+		EE4A008A1AAB9F5F00925811 /* yeah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00891AAB9F5F00925811 /* yeah.mp3 */; };
 		EEB782B91A9D448C00811E2B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB782B81A9D448C00811E2B /* Score.swift */; };
 		EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */; };
 		EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */; };
@@ -42,6 +47,11 @@
 		86C3B2B182562AE17329E6B8 /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
 		8B89CB76BB132EC06824620F /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3E50821A9561D100CC5198 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		EE4A00811AAB98C400925811 /* punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch.wav; sourceTree = "<group>"; };
+		EE4A00831AAB9B9700925811 /* flap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flap.wav; sourceTree = "<group>"; };
+		EE4A00851AAB9CDC00925811 /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		EE4A00871AAB9E8900925811 /* Pamgaea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pamgaea.mp3; sourceTree = "<group>"; };
+		EE4A00891AAB9F5F00925811 /* yeah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yeah.mp3; sourceTree = "<group>"; };
 		EEB782B81A9D448C00811E2B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBF6FB91A954FF100C6D0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +101,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE4A00801AAB98B700925811 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EE4A00891AAB9F5F00925811 /* yeah.mp3 */,
+				EE4A00871AAB9E8900925811 /* Pamgaea.mp3 */,
+				EE4A00831AAB9B9700925811 /* flap.wav */,
+				EE4A00811AAB98C400925811 /* punch.wav */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
 		EEB5B3EA25B29D4CA9A7A111 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +144,7 @@
 		EEBF6FB71A954FF100C6D0D2 /* FlappySwift */ = {
 			isa = PBXGroup;
 			children = (
+				EE4A00851AAB9CDC00925811 /* MusicPlayer.swift */,
 				EECD568E1A963F2A00EAFC65 /* Actors */,
 				EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */,
 				EE3E50821A9561D100CC5198 /* MenuViewController.swift */,
@@ -140,6 +162,7 @@
 		EEBF6FB81A954FF100C6D0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE4A00801AAB98B700925811 /* sounds */,
 				EEBF6FB91A954FF100C6D0D2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -269,7 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEBF6FC91A954FF100C6D0D2 /* LaunchScreen.xib in Resources */,
+				EE4A00821AAB98C400925811 /* punch.wav in Resources */,
 				EEBF6FC61A954FF100C6D0D2 /* Images.xcassets in Resources */,
+				EE4A00881AAB9E8900925811 /* Pamgaea.mp3 in Resources */,
+				EE4A00841AAB9B9700925811 /* flap.wav in Resources */,
+				EE4A008A1AAB9F5F00925811 /* yeah.mp3 in Resources */,
 				EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */,
 				EEBF6FC41A954FF100C6D0D2 /* Main.storyboard in Resources */,
 			);
@@ -337,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4A00861AAB9CDC00925811 /* MusicPlayer.swift in Sources */,
 				EECD56991A96400D00EAFC65 /* ParallaxNode.swift in Sources */,
 				EEE472D21A9BDEF600EB6916 /* Pipes.swift in Sources */,
 				EEE231841A9ABDA400F248BA /* SKPhysicsBody+FlappySwift.swift in Sources */,

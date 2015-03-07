@@ -20,7 +20,6 @@ class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
     private var bird: Bird!
     private var actors: [Startable]!
-    //...
     private var score = Score()
     
     var onPlayAgainPressed:(()->Void)!
@@ -53,6 +52,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        runAction(SKAction.playSoundFileNamed("flap.wav", waitForCompletion: false))
         bird.flap()
     }
 }
@@ -84,9 +84,11 @@ extension GameScene: SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.pipe.rawValue |  BodyType.bird.rawValue:
             println("Contact with a pipe")
+            runAction(SKAction.playSoundFileNamed("punch.wav", waitForCompletion: false))
             bird.pushDown()
         case BodyType.ground.rawValue | BodyType.bird.rawValue:
             println("Contact with ground")
+            runAction(SKAction.playSoundFileNamed("punch.wav", waitForCompletion: false))
             for actor in actors {
                 actor.stop()
             }
@@ -103,6 +105,7 @@ extension GameScene: SKPhysicsContactDelegate {
         switch (contactMask) {
         case BodyType.gap.rawValue |  BodyType.bird.rawValue:
             println("Contact with gap")
+            runAction(SKAction.playSoundFileNamed("yeah.mp3", waitForCompletion: false))
             score.increase()
         default:
             return
