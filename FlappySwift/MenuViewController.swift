@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        player.play()
+        player?.play()
         setup()
         layoutView()
         style()

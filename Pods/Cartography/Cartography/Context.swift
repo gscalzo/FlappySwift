@@ -16,27 +16,25 @@ public class Context {
     internal var constraints: [Constraint] = []
 
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
-        from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
-
-        var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
-
-        if to == nil {
-            toAttribute = NSLayoutAttribute.NotAnAttribute
-        } else {
-            toAttribute = to!.attribute
-        }
-
-        let superview = closestCommonAncestor(from.view, to?.view)
+        from.view.car_translatesAutoresizingMaskIntoConstraints = false
 
         let layoutConstraint = NSLayoutConstraint(item: from.view,
                                                   attribute: from.attribute,
                                                   relatedBy: relation,
                                                   toItem: to?.view,
-                                                  attribute: toAttribute,
+                                                  attribute: to?.attribute ?? .NotAnAttribute,
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))
 
-        constraints += [ Constraint(view: superview!, layoutConstraint: layoutConstraint) ]
+        if let to = to {
+            if let common = closestCommonAncestor(from.view, to.view ) {
+                constraints.append(Constraint(view: common, layoutConstraint: layoutConstraint))
+            } else {
+                fatalError("No common superview found between \(from.view) and \(to.view)")
+            }
+        } else {
+            constraints.append(Constraint(view: from.view, layoutConstraint: layoutConstraint))
+        }
 
         return layoutConstraint
     }

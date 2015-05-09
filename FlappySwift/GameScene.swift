@@ -50,13 +50,12 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         bird.update()
     }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         runAction(SKAction.playSoundFileNamed("flap.wav", waitForCompletion: false))
         bird.flap()
     }
 }
-
 private extension GameScene{
     func bodyTextureName(textureName: String) -> SKNode{
         let image = UIImage(named: textureName)
@@ -78,7 +77,7 @@ private extension GameScene{
 
 // Contacts
 extension GameScene: SKPhysicsContactDelegate {
-    func didBeginContact(contact: SKPhysicsContact!) {
+    func didBeginContact(contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
@@ -103,7 +102,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
     }
     
-    func didEndContact(contact: SKPhysicsContact!) {
+    func didEndContact(contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {

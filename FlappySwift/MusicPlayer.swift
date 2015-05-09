@@ -12,12 +12,15 @@ import AVFoundation
 class MusicPlayer {
     private let player: AVAudioPlayer?
     
-    init(filename: String, type: String){
+    init?(filename: String, type: String){
         if let resource = NSBundle.mainBundle().pathForResource(filename, ofType: type) {
             let url = NSURL(fileURLWithPath: resource)
             player = AVAudioPlayer(contentsOfURL: url, error: nil);
             player!.numberOfLoops = -1
             player!.prepareToPlay()
+        } else {
+            player = nil
+            return nil
         }
     }
     
