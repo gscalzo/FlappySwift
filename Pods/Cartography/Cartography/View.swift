@@ -17,8 +17,9 @@ import Foundation
             layoutIfNeeded()
         }
 
-        func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-            setTranslatesAutoresizingMaskIntoConstraints(flag)
+        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
+            get { return translatesAutoresizingMaskIntoConstraints() }
+            set { setTranslatesAutoresizingMaskIntoConstraints(newValue) }
         }
     }
 #else
@@ -30,21 +31,9 @@ import Foundation
             (superview ?? self).layoutSubtreeIfNeeded()
         }
 
-        func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-            translatesAutoresizingMaskIntoConstraints = flag
+        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
+            get { return translatesAutoresizingMaskIntoConstraints }
+            set { translatesAutoresizingMaskIntoConstraints = newValue }
         }
     }
 #endif
-
-private var InstalledLayoutConstraintsKey: StaticString = "InstalledLayoutConstraintsKey"
-
-extension View {
-    var car_installedLayoutConstraints: [Constraint]? {
-        get {
-            return objc_getAssociatedObject(self, &InstalledLayoutConstraintsKey) as? [Constraint]
-        }
-        set {
-            objc_setAssociatedObject(self, &InstalledLayoutConstraintsKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_COPY_NONATOMIC))
-        }
-    }
-}

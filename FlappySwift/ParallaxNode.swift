@@ -29,11 +29,11 @@ class ParallaxNode {
         node.zPosition = zPosition
         return self
     }
-   
+    
     func addTo(parentNode: SKSpriteNode) -> ParallaxNode {
         parentNode.addChild(node)
         return self
-    }    
+    }
 }
 
 // Mark: Startable
@@ -53,11 +53,9 @@ extension ParallaxNode {
 }
 
 // Mark: Private
-private extension ParallaxNode {
-    private func createHalfNodeTexture(textureNamed: String, offsetX: CGFloat) -> SKSpriteNode {
-        let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
-        node.anchorPoint = CGPointZero
-        node.position = CGPoint(x: offsetX, y: 0)
-        return node
-    }
+private func createHalfNodeTexture(textureNamed: String, #offsetX: CGFloat) -> SKSpriteNode {
+    let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
+    node.anchorPoint = CGPointZero
+    node.position = CGPoint(x: offsetX, y: 0)
+    return node
 }
