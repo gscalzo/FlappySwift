@@ -6,10 +6,14 @@
 //  Copyright (c) 2015 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
 internal extension Dictionary {
-    init (_ pairs: [Element]) {
+    init(_ pairs: [Element]) {
         self.init()
 
         for (key, value) in pairs {
