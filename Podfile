@@ -1,12 +1,6 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '6.0'
+use_frameworks!
 
 target 'FlappySwift' do
-  pod 'Cartography', '~> 0.1'
-  pod 'HTPressableButton', '~> 1.3.1'
+  pod 'Cartography', '~> 0.5'
+  pod 'HTPressableButton', '~> 1.3'
 end
-
-target 'FlappySwiftTests' do
-
-end
-
