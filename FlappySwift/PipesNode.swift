@@ -63,9 +63,8 @@ class PipesNode{
 
 
 // Creators
-private extension PipesNode {
-     func createPipe(#imageNamed: String) -> SKSpriteNode {
-        let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+private func createPipe(#imageNamed: String) -> SKSpriteNode {
+    let pipeNode = SKSpriteNode(imageNamed: imageNamed)
         let size = CGSize(width: pipeNode.size.width, height: pipeNode.size.height)
         pipeNode.physicsBody = SKPhysicsBody.rectSize(size) {
             body in
@@ -75,7 +74,7 @@ private extension PipesNode {
             body.collisionBitMask  = BodyType.pipe.rawValue
         }
 
-        return pipeNode
+    return pipeNode
     }
     
     private func createGap(#size: CGSize) -> SKSpriteNode {
@@ -90,5 +89,4 @@ private extension PipesNode {
             body.collisionBitMask = BodyType.gap.rawValue
         }
         return gapNode
-    }
 }

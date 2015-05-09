@@ -19,7 +19,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameCenter.authenticateLocalPlayer()
-        player.play()
+        player?.play()
         setup()
         layoutView()
         style()
