@@ -56,9 +56,7 @@ class PipesNode{
 
 
 // Creators
-private extension PipesNode {
-     func createPipe(#imageNamed: String) -> SKSpriteNode {
-        let pipeNode = SKSpriteNode(imageNamed: imageNamed)
-        return pipeNode
-    }
+private func createPipe(#imageNamed: String) -> SKSpriteNode {
+    let pipeNode = SKSpriteNode(imageNamed: imageNamed)
+    return pipeNode
 }
