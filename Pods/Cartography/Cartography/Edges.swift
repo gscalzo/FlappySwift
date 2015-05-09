@@ -12,37 +12,51 @@ import UIKit
 import AppKit
 #endif
 
-public enum Edges : Compound {
-    case Edges(Context, View)
+public struct Edges: Compound, RelativeCompoundEquality, RelativeCompoundInequality {
+    public let context: Context
+    public let properties: [Property]
 
-    var context: Context {
-        switch (self) {
-            case let .Edges(context, _):
-                return context
-        }
-    }
-
-    var properties: [Property] {
-        switch (self) {
-            case let .Edges(context, view):
-                return [
-                    Edge.Top(context, view),
-                    Edge.Leading(context, view),
-                    Edge.Bottom(context, view),
-                    Edge.Trailing(context, view)
-                ]
-        }
+    internal init(_ context: Context, _ properties: [Property]) {
+        self.context = context
+        self.properties = properties
     }
 }
 
+/// Insets all edges.
+///
+/// :param: edges The edges to inset.
+/// :param: all   The amount by which to inset all edges, in points.
+///
+/// :returns: A new expression with the inset edges.
+///
 public func inset(edges: Edges, all: Number) -> Expression<Edges> {
     return inset(edges, all, all, all, all)
 }
 
+/// Insets the horizontal and vertical edges.
+///
+/// :param: edges      The edges to inset.
+/// :param: horizontal The amount by which to inset the horizontal edges, in
+///                    points.
+/// :param: vertical   The amount by which to inset the vertical edges, in
+///                    points.
+///
+/// :returns: A new expression with the inset edges.
+///
 public func inset(edges: Edges, horizontal: Number, vertical: Number) -> Expression<Edges> {
     return inset(edges, vertical, horizontal, vertical, horizontal)
 }
 
+/// Insets edges individually.
+///
+/// :param: edges    The edges to inset.
+/// :param: top      The amount by which to inset the top edge, in points.
+/// :param: leading  The amount by which to inset the leading edge, in points.
+/// :param: bottom   The amount by which to inset the bottom edge, in points.
+/// :param: trailing The amount by which to inset the trailing edge, in points.
+///
+/// :returns: A new expression with the inset edges.
+///
 public func inset(edges: Edges, top: Number, leading: Number, bottom: Number, trailing: Number) -> Expression<Edges> {
     return Expression(edges, [
         Coefficients(1, top.doubleValue),
@@ -50,44 +64,4 @@ public func inset(edges: Edges, top: Number, leading: Number, bottom: Number, tr
         Coefficients(1, -bottom.doubleValue),
         Coefficients(1, -trailing.doubleValue)
     ])
-}
-
-// MARK: Equality
-
-public func ==(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
-}
-
-public func ==(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
-    return rhs == lhs
-}
-
-public func ==(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs)
-}
-
-// MARK: Inequality
-
-public func <=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-public func >=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func <=(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-public func <=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
-    return rhs >= lhs
-}
-
-public func >=(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
-    return rhs <= lhs
 }

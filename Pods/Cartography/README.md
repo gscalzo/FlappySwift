@@ -1,4 +1,4 @@
-# Cartography
+# Cartography :iphone::triangular_ruler:
 
 <a href="https://github.com/Carthage/Carthage/issues/179">
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" align="right" vspace="2px">
@@ -10,7 +10,10 @@
 Set up your Auto Layout constraints declaratively and without any stringly
 typing!
 
-## How to use
+If you end up using Cartography in production, I'd love to hear from you. You
+can reach me through [Twitter] or [email].
+
+## Usage
 
 Call the `layout` function with your `UIView` or `NSView` instances as well as a
 closure in which you declare the constraints between the different attributes of
@@ -29,6 +32,13 @@ layout(view1, view2) { view1, view2 in
     view2.top == view1.bottom + 20
 }
 ```
+
+For every view on the left hand side of an equality or inequality operator,
+Cartography will automatically set its
+`translatesAutoresizingMaskIntoConstraints` property to `false`. If the view is
+not controlled by you–for example if it belongs to a Apple-provided
+`UIViewController` class–you should take appropriate care when declaring its
+constraints.
 
 Note that `layout` will automatically relayout the views as necessary. If you
 instead want to trigger the layouting step yourself, you can instead use the
@@ -86,10 +96,35 @@ let group = layout(button) { button in
 
 ## Supported attributes
 
-Cartography supports all built-in attributes as of iOS 7 and OS X 10.9, those
-are: `width`, `height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`,
-`centerX`, `centerY` and `baseline`. These can be further refined using the
-following operators: `*`, `/`, `+` and `-`.
+Cartography supports all built-in attributes as of iOS 8 and OS X 10.9, those
+are:
+
+- `width`
+- `height`
+- `top`
+- `right`
+- `bottom`
+- `left`
+- `leading`
+- `trailing`
+- `centerX`
+- `centerY`
+- `baseline`
+
+as well as the iOS specific
+
+- `firstBaseline`
+- `leftMargin`
+- `rightMargin`
+- `topMargin`
+- `bottomMargin`
+- `leadingMargin`
+- `trailingMargin`
+- `centerXWithinMargins`
+- `centerYWithinMargins`
+
+These can be further refined using the following operators: `*`, `/`, `+` and
+`-`.
 
 Additionally, it supports convenient compound attributes that allow you to
 assign multiple attributes at once:
@@ -103,13 +138,37 @@ layout(view) { view in
 
 ```swift
 layout(view) { view in
-    view.edges == inset(view.superview!.edges, 20, 20, 40, 20); return
+    view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
 }
 ```
 
-(We need to return explicitly here to work around [a bug in
-Swift](https://github.com/robb/Cartography/issues/9), this only affects single
-line blocks, however.)
+### Aligning multiple view
+
+If you need to align multiple views by a common edge, you can use the `align`
+functions:
+
+```swift
+layout(view1, view2, view3) { view1, view2, view3 in
+    align(top: view1, view2, view3)
+}
+```
+
+Which is equivalent to `view1.top == view2.top; view2.top == view3.top`. Similar
+variants exist for `top`, `right` `bottom`, `left`, `leading`, `trailing`,
+`centerX`, `centerY` and `baseline`.
+
+### Distributing views evenly
+
+For distributing multiple views, either horizontally or vertically, you can use
+the `distribute` functions:
+
+```swift
+layout(view1, view2, view3) { view1, view2, view3 in
+    distribute(by: 10, horizontally: view1, view2, view3)
+}
+```
+
+Which is equivalent to `view1.trailing == view2.leading - 10; view2.trailing == view3.leading - 10`.
 
 ## Setting priorities
 
@@ -132,23 +191,32 @@ time:
 var width: NSLayoutConstraint?
 
 layout(view) { view in
-    width = (view.width == 200 ~ 100); return
+    width = (view.width == 200 ~ 100)
 }
 ```
 
 Note that declaring compound attributes returns multiple constraints at once:
 
 ```swift
-var constraints: NSLayoutConstraint[]?
+var constraints: [NSLayoutConstraint]?
 
 layout(view) { view in
-    constraints = (view.size == view.superview!.size ~ 100); return
+    constraints = (view.size == view.superview!.size ~ 100)
 }
 ```
 
+## Support
+
+Please, don't hesitate to [file an
+issue](https://github.com/robb/Cartography/issues/new) if you have questions.
+
 ## About Cartography
 
-Cartography was inspired by the excellent [FLKAutoLayout] by [Florian Kugler][florian].
+Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
+[FLKAutoLayout] by [Florian Kugler][florian].
 
 [flkautolayout]: https://github.com/floriankugler/FLKAutoLayout
-[florian]: https://github.com/floriankugler
+[florian]:       https://github.com/floriankugler
+[me]:            http://robb.is
+[twitter]:       https://twitter.com/ceterum_censeo
+[email]:         mailto:robb@robb.is

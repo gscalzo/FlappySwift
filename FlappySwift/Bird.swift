@@ -9,7 +9,7 @@
 import SpriteKit
 
 class Bird : Startable {
-    private let node: SKSpriteNode!
+    private var node: SKSpriteNode!
     private let textureNames: [String]
     
     var position : CGPoint {
