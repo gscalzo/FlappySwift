@@ -9,34 +9,31 @@
 import SpriteKit
 
 class Background {
-    private var parallaxNode: ParallaxNode!
-    private let textureName: String
-
-    init(textureNamed textureName: String) {
-        self.textureName = textureName
+    private let parallaxNode: ParallaxNode
+    private let duration: Double
+    
+    func zPosition(zPosition: CGFloat) {
+        parallaxNode.zPosition(zPosition)
     }
     
-    func addTo(parentNode: SKSpriteNode!) -> Background {
-        let width = parentNode.size.width
-        let height = parentNode.size.height
-        
-        parallaxNode = ParallaxNode(width: width,
-            height: height,
-            textureNamed: textureName).addTo(parentNode)
-
+    init(textureNamed textureName: String, duration: Double) {
+        parallaxNode = ParallaxNode(textureNamed: textureName)
+        self.duration = duration
+    }
+    
+    func addTo(parentNode: SKSpriteNode) -> Self {
+        parallaxNode.addTo(parentNode)
         return self
     }
 }
 
 // Startable
 extension Background : Startable {
-    func start() -> Startable {
-        parallaxNode.start(duration: 20.0)
-        return self
+    func start() {
+        parallaxNode.start(duration: duration)
     }
     
-    func stop() -> Startable {
+    func stop() {
         parallaxNode.stop()
-        return self
     }
 }

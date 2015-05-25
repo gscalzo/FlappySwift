@@ -2,8 +2,8 @@
 //  SKAction+FlappySwift.swift
 //  FlappySwift
 //
-//  Created by Giordano Scalzo on 07/09/2014.
-//  Copyright (c) 2014 Effective Code. All rights reserved.
+//  Created by Giordano Scalzo on 07/03/2015.
+//  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 
 import SpriteKit
@@ -23,5 +23,4 @@ extension SKAction {
         }
         return SKAction.sequence(actionsArray)
     }
-
 }

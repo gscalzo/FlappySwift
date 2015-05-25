@@ -2,10 +2,11 @@
 //  FlappySwiftTests.swift
 //  FlappySwiftTests
 //
-//  Created by Giordano Scalzo on 02/06/2014.
-//  Copyright (c) 2014 Effective Code. All rights reserved.
+//  Created by Giordano Scalzo on 18/02/2015.
+//  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 
+import UIKit
 import XCTest
 
 class FlappySwiftTests: XCTestCase {

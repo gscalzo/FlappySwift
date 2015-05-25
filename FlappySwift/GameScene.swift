@@ -2,96 +2,117 @@
 //  GameScene.swift
 //  FlappySwift
 //
-//  Created by Giordano Scalzo on 02/06/2014.
-//  Copyright (c) 2014 Effective Code. All rights reserved.
+//  Created by Giordano Scalzo on 18/02/2015.
+//  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 
 import SpriteKit
+import SIAlertView
 
 enum BodyType : UInt32 {
     case bird   = 1  // (1 << 0)
     case ground = 2  // (1 << 1)
     case pipe   = 4  // (1 << 2)
     case gap    = 8  // (1 << 3)
-    case bomb   = 16 // (1 << 4)
 }
 
 class GameScene: SKScene {
     private var screenNode: SKSpriteNode!
-    private var actors: [Startable]!
     private var bird: Bird!
-    private var score: Score!
-
+    private var actors: [Startable]!
+    private var score = Score()
+    var gameCenter: GameCenter?
+    
+    var onPlayAgainPressed:(()->Void)!
+    var onCancelPressed:(()->Void)!
+    
     override func didMoveToView(view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
 
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
-        addChild(screenNode)        
-        
-        let textures = Textures.cave()
-        let bg = Background(textureNamed: textures.background).addTo(screenNode)
-        let te = Ground(textureNamed: textures.ground).addTo(screenNode)
-        bird = Bird(textureNames: textures.bird).addTo(screenNode)
+        addChild(screenNode)
+        let sky = Background(textureNamed: "sky", duration:60.0).addTo(screenNode)
+        let city = Background(textureNamed: "city", duration:20.0).addTo(screenNode)
+        let ground = Background(textureNamed: "ground", duration:5.0).addTo(screenNode)
+        ground.zPosition(5)
+        screenNode.addChild(bodyTextureName("ground"))
+        bird = Bird(textureNames: ["bird1.png", "bird2.png"]).addTo(screenNode)
         bird.position = CGPointMake(30.0, 400.0)
-        let pi = Pipes(textureNames: textures.pipes).addTo(screenNode)
-        actors = [bg, te, pi, bird]
-
-        score = Score().addTo(screenNode)
-
+        let pipes = Pipes(topPipeTexture: "topPipe.png", bottomPipeTexture: "bottomPipe").addTo(screenNode)
+        score.addTo(screenNode)
+        
+        actors = [sky, city, ground, bird, pipes]
+        
         for actor in actors {
             actor.start()
         }
     }
-    
     override func update(currentTime: CFTimeInterval) {
         bird.update()
     }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        switch touches.count {
-            case 1: bird.flap()
-            default: shoot()
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        runAction(SKAction.playSoundFileNamed("flap.wav", waitForCompletion: false))
+        bird.flap()
+    }
+}
+private extension GameScene{
+    func bodyTextureName(textureName: String) -> SKNode{
+        let image = UIImage(named: textureName)
+        let width = image!.size.width
+        let height = image!.size.height
+        let groundBody = SKNode()
+        groundBody.position = CGPoint(x: width/2, y: height/2)
+        
+        groundBody.physicsBody = SKPhysicsBody.rectSize(CGSize(width: width, height: height)){ body in
+            body.dynamic = false
+            body.affectedByGravity = false
+            body.categoryBitMask = BodyType.ground.rawValue
+            body.collisionBitMask = BodyType.ground.rawValue
         }
+        
+        return groundBody
     }
 }
 
 // Contacts
 extension GameScene: SKPhysicsContactDelegate {
-    func didBeginContact(contact: SKPhysicsContact!) {
+    func didBeginContact(contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
-        case BodyType.pipe.rawValue |  BodyType.bomb.rawValue:
-            println("Contact with a bomb")
-            if contact.bodyA.categoryBitMask == BodyType.pipe.rawValue {
-                explode(pipe: contact.bodyA.node as SKSpriteNode)
-            } else {
-                explode(pipe: contact.bodyB.node as SKSpriteNode)
-            }
         case BodyType.pipe.rawValue |  BodyType.bird.rawValue:
             println("Contact with a pipe")
+            runAction(SKAction.playSoundFileNamed("punch.wav", waitForCompletion: false))
             bird.pushDown()
         case BodyType.ground.rawValue | BodyType.bird.rawValue:
             println("Contact with ground")
+            runAction(SKAction.playSoundFileNamed("punch.wav", waitForCompletion: false))
             for actor in actors {
                 actor.stop()
             }
-            
-            let shakeAction = SKAction.shake(0.1, amplitudeX: 20)
+            let shakeAction = SKAction.shake(0.1, amplitudeX: 20, amplitudeY: 20)
             screenNode.runAction(shakeAction)
+            if let gameCenter = gameCenter{
+                gameCenter.reportScore(score.currentScore)
+            }
+            execAfter(1) {
+                self.askToPlayAgain()
+            }
         default:
             return
         }
         
     }
     
-    func didEndContact(contact: SKPhysicsContact!) {
+    func didEndContact(contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch (contactMask) {
         case BodyType.gap.rawValue |  BodyType.bird.rawValue:
             println("Contact with gap")
+            runAction(SKAction.playSoundFileNamed("yeah.mp3", waitForCompletion: false))
             score.increase()
         default:
             return
@@ -99,44 +120,13 @@ extension GameScene: SKPhysicsContactDelegate {
     }
 }
 
-// Explosion
-extension GameScene {
-    private func shoot(#emitterName: String, finalYPosition: CGFloat) {
-        let fireBoltEmmitter = SKEmitterNode.emitterNodeWithName(emitterName)
-        fireBoltEmmitter.position = bird.position
-        fireBoltEmmitter.physicsBody = SKPhysicsBody.rectSize(CGSize(width: 20, height: 20)) {
-            body in
-            body.dynamic = true
-            body.categoryBitMask    = BodyType.bomb.rawValue
-            body.collisionBitMask   = BodyType.bomb.rawValue
-            body.contactTestBitMask = BodyType.pipe.rawValue
-        }
-        screenNode.addChild(fireBoltEmmitter)
+// Private
+private extension GameScene {
+    func askToPlayAgain() {
+        let alertView = SIAlertView(title: "Ouch!!", andMessage: "Congratulations! Your score is \(score.currentScore). Play again?")
         
-        fireBoltEmmitter.runAction(SKAction.sequence(
-            [
-                SKAction.moveByX(500, y: 100, duration: 1),
-                SKAction.removeFromParent()
-            ]))
-    }
-    
-    private func shoot() {
-        shoot(emitterName: "fireBolt", finalYPosition: 1000)
-    }
-    
-    private func explode(#pipe: SKSpriteNode) {
-        let explosionEmmitter = SKEmitterNode.emitterNodeWithName("explosion")
-        let x = pipe.parent!.position.x
-        let y = pipe.position.y
-        explosionEmmitter.position = CGPoint(x: x, y: y)
-        screenNode.addChild(explosionEmmitter)
-        
-        pipe.runAction(SKAction.sequence(
-            [
-                SKAction.fadeAlphaTo(0, duration: 0.1),
-                SKAction.removeFromParent()
-            ]))
+        alertView.addButtonWithTitle("OK", type: .Default) { _ in self.onPlayAgainPressed() }
+        alertView.addButtonWithTitle("Cancel", type: .Default) { _ in self.onCancelPressed() }
+        alertView.show()
     }
 }
-
-

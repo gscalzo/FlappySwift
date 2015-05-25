@@ -2,20 +2,17 @@
 //  Score.swift
 //  FlappySwift
 //
-//  Created by Giordano Scalzo on 07/09/2014.
-//  Copyright (c) 2014 Effective Code. All rights reserved.
+//  Created by Giordano Scalzo on 24/02/2015.
+//  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 
 import SpriteKit
 
 class Score {
-    private var score: SKLabelNode!
-    private var currentScore = 0
-    
-    init(){}
+    private let score = SKLabelNode(text: "0")
+    var currentScore = 0
     
     func addTo(parentNode: SKSpriteNode) -> Score {
-        score = SKLabelNode(text: "\(currentScore)")
         score.fontName = "MarkerFelt-Wide"
         score.fontSize = 30
         score.position = CGPoint(x: parentNode.size.width/2, y: parentNode.size.height - 40)

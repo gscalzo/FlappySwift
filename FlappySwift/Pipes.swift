@@ -2,67 +2,65 @@
 //  Pipes.swift
 //  FlappySwift
 //
-//  Created by Giordano Scalzo on 29/08/2014.
-//  Copyright (c) 2014 Effective Code. All rights reserved.
+//  Created by Giordano Scalzo on 23/02/2015.
+//  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 
 import SpriteKit
 
 class Pipes {
     private class var createActionKey : String { get {return "createActionKey"} }
-
     private var parentNode: SKSpriteNode!
-    private let textureNames: [String]
+    private let topPipeTexture: String
+    private let bottomPipeTexture: String
     
-    init(textureNames: [String]) {
-        self.textureNames = textureNames
+    init(topPipeTexture: String, bottomPipeTexture: String) {
+        self.topPipeTexture = topPipeTexture
+        self.bottomPipeTexture = bottomPipeTexture
     }
     
     func addTo(parentNode: SKSpriteNode) -> Pipes {
         self.parentNode = parentNode
         return self
     }
-    
 }
 
-// Startable
+//MARK: Startable
 extension Pipes : Startable {
-    func start() -> Startable {
+    func start() {
         let createAction = SKAction.repeatActionForever(
             SKAction.sequence(
                 [
-                    SKAction.runBlock { () -> Void in
-                        self.createNewPipe()
+                    SKAction.runBlock {
+                        self.createNewPipesNode()
                     },
                     SKAction.waitForDuration(3)
                 ]
             ) )
         
         parentNode.runAction(createAction, withKey: Pipes.createActionKey)
-        
-        return self
     }
     
-    func stop() -> Startable {
+    func stop() {
         parentNode.removeActionForKey(Pipes.createActionKey)
         
-        let pipeNodes = parentNode.children.filter { (node: AnyObject?) -> Bool in
-             (node as SKNode).name == PipePair.kind
+        let pipeNodes = parentNode.children.filter {
+            ($0 as! SKNode).name == PipesNode.kind
         }
         for pipe in pipeNodes {
             pipe.removeAllActions()
         }
-        return self
     }
 }
 
-
-extension Pipes {
-    private func createNewPipe() {
-        PipePair(textures: textureNames, centerY: centerPipes()).addTo(parentNode).start()
+//MARK: Private
+private extension Pipes {
+    func createNewPipesNode() {
+        PipesNode(topPipeTexture: topPipeTexture, bottomPipeTexture:bottomPipeTexture, centerY: centerPipes()).addTo(parentNode).start()
     }
     
-    private func centerPipes() -> CGFloat {
+    func centerPipes() -> CGFloat {
         return parentNode.size.height/2 - 100 + 20 * CGFloat(arc4random_uniform(10))
     }
 }
+

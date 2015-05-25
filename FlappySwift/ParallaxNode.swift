@@ -6,42 +6,38 @@
 //  Copyright (c) 2014 Effective Code. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
 
 class ParallaxNode {
     private let node: SKSpriteNode!
     
-    init(width: CGFloat, height: CGFloat, textureNamed: String) {
-        let size = CGSizeMake(2*width, height)
+    init(textureNamed: String) {
+        let leftHalf = createHalfNodeTexture(textureNamed, offsetX: 0)
+        let rightHalf = createHalfNodeTexture(textureNamed, offsetX: leftHalf.size.width)
+        
+        let size = CGSize(width: leftHalf.size.width + rightHalf.size.width,
+            height: leftHalf.size.height)
         
         node = SKSpriteNode(color: UIColor.whiteColor(), size: size)
-
         node.anchorPoint = CGPointZero
         node.position = CGPointZero
-        node.addChild(createNode(textureNamed, x: 0))
-        node.addChild(createNode(textureNamed, x: width))
-    }
-    
-    private func createNode(textureNamed: String, x: CGFloat) -> SKNode {
-        let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
-                node.lightingBitMask = BodyType.bird.rawValue
-        node.anchorPoint = CGPointZero
-        node.position = CGPoint(x: x, y: 0)
-        
-        return node
+        node.addChild(leftHalf)
+        node.addChild(rightHalf)
     }
     
     func zPosition(zPosition: CGFloat) -> ParallaxNode {
         node.zPosition = zPosition
         return self
     }
-   
+    
     func addTo(parentNode: SKSpriteNode) -> ParallaxNode {
         parentNode.addChild(node)
         return self
     }
-    
+}
+
+// Mark: Startable
+extension ParallaxNode {
     func start(#duration: NSTimeInterval) {
         node.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
@@ -54,5 +50,12 @@ class ParallaxNode {
     func stop() {
         node.removeAllActions()
     }
-    
+}
+
+// Mark: Private
+private func createHalfNodeTexture(textureNamed: String, #offsetX: CGFloat) -> SKSpriteNode {
+    let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
+    node.anchorPoint = CGPointZero
+    node.position = CGPoint(x: offsetX, y: 0)
+    return node
 }

@@ -2,20 +2,27 @@
 //  AppDelegate.swift
 //  FlappySwift
 //
-//  Created by Giordano Scalzo on 02/06/2014.
-//  Copyright (c) 2014 Effective Code. All rights reserved.
+//  Created by Giordano Scalzo on 18/02/2015.
+//  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-                            
+
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        // Override point for customization after application launch.
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let viewController = MenuViewController()
+        
+        let mainWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+        mainWindow.backgroundColor = UIColor.whiteColor()
+        mainWindow.rootViewController = viewController
+        mainWindow.makeKeyAndVisible()
+        window = mainWindow
+
         return true
     }
 
