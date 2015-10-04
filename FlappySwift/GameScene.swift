@@ -19,7 +19,7 @@ class GameScene: SKScene {
         self.addChild(myLabel)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
@@ -30,7 +30,7 @@ class GameScene: SKScene {
             sprite.xScale = 0.5
             sprite.yScale = 0.5
             sprite.position = location
-            println(location)
+            print(location)
             
             let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
             
