@@ -39,7 +39,7 @@ private extension MenuViewController{
     }
     
     @objc func onGameCenterPressed(sender: UIButton) {
-        println("onGameCenterPressed")
+        print("onGameCenterPressed")
     }
     
 }
@@ -47,13 +47,13 @@ private extension MenuViewController{
 // MARK: Layout
 extension MenuViewController{
     func layoutView() {
-        layout(playButton) { view in
+        constrain(playButton) { view in
             view.bottom == view.superview!.centerY - 60
             view.centerX == view.superview!.centerX
             view.height == 80
             view.width == view.superview!.width - 40
         }
-        layout(gameCenterButton) { view in
+        constrain(gameCenterButton) { view in
             view.bottom == view.superview!.centerY + 60
             view.centerX == view.superview!.centerX
             view.height == 80
