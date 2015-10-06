@@ -10,10 +10,10 @@ import UIKit
 import SpriteKit
 
 extension SKNode {
-    class func unarchiveFromFile(file : NSString) -> SKNode? {
+    class func unarchiveFromFile(file : NSString) throws -> SKNode? {
         if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+            let sceneData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+            let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
@@ -32,7 +32,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         skView.frame = view.bounds
         view.addSubview(skView)
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        do {
+            let scene = try GameScene.unarchiveFromFile("GameScene")
+            if let scene = scene as? GameScene {
             scene.size = skView.frame.size
             skView.showsPhysics = true
             skView.showsFPS = true
@@ -40,6 +42,9 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             scene.scaleMode = .AspectFill
             skView.presentScene(scene)
+        }
+        }catch (let error) {
+            fatalError("Error \(error) while unarchiving 'GameScene'")
         }
     }
 }

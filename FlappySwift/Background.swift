@@ -21,8 +21,8 @@ class Background {
         self.duration = duration
     }
     
-    func addTo(parentNode: SKSpriteNode) -> Self {
-        parallaxNode.addTo(parentNode)
+    func addTo(parentNode: SKSpriteNode, zPosition: CGFloat) -> Self {
+        parallaxNode.addTo(parentNode, zPosition: zPosition)
         return self
     }
 }
