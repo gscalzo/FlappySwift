@@ -10,10 +10,10 @@ import UIKit
 import SpriteKit
 
 extension SKNode {
-    class func unarchiveFromFile(file : NSString) -> SKNode? {
+    class func unarchiveFromFile(file : NSString) throws -> SKNode? {
         if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+            let sceneData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+            let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
@@ -34,24 +34,28 @@ class GameViewController: UIViewController {
         view.addSubview(skView)
         createTheScene()
     }
+    
     private func createTheScene() {
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            scene.size = skView.frame.size
-//            skView.showsPhysics = true
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            skView.ignoresSiblingOrder = true
-            scene.scaleMode = .AspectFill
-            
-            scene.onPlayAgainPressed = {[weak self] in
-                self?.createTheScene()
-                return
+        do {
+            let scene = try GameScene.unarchiveFromFile("GameScene")
+            if let scene = scene as? GameScene {
+                scene.size = skView.frame.size
+                skView.showsFPS = true
+                skView.showsNodeCount = true
+                skView.ignoresSiblingOrder = true
+                scene.scaleMode = .AspectFill
+                
+                scene.onPlayAgainPressed = {[weak self] in
+                    self?.createTheScene()
+                }
+                
+                scene.onCancelPressed = {[weak self] in
+                    self?.dismissViewControllerAnimated(true, completion: nil)
+                }
+                skView.presentScene(scene)
             }
-            scene.onCancelPressed = {[weak self] in
-                self?.dismissViewControllerAnimated(true, completion: nil)
-                return
-            }
-            self.skView.presentScene(scene)
+        }catch (let error) {
+            fatalError("Error \(error) while unarchiving 'GameScene'")
         }
-    }    
+    }
 }

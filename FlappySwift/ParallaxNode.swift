@@ -18,7 +18,7 @@ class ParallaxNode {
         let size = CGSize(width: leftHalf.size.width + rightHalf.size.width,
             height: leftHalf.size.height)
         
-        node = SKSpriteNode(color: UIColor.whiteColor(), size: size)
+        node = SKSpriteNode(color: UIColor.clearColor(), size: size)
         node.anchorPoint = CGPointZero
         node.position = CGPointZero
         node.addChild(leftHalf)
@@ -30,15 +30,16 @@ class ParallaxNode {
         return self
     }
     
-    func addTo(parentNode: SKSpriteNode) -> ParallaxNode {
+    func addTo(parentNode: SKSpriteNode, zPosition: CGFloat) -> ParallaxNode {
         parentNode.addChild(node)
+        node.zPosition = zPosition
         return self
     }
 }
 
 // Mark: Startable
 extension ParallaxNode {
-    func start(#duration: NSTimeInterval) {
+    func start(duration duration: NSTimeInterval) {
         node.runAction(SKAction.repeatActionForever(SKAction.sequence(
             [
                 SKAction.moveToX(-node.size.width/2.0, duration: duration),
@@ -53,7 +54,7 @@ extension ParallaxNode {
 }
 
 // Mark: Private
-private func createHalfNodeTexture(textureNamed: String, #offsetX: CGFloat) -> SKSpriteNode {
+private func createHalfNodeTexture(textureNamed: String, offsetX: CGFloat) -> SKSpriteNode {
     let node = SKSpriteNode(imageNamed: textureNamed, normalMapped: true)
     node.anchorPoint = CGPointZero
     node.position = CGPoint(x: offsetX, y: 0)

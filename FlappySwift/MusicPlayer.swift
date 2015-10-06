@@ -9,29 +9,28 @@
 import Foundation
 import AVFoundation
 
+enum MusicPlayerError: ErrorType {
+    case ResourceNotFound
+}
+
 class MusicPlayer {
-    private let player: AVAudioPlayer?
+    private var player: AVAudioPlayer? = nil
     
-    init?(filename: String, type: String){
+    init(filename: String, type: String) throws {
         if let resource = NSBundle.mainBundle().pathForResource(filename, ofType: type) {
             let url = NSURL(fileURLWithPath: resource)
-            player = AVAudioPlayer(contentsOfURL: url, error: nil);
-            player!.numberOfLoops = -1
-            player!.prepareToPlay()
+            player = try AVAudioPlayer(contentsOfURL: url)
+            player?.numberOfLoops = -1
+            player?.prepareToPlay()
         } else {
-            player = nil
-            return nil
+            throw MusicPlayerError.ResourceNotFound
         }
     }
     
     func play() {
-        if let player = player {
-            player.play()
-        }
+        player?.play()
     }
     func stop() {
-        if let player = player {
-            player.stop()
-        }
+        player?.stop()
     }
 }

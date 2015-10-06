@@ -63,7 +63,7 @@ class PipesNode{
 
 
 // Creators
-private func createPipe(#imageNamed: String) -> SKSpriteNode {
+private func createPipe(imageNamed imageNamed: String) -> SKSpriteNode {
     let pipeNode = SKSpriteNode(imageNamed: imageNamed)
         let size = CGSize(width: pipeNode.size.width, height: pipeNode.size.height)
         pipeNode.physicsBody = SKPhysicsBody.rectSize(size) {
@@ -77,7 +77,7 @@ private func createPipe(#imageNamed: String) -> SKSpriteNode {
     return pipeNode
     }
     
-    private func createGap(#size: CGSize) -> SKSpriteNode {
+    private func createGap(size size: CGSize) -> SKSpriteNode {
         let gapNode = SKSpriteNode(color: UIColor.clearColor(),
             size: size)
         gapNode.zPosition = 6
