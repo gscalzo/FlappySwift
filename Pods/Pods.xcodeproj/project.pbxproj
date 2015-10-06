@@ -7,488 +7,565 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0147102342BF4B661FBD659F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE2F96B307D854F6847379 /* Foundation.framework */; };
-		04EC95DF7286DE97A8DCFFF3 /* UIImage+HTButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDEB6B593AB4411C15C2E0B /* UIImage+HTButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DC64306C229366759E89877 /* UIColor+HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B9A6BDA2FDBA3B4C55EFE5 /* UIColor+HTColor.m */; };
-		12F9518CD3FD62E8342BF336 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6EBCA36B1356C3448273F /* Edge.swift */; };
-		181C2D55DECC70B9EDC41281 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9107F87E1653A263724533 /* Extensions.swift */; };
-		18DC6D66E0EC0892ECBA9FE4 /* Pods-FlappySwift-HTPressableButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FECF97D1BA5DC8355C055D1 /* Pods-FlappySwift-HTPressableButton-dummy.m */; };
-		1A3CCABA25C60F73B81D145F /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DE7A5E6FA004EA554793A3 /* Distribute.swift */; };
-		337E4FFBB387C8C66606948E /* Pods-FlappySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BD74426B0D21CA9B9C94A8 /* Pods-FlappySwift-dummy.m */; };
-		3E98564086F0CCE559A7CC14 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC9A94017DD38A7938E09E /* View.swift */; };
-		40D1FD0F192A1AD45D1F7EEA /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4FBBD4C9F147A647EE1881 /* LayoutProxy.swift */; };
-		534772A817FE83063C9E65CC /* Pods-FlappySwift-Cartography-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8B7FF1C117AE19E8F5CB /* Pods-FlappySwift-Cartography-dummy.m */; };
-		560DEB4C2DA41940BED6E4B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE2F96B307D854F6847379 /* Foundation.framework */; };
-		5D0ED3318E2C1CDF6B37EF22 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D61C830E6A94C2852E441 /* Align.swift */; };
-		6ABE783933727AD5C4CFB26C /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445611B5758BCA1D082198F7 /* ConstraintGroup.swift */; };
-		6CC1BB8B0B5BA2D82CD3FE66 /* Pods-FlappySwift-HTPressableButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D68689A0AD930E7EB33BC8 /* Pods-FlappySwift-HTPressableButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		760A5F460712C7FD698FB752 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F6DC182DE838BC5B20BEB /* Dimension.swift */; };
-		8AFE0041C2DB5D42D35CF81F /* HTPressableButtonPrefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FB8CBDFD499A051FFE1E74 /* HTPressableButtonPrefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B23108EBE88A6F93E45B99E /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD92B3B097CE0A9897261EB /* Size.swift */; };
-		979C00A269EE970D4792B6E7 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1F9158B97BEDF04B3264D /* Edges.swift */; };
-		97CC5D15679EB6BBFD94677F /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6FB5C373A890BF935CC8B /* Layout.swift */; };
-		A1956425C717D8A52FD2972D /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7777998450E211CF0B5F6E /* Compound.swift */; };
-		A50C6ABC9DCE7170ABFAAEC1 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2A8954D0B4B43F7FE8E9 /* Constraint.swift */; };
-		A9E3580955571A2449ABF98E /* HTPressableButtonPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC8D075EE217E45904EB77 /* HTPressableButtonPrefs.m */; };
-		A9F7BFB0B83EBF3CBB2472F6 /* Pods-FlappySwift-Cartography-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A28A64D0A32AEBE2540F397 /* Pods-FlappySwift-Cartography-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ABA6482B853C9AF7FB994A71 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544DA30D9DA546EF33A006F /* Coefficients.swift */; };
-		AC7D430F09313A3E724EE21C /* Pods-FlappySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6821D41AA73233AC5CC5B9 /* Pods-FlappySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1DD7C16C456D9AF4C5192C9 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5372B4566C6514014D27C7 /* ViewUtils.swift */; };
-		D3570B13F66FA5E8F9F8051A /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A0FF551399C8894C809AF /* Context.swift */; };
-		D6FF300ED24AFED737CA9A89 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D230F717D4E9ECD60770EA4 /* Point.swift */; };
-		D80B08E6813B58CB7A0D7242 /* UIImage+HTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B67D45085EF37AE35BCE40BD /* UIImage+HTButton.m */; };
-		DA23A298B1A16A33B32EBB03 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF7CE9D2604B27D3B68A271 /* Property.swift */; };
-		DE6575FF42E029586B3BAB18 /* UIColor+HTColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D89C37CB929CABB6CB07A01F /* UIColor+HTColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEE2619063EA5B468BE8F623 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B94C2F17FC058125B79E3 /* Priority.swift */; };
-		E10C93093E3A1BF6F117F110 /* HTPressableButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 37ACAC2D3506112AB184C4AA /* HTPressableButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E26C3EEA5EDC0B609BF9A955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE2F96B307D854F6847379 /* Foundation.framework */; };
-		E540EF7E81B785AC05C3291F /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A86D333DCCB2849F544A1F26 /* HTPressableButton.m */; };
-		F1824652BAF0AC1262B9CAC3 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8F2EB7CB6774C1A8765D2 /* Expression.swift */; };
+		07A3AD4A2E9B4C79B66F6078A7212678 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15803BFAA2D84E5565D397F485653B /* Constrain.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0A6741A5C137D40614EC689D16C93F6F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC447E88C9864AA6876F67C49CE758A2 /* Extensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1458D7AD1A3F93930F89A8F4363CDE4C /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178F03045F7260960E1EB6A87B1383E /* Edge.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1EFED9DB0F470A72D989FBE9BEC51762 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEF23C636E262B7E55058B60B098D17 /* Constraint.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		231F524F71AFC5604B0D969A4DF7593E /* UIColor+HTColor.h in Headers */ = {isa = PBXBuildFile; fileRef = FED17A32D25191F397E6F8D501B92E62 /* UIColor+HTColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32E0424A22426C26222FD41DC732DC4F /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE0BEFB73BA3761718EDC3B22CCE0B /* Align.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		50C88B95BE9D90657D27CEA4954C829A /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050A53C05AF964C928B5B4CF1CFA61AC /* Edges.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		568311479197016A4AF5194DB7C11D6D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C010AD9C4300FA7300894415E13E5AC /* Point.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		57FCF2003171B8EFE4AEAE5820ADFBE0 /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4814BA671F299CE3166A14FECDEEEA /* HTPressableButton.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		58231F42F0B2E0BA4E1F47931E459761 /* UIImage+HTButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DA13647BC1A24A8D623D207F73E670 /* UIImage+HTButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A2E97430A450C5CAA1B0494C39C307 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		69EC3FDA3F7EF8C8B9CF99EE6AE843F1 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284890CAE5DE9FC781BFF261181D51CA /* Expression.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6B287C44DBA80D295C853EB824C8883D /* Pods-FlappySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF8D569A956CC2B5D31FE023BF885CE /* Pods-FlappySwift-dummy.m */; };
+		70DC3A432095C1638864D1A71E0994EC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161F5E732978AC234DD0D3EB98E6FE7 /* View.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		77BA2D35B4E692991642B8A168CE7630 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A41A5ED2B20EFAE5E659F1ACD6638A /* Context.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7965459743D0A795D3F21CFDAB64FA20 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE52E6465D1B95F09187F0FFF3F50F8 /* Compound.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8029B0AAF7180842CEAF557D457CD79C /* UIColor+HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DAB14C28C2391996B30884B90A3680 /* UIColor+HTColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8867CE63C7E4029D8D6520D2D553CA95 /* UIImage+HTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBB17DF63CF1DBEA3B4E73596BBE49C /* UIImage+HTButton.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8AC6537A12658A773FB08D4C9C56D42F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		916F46BB97C5209C56F4227F6B8D197D /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18E5DF8149AE6EF5ADA43F185CCAEF /* ConstraintGroup.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		94FA81E5AAD99FC80DC4123F16239B36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		9BD9D1F1DF91141C9450065FBFBF5F56 /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AD0951833C49DE63D04689A2A0CAA /* Distribute.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A2CD76F30A26D61507DB9A4C81A74D03 /* HTPressableButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A0FC72B38B1340FB76230693EBD83D4 /* HTPressableButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A60E28925C0DA0C0C240E4CEDE40CFE2 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF941B192FC589226225E6F5AC691A /* LayoutProxy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AA0E218C1B036D8ED880758323EE36B5 /* HTPressableButtonPrefs.h in Headers */ = {isa = PBXBuildFile; fileRef = BFBD5CAD228D2CEE4EF63D9CD92BD7EF /* HTPressableButtonPrefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC0ACFB8904C068966EB1A84D4FFB65D /* HTPressableButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B40EF6A0AD020AF1E1D3E67FEC5C4C /* HTPressableButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B90891688A088BC37455234028C2E993 /* Cartography-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4F21278D743ECCD1120AD05B536AB02 /* Cartography-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2D0484CBD140F0D9095338AC46F35CA /* Pods-FlappySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B566A95342BC33D97FFBF8F469866088 /* Pods-FlappySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB1C049C6C66544A0C8766A92A429C5F /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634DC1F4D7198E53A60162CA2C83651 /* Size.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DD4DCD3B3C9B3FCD4A84360344E24D7D /* Cartography-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7DEE0D78F3BD1F70778F7E8A3A6F7 /* Cartography-dummy.m */; };
+		DD993AF689ABEB3753FD97C58D96147C /* HTPressableButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD5CE85247CE550DB183476EC0B0DF /* HTPressableButton-dummy.m */; };
+		DEDCF7C856391A971429A7D22A16C141 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9B2E750734BC6B737D48B1D31E0F0 /* Dimension.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E2BC5D385B122DCECB6F8F302096706A /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D663E230EF6B36FF9499F1D949589 /* Priority.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E7D2764025C159F0A06FDE51660DDAB0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FA73F4E8A060BC419CE99AE7C6C1B /* Property.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E98C7A1F5AEB818239DABA8B260E1F53 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1780E031EF2CB744D109211AD01BF5E6 /* Coefficients.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EA526FC603C6661538DB9B58EDF76392 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7BD08225E06C17B03A83328F6A7FA7 /* ViewUtils.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FFB3A44779D3AC5F0D415850BBB03F9A /* HTPressableButtonPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CBC3CF77A6D87D67BA3EB007BD4C60 /* HTPressableButtonPrefs.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21969104C98D72B965D39CD6 /* PBXContainerItemProxy */ = {
+		10FF5EF73E9DCEFFF1912A63444ACA17 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1AFC1594F97DB0EB8DE38717 /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6D2F27EC798B59C8E25E9F39;
-			remoteInfo = "Pods-FlappySwift-HTPressableButton";
+			remoteGlobalIDString = C3A04698AAE4D6124C20602D622956E5;
+			remoteInfo = Cartography;
 		};
-		6926BABE8388ED6DF338D271 /* PBXContainerItemProxy */ = {
+		DAADAD60D3C2BBF50C421023FBB2779E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1AFC1594F97DB0EB8DE38717 /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 08C82A0EB55FD759800599AB;
-			remoteInfo = "Pods-FlappySwift-Cartography";
+			remoteGlobalIDString = 7FEF77C304F58B4306F448A2D383D419;
+			remoteInfo = HTPressableButton;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		033D2A3C1E269E6248C7BEF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06897036F6989B070468499B /* Pods_FlappySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		08D68689A0AD930E7EB33BC8 /* Pods-FlappySwift-HTPressableButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-HTPressableButton-umbrella.h"; sourceTree = "<group>"; };
-		0A28A64D0A32AEBE2540F397 /* Pods-FlappySwift-Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-Cartography-umbrella.h"; sourceTree = "<group>"; };
-		0D230F717D4E9ECD60770EA4 /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
-		0D2E8B7FF1C117AE19E8F5CB /* Pods-FlappySwift-Cartography-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlappySwift-Cartography-dummy.m"; sourceTree = "<group>"; };
-		0DEFD1C909D96C77CD505D17 /* Pods-FlappySwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlappySwift-acknowledgements.plist"; sourceTree = "<group>"; };
-		0EEC8D075EE217E45904EB77 /* HTPressableButtonPrefs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTPressableButtonPrefs.m; path = Classes/HTPressableButtonPrefs.m; sourceTree = "<group>"; };
-		120D61C830E6A94C2852E441 /* Align.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Align.swift; path = Cartography/Align.swift; sourceTree = "<group>"; };
-		135F6DC182DE838BC5B20BEB /* Dimension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = Cartography/Dimension.swift; sourceTree = "<group>"; };
-		14EFA184F2208AD5790080CA /* Pods-FlappySwift-Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FlappySwift-Cartography.modulemap"; sourceTree = "<group>"; };
-		1BAD2E7E0960A91BDD27F155 /* Pods-FlappySwift-HTPressableButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift-HTPressableButton.xcconfig"; sourceTree = "<group>"; };
-		2FAC9A94017DD38A7938E09E /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
-		2FECF97D1BA5DC8355C055D1 /* Pods-FlappySwift-HTPressableButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlappySwift-HTPressableButton-dummy.m"; sourceTree = "<group>"; };
-		33E3280D297BED201160BE25 /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
-		37ACAC2D3506112AB184C4AA /* HTPressableButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTPressableButton.h; path = Classes/HTPressableButton.h; sourceTree = "<group>"; };
-		3B5372B4566C6514014D27C7 /* ViewUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Cartography/ViewUtils.swift; sourceTree = "<group>"; };
-		3ED6EBCA36B1356C3448273F /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
-		3FF7CE9D2604B27D3B68A271 /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
-		445611B5758BCA1D082198F7 /* ConstraintGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintGroup.swift; path = Cartography/ConstraintGroup.swift; sourceTree = "<group>"; };
-		4DDEB6B593AB4411C15C2E0B /* UIImage+HTButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+HTButton.h"; path = "Classes/UIImage+HTButton.h"; sourceTree = "<group>"; };
-		500043E28EA3A36634F8E7E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51BD74426B0D21CA9B9C94A8 /* Pods-FlappySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlappySwift-dummy.m"; sourceTree = "<group>"; };
-		53FB8CBDFD499A051FFE1E74 /* HTPressableButtonPrefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTPressableButtonPrefs.h; path = Classes/HTPressableButtonPrefs.h; sourceTree = "<group>"; };
-		5FAB3008BFCD075CA4535060 /* Pods-FlappySwift-Cartography.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift-Cartography.xcconfig"; sourceTree = "<group>"; };
-		62DE7A5E6FA004EA554793A3 /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
-		66445F8A89C037E5D524629A /* Pods-FlappySwift-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-environment.h"; sourceTree = "<group>"; };
-		6BA1F9158B97BEDF04B3264D /* Edges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edges.swift; path = Cartography/Edges.swift; sourceTree = "<group>"; };
-		6C9107F87E1653A263724533 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cartography/Extensions.swift; sourceTree = "<group>"; };
-		6FF8F3589C1C5A4E717D9FE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		724C469A321EFFF700171802 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		7BC8F2EB7CB6774C1A8765D2 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
-		8544DA30D9DA546EF33A006F /* Coefficients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coefficients.swift; path = Cartography/Coefficients.swift; sourceTree = "<group>"; };
-		97B9A6BDA2FDBA3B4C55EFE5 /* UIColor+HTColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HTColor.m"; path = "Classes/UIColor+HTColor.m"; sourceTree = "<group>"; };
-		A86D333DCCB2849F544A1F26 /* HTPressableButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTPressableButton.m; path = Classes/HTPressableButton.m; sourceTree = "<group>"; };
-		B67D45085EF37AE35BCE40BD /* UIImage+HTButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+HTButton.m"; path = "Classes/UIImage+HTButton.m"; sourceTree = "<group>"; };
-		B8D4786D5F60BBC257356C3C /* Pods-FlappySwift-HTPressableButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FlappySwift-HTPressableButton.modulemap"; sourceTree = "<group>"; };
-		C90963AF22236DC193BB9E28 /* Pods-FlappySwift-Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-Cartography-prefix.pch"; sourceTree = "<group>"; };
-		CC4FBBD4C9F147A647EE1881 /* LayoutProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProxy.swift; path = Cartography/LayoutProxy.swift; sourceTree = "<group>"; };
-		CCF975A2C6F16C0DDEC8250D /* Pods-FlappySwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlappySwift-frameworks.sh"; sourceTree = "<group>"; };
-		D25B94C2F17FC058125B79E3 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
-		D5714BB9369391CAA0DA22FD /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
-		D70FB615E0DD435C7EB7141C /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D73A0FF551399C8894C809AF /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Cartography/Context.swift; sourceTree = "<group>"; };
-		D89C37CB929CABB6CB07A01F /* UIColor+HTColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+HTColor.h"; path = "Classes/UIColor+HTColor.h"; sourceTree = "<group>"; };
-		D8AC1689C19478833B10482E /* Pods-FlappySwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlappySwift-resources.sh"; sourceTree = "<group>"; };
-		DA4DE292ABCCF2DE42950C69 /* Pods-FlappySwift-Cartography-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift-Cartography-Private.xcconfig"; sourceTree = "<group>"; };
-		DA7777998450E211CF0B5F6E /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
-		DB036D739C0159E79147E5C7 /* Pods-FlappySwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlappySwift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DDD92B3B097CE0A9897261EB /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Cartography/Size.swift; sourceTree = "<group>"; };
-		DDEAC5195AD9D11CFFF12741 /* Pods-FlappySwift-HTPressableButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-HTPressableButton-prefix.pch"; sourceTree = "<group>"; };
-		E2281C38FADF500B55D44AB2 /* Pods-FlappySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FlappySwift.modulemap"; sourceTree = "<group>"; };
-		E3AE2F96B307D854F6847379 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EBFA4C39AED2DF365B3CCFDF /* HTPressableButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTPressableButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE6821D41AA73233AC5CC5B9 /* Pods-FlappySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-umbrella.h"; sourceTree = "<group>"; };
-		F5B6FB5C373A890BF935CC8B /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Cartography/Layout.swift; sourceTree = "<group>"; };
-		FBCB2A8954D0B4B43F7FE8E9 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Cartography/Constraint.swift; sourceTree = "<group>"; };
-		FDD5BB1CBFEE6B40139138FD /* Pods-FlappySwift-HTPressableButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift-HTPressableButton-Private.xcconfig"; sourceTree = "<group>"; };
+		050A53C05AF964C928B5B4CF1CFA61AC /* Edges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edges.swift; path = Cartography/Edges.swift; sourceTree = "<group>"; };
+		0DC90C1ED45DDEA337AD505EB5893915 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EBD5CE85247CE550DB183476EC0B0DF /* HTPressableButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTPressableButton-dummy.m"; sourceTree = "<group>"; };
+		0FD056AD1B3E1445F398612DA2BFB1EA /* HTPressableButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HTPressableButton.xcconfig; sourceTree = "<group>"; };
+		13255452D73238487337548D722998DB /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1780E031EF2CB744D109211AD01BF5E6 /* Coefficients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coefficients.swift; path = Cartography/Coefficients.swift; sourceTree = "<group>"; };
+		20CE0BEFB73BA3761718EDC3B22CCE0B /* Align.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Align.swift; path = Cartography/Align.swift; sourceTree = "<group>"; };
+		284890CAE5DE9FC781BFF261181D51CA /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
+		2BD9B2E750734BC6B737D48B1D31E0F0 /* Dimension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = Cartography/Dimension.swift; sourceTree = "<group>"; };
+		328A969CDA0B566C19742A7C39D42A60 /* Pods-FlappySwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlappySwift-acknowledgements.plist"; sourceTree = "<group>"; };
+		36CBC3CF77A6D87D67BA3EB007BD4C60 /* HTPressableButtonPrefs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTPressableButtonPrefs.m; path = Classes/HTPressableButtonPrefs.m; sourceTree = "<group>"; };
+		3B21ED76592D042FC23225BB00AC4CE6 /* HTPressableButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTPressableButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D9FA73F4E8A060BC419CE99AE7C6C1B /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45B40EF6A0AD020AF1E1D3E67FEC5C4C /* HTPressableButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTPressableButton.h; path = Classes/HTPressableButton.h; sourceTree = "<group>"; };
+		4FBB17DF63CF1DBEA3B4E73596BBE49C /* UIImage+HTButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+HTButton.m"; path = "Classes/UIImage+HTButton.m"; sourceTree = "<group>"; };
+		542ECA6DED246A2B44133F6C7455F5B1 /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cartography.modulemap; sourceTree = "<group>"; };
+		57DA13647BC1A24A8D623D207F73E670 /* UIImage+HTButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+HTButton.h"; path = "Classes/UIImage+HTButton.h"; sourceTree = "<group>"; };
+		58AF941B192FC589226225E6F5AC691A /* LayoutProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProxy.swift; path = Cartography/LayoutProxy.swift; sourceTree = "<group>"; };
+		5DE5A2F68D409F160E19AEDFF88BDC59 /* Pods-FlappySwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlappySwift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		66AAC28925EBC127B897E761233BCF13 /* Pods-FlappySwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlappySwift-frameworks.sh"; sourceTree = "<group>"; };
+		68E58B307A0897911CA5F14DBA407D8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A0FC72B38B1340FB76230693EBD83D4 /* HTPressableButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTPressableButton-umbrella.h"; sourceTree = "<group>"; };
+		6AFBFA9375A54B439B08EEB44ECA5812 /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
+		75A1A820042112BCD42B7F28B6D53EF7 /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
+		7A18E5DF8149AE6EF5ADA43F185CCAEF /* ConstraintGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintGroup.swift; path = Cartography/ConstraintGroup.swift; sourceTree = "<group>"; };
+		7C4814BA671F299CE3166A14FECDEEEA /* HTPressableButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTPressableButton.m; path = Classes/HTPressableButton.m; sourceTree = "<group>"; };
+		8C010AD9C4300FA7300894415E13E5AC /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
+		91A41A5ED2B20EFAE5E659F1ACD6638A /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Cartography/Context.swift; sourceTree = "<group>"; };
+		95DAB14C28C2391996B30884B90A3680 /* UIColor+HTColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HTColor.m"; path = "Classes/UIColor+HTColor.m"; sourceTree = "<group>"; };
+		966D663E230EF6B36FF9499F1D949589 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
+		A36772CC5E9D24DF772D3F04D3F75E9E /* HTPressableButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HTPressableButton.modulemap; sourceTree = "<group>"; };
+		A634DC1F4D7198E53A60162CA2C83651 /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Cartography/Size.swift; sourceTree = "<group>"; };
+		ABCDF95F53214024D36949E0BB5B3DE7 /* Cartography.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cartography.xcconfig; sourceTree = "<group>"; };
+		ADF8D569A956CC2B5D31FE023BF885CE /* Pods-FlappySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlappySwift-dummy.m"; sourceTree = "<group>"; };
+		B154654767254FCCA771AE3AC8B826E6 /* Pods-FlappySwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlappySwift-resources.sh"; sourceTree = "<group>"; };
+		B566A95342BC33D97FFBF8F469866088 /* Pods-FlappySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlappySwift-umbrella.h"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC447E88C9864AA6876F67C49CE758A2 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cartography/Extensions.swift; sourceTree = "<group>"; };
+		BFBD5CAD228D2CEE4EF63D9CD92BD7EF /* HTPressableButtonPrefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTPressableButtonPrefs.h; path = Classes/HTPressableButtonPrefs.h; sourceTree = "<group>"; };
+		C178F03045F7260960E1EB6A87B1383E /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
+		CAA7DEE0D78F3BD1F70778F7E8A3A6F7 /* Cartography-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cartography-dummy.m"; sourceTree = "<group>"; };
+		DCE52E6465D1B95F09187F0FFF3F50F8 /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
+		DD6527C783ADB2129F43CEE3502C903C /* HTPressableButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTPressableButton-prefix.pch"; sourceTree = "<group>"; };
+		E226E24FFCCE4661AFBCEE49131503CE /* Pods-FlappySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FlappySwift.modulemap"; sourceTree = "<group>"; };
+		E65C8472134595ABDA3A2DBC64F53FAD /* Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-prefix.pch"; sourceTree = "<group>"; };
+		EB15803BFAA2D84E5565D397F485653B /* Constrain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrain.swift; path = Cartography/Constrain.swift; sourceTree = "<group>"; };
+		EEEF23C636E262B7E55058B60B098D17 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Cartography/Constraint.swift; sourceTree = "<group>"; };
+		F161F5E732978AC234DD0D3EB98E6FE7 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
+		F305B2BA0220C277F528DC584ED2E719 /* Pods_FlappySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F21278D743ECCD1120AD05B536AB02 /* Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-umbrella.h"; sourceTree = "<group>"; };
+		FC1AD0951833C49DE63D04689A2A0CAA /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
+		FD7BD08225E06C17B03A83328F6A7FA7 /* ViewUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Cartography/ViewUtils.swift; sourceTree = "<group>"; };
+		FDE35C56211BD72A5726E9F8B9BD1AE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED17A32D25191F397E6F8D501B92E62 /* UIColor+HTColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+HTColor.h"; path = "Classes/UIColor+HTColor.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3D023F7A1D5641AFDDC8C192 /* Frameworks */ = {
+		429A34DF3BBD7321C9C7D6FBF5F1E3FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				560DEB4C2DA41940BED6E4B5 /* Foundation.framework in Frameworks */,
+				94FA81E5AAD99FC80DC4123F16239B36 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B66C8E6F61405FE6D0834D6 /* Frameworks */ = {
+		73FC55CEA04649FFD0B2C5048E69A333 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26C3EEA5EDC0B609BF9A955 /* Foundation.framework in Frameworks */,
+				8AC6537A12658A773FB08D4C9C56D42F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2A993826BBB1F20568B6E74 /* Frameworks */ = {
+		78FC7F00B08F9BD89D457F90872486AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0147102342BF4B661FBD659F /* Foundation.framework in Frameworks */,
+				64A2E97430A450C5CAA1B0494C39C307 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B3B0272133E912DEC01957F /* Pods-FlappySwift */ = {
+		043F6CDBC1DFEDE9EC899FA20EB58C92 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6FF8F3589C1C5A4E717D9FE9 /* Info.plist */,
-				E2281C38FADF500B55D44AB2 /* Pods-FlappySwift.modulemap */,
-				DB036D739C0159E79147E5C7 /* Pods-FlappySwift-acknowledgements.markdown */,
-				0DEFD1C909D96C77CD505D17 /* Pods-FlappySwift-acknowledgements.plist */,
-				51BD74426B0D21CA9B9C94A8 /* Pods-FlappySwift-dummy.m */,
-				66445F8A89C037E5D524629A /* Pods-FlappySwift-environment.h */,
-				CCF975A2C6F16C0DDEC8250D /* Pods-FlappySwift-frameworks.sh */,
-				D8AC1689C19478833B10482E /* Pods-FlappySwift-resources.sh */,
-				EE6821D41AA73233AC5CC5B9 /* Pods-FlappySwift-umbrella.h */,
-				33E3280D297BED201160BE25 /* Pods-FlappySwift.debug.xcconfig */,
-				D5714BB9369391CAA0DA22FD /* Pods-FlappySwift.release.xcconfig */,
+				A36772CC5E9D24DF772D3F04D3F75E9E /* HTPressableButton.modulemap */,
+				0FD056AD1B3E1445F398612DA2BFB1EA /* HTPressableButton.xcconfig */,
+				0EBD5CE85247CE550DB183476EC0B0DF /* HTPressableButton-dummy.m */,
+				DD6527C783ADB2129F43CEE3502C903C /* HTPressableButton-prefix.pch */,
+				6A0FC72B38B1340FB76230693EBD83D4 /* HTPressableButton-umbrella.h */,
+				68E58B307A0897911CA5F14DBA407D8A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HTPressableButton";
+			sourceTree = "<group>";
+		};
+		2C6CE24BD7916E1CFF2DB6AFEF529DFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92CA4488574B4752096A9CC3075764E1 /* Cartography */,
+				3985BD27962E7E3419E3AA60F211112F /* HTPressableButton */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3985BD27962E7E3419E3AA60F211112F /* HTPressableButton */ = {
+			isa = PBXGroup;
+			children = (
+				B73971CCA1812C00EF08D46C5BBD66B4 /* All */,
+				043F6CDBC1DFEDE9EC899FA20EB58C92 /* Support Files */,
+			);
+			path = HTPressableButton;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				2C6CE24BD7916E1CFF2DB6AFEF529DFD /* Pods */,
+				A29C4B6ED017754583307424BCD821E0 /* Products */,
+				7DC52C4B9F132EADF07E7B72943C1165 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7DC52C4B9F132EADF07E7B72943C1165 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C449B56175F501396139A1CA89ACA632 /* Pods-FlappySwift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		92CA4488574B4752096A9CC3075764E1 /* Cartography */ = {
+			isa = PBXGroup;
+			children = (
+				20CE0BEFB73BA3761718EDC3B22CCE0B /* Align.swift */,
+				1780E031EF2CB744D109211AD01BF5E6 /* Coefficients.swift */,
+				DCE52E6465D1B95F09187F0FFF3F50F8 /* Compound.swift */,
+				EB15803BFAA2D84E5565D397F485653B /* Constrain.swift */,
+				EEEF23C636E262B7E55058B60B098D17 /* Constraint.swift */,
+				7A18E5DF8149AE6EF5ADA43F185CCAEF /* ConstraintGroup.swift */,
+				91A41A5ED2B20EFAE5E659F1ACD6638A /* Context.swift */,
+				2BD9B2E750734BC6B737D48B1D31E0F0 /* Dimension.swift */,
+				FC1AD0951833C49DE63D04689A2A0CAA /* Distribute.swift */,
+				C178F03045F7260960E1EB6A87B1383E /* Edge.swift */,
+				050A53C05AF964C928B5B4CF1CFA61AC /* Edges.swift */,
+				284890CAE5DE9FC781BFF261181D51CA /* Expression.swift */,
+				BC447E88C9864AA6876F67C49CE758A2 /* Extensions.swift */,
+				58AF941B192FC589226225E6F5AC691A /* LayoutProxy.swift */,
+				8C010AD9C4300FA7300894415E13E5AC /* Point.swift */,
+				966D663E230EF6B36FF9499F1D949589 /* Priority.swift */,
+				3D9FA73F4E8A060BC419CE99AE7C6C1B /* Property.swift */,
+				A634DC1F4D7198E53A60162CA2C83651 /* Size.swift */,
+				F161F5E732978AC234DD0D3EB98E6FE7 /* View.swift */,
+				FD7BD08225E06C17B03A83328F6A7FA7 /* ViewUtils.swift */,
+				B0D37C4E03C436566ED9B9CBBFE799AC /* Support Files */,
+			);
+			path = Cartography;
+			sourceTree = "<group>";
+		};
+		A29C4B6ED017754583307424BCD821E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13255452D73238487337548D722998DB /* Cartography.framework */,
+				3B21ED76592D042FC23225BB00AC4CE6 /* HTPressableButton.framework */,
+				F305B2BA0220C277F528DC584ED2E719 /* Pods_FlappySwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0D37C4E03C436566ED9B9CBBFE799AC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				542ECA6DED246A2B44133F6C7455F5B1 /* Cartography.modulemap */,
+				ABCDF95F53214024D36949E0BB5B3DE7 /* Cartography.xcconfig */,
+				CAA7DEE0D78F3BD1F70778F7E8A3A6F7 /* Cartography-dummy.m */,
+				E65C8472134595ABDA3A2DBC64F53FAD /* Cartography-prefix.pch */,
+				F4F21278D743ECCD1120AD05B536AB02 /* Cartography-umbrella.h */,
+				FDE35C56211BD72A5726E9F8B9BD1AE3 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cartography";
+			sourceTree = "<group>";
+		};
+		B73971CCA1812C00EF08D46C5BBD66B4 /* All */ = {
+			isa = PBXGroup;
+			children = (
+				45B40EF6A0AD020AF1E1D3E67FEC5C4C /* HTPressableButton.h */,
+				7C4814BA671F299CE3166A14FECDEEEA /* HTPressableButton.m */,
+				BFBD5CAD228D2CEE4EF63D9CD92BD7EF /* HTPressableButtonPrefs.h */,
+				36CBC3CF77A6D87D67BA3EB007BD4C60 /* HTPressableButtonPrefs.m */,
+				FED17A32D25191F397E6F8D501B92E62 /* UIColor+HTColor.h */,
+				95DAB14C28C2391996B30884B90A3680 /* UIColor+HTColor.m */,
+				57DA13647BC1A24A8D623D207F73E670 /* UIImage+HTButton.h */,
+				4FBB17DF63CF1DBEA3B4E73596BBE49C /* UIImage+HTButton.m */,
+			);
+			name = All;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C449B56175F501396139A1CA89ACA632 /* Pods-FlappySwift */ = {
+			isa = PBXGroup;
+			children = (
+				0DC90C1ED45DDEA337AD505EB5893915 /* Info.plist */,
+				E226E24FFCCE4661AFBCEE49131503CE /* Pods-FlappySwift.modulemap */,
+				5DE5A2F68D409F160E19AEDFF88BDC59 /* Pods-FlappySwift-acknowledgements.markdown */,
+				328A969CDA0B566C19742A7C39D42A60 /* Pods-FlappySwift-acknowledgements.plist */,
+				ADF8D569A956CC2B5D31FE023BF885CE /* Pods-FlappySwift-dummy.m */,
+				66AAC28925EBC127B897E761233BCF13 /* Pods-FlappySwift-frameworks.sh */,
+				B154654767254FCCA771AE3AC8B826E6 /* Pods-FlappySwift-resources.sh */,
+				B566A95342BC33D97FFBF8F469866088 /* Pods-FlappySwift-umbrella.h */,
+				75A1A820042112BCD42B7F28B6D53EF7 /* Pods-FlappySwift.debug.xcconfig */,
+				6AFBFA9375A54B439B08EEB44ECA5812 /* Pods-FlappySwift.release.xcconfig */,
 			);
 			name = "Pods-FlappySwift";
 			path = "Target Support Files/Pods-FlappySwift";
 			sourceTree = "<group>";
 		};
-		2CE07ABD43E61F0B1E1D13A3 /* All */ = {
-			isa = PBXGroup;
-			children = (
-				37ACAC2D3506112AB184C4AA /* HTPressableButton.h */,
-				A86D333DCCB2849F544A1F26 /* HTPressableButton.m */,
-				53FB8CBDFD499A051FFE1E74 /* HTPressableButtonPrefs.h */,
-				0EEC8D075EE217E45904EB77 /* HTPressableButtonPrefs.m */,
-				D89C37CB929CABB6CB07A01F /* UIColor+HTColor.h */,
-				97B9A6BDA2FDBA3B4C55EFE5 /* UIColor+HTColor.m */,
-				4DDEB6B593AB4411C15C2E0B /* UIImage+HTButton.h */,
-				B67D45085EF37AE35BCE40BD /* UIImage+HTButton.m */,
-			);
-			name = All;
-			sourceTree = "<group>";
-		};
-		4B4E8B5A39D640A10C27F652 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E3AE2F96B307D854F6847379 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		528EF1C3FC4C35393BC2C1B7 = {
-			isa = PBXGroup;
-			children = (
-				724C469A321EFFF700171802 /* Podfile */,
-				CC403CE6D6DCD3D8D4238C83 /* Frameworks */,
-				52D4200FFABAF75CC6B9A205 /* Pods */,
-				BDBFE2A6A6E310B0A7870C7C /* Products */,
-				E380FA30E90FD6AA4E3AB176 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		52D4200FFABAF75CC6B9A205 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				59BC6A01A890970513A4C395 /* Cartography */,
-				B96DF42C404E5346591F24C9 /* HTPressableButton */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		59BC6A01A890970513A4C395 /* Cartography */ = {
-			isa = PBXGroup;
-			children = (
-				120D61C830E6A94C2852E441 /* Align.swift */,
-				8544DA30D9DA546EF33A006F /* Coefficients.swift */,
-				DA7777998450E211CF0B5F6E /* Compound.swift */,
-				FBCB2A8954D0B4B43F7FE8E9 /* Constraint.swift */,
-				445611B5758BCA1D082198F7 /* ConstraintGroup.swift */,
-				D73A0FF551399C8894C809AF /* Context.swift */,
-				135F6DC182DE838BC5B20BEB /* Dimension.swift */,
-				62DE7A5E6FA004EA554793A3 /* Distribute.swift */,
-				3ED6EBCA36B1356C3448273F /* Edge.swift */,
-				6BA1F9158B97BEDF04B3264D /* Edges.swift */,
-				7BC8F2EB7CB6774C1A8765D2 /* Expression.swift */,
-				6C9107F87E1653A263724533 /* Extensions.swift */,
-				F5B6FB5C373A890BF935CC8B /* Layout.swift */,
-				CC4FBBD4C9F147A647EE1881 /* LayoutProxy.swift */,
-				0D230F717D4E9ECD60770EA4 /* Point.swift */,
-				D25B94C2F17FC058125B79E3 /* Priority.swift */,
-				3FF7CE9D2604B27D3B68A271 /* Property.swift */,
-				DDD92B3B097CE0A9897261EB /* Size.swift */,
-				2FAC9A94017DD38A7938E09E /* View.swift */,
-				3B5372B4566C6514014D27C7 /* ViewUtils.swift */,
-				C211BDFCF93C539200C1727D /* Support Files */,
-			);
-			path = Cartography;
-			sourceTree = "<group>";
-		};
-		644F263C6298542BED871324 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				500043E28EA3A36634F8E7E5 /* Info.plist */,
-				B8D4786D5F60BBC257356C3C /* Pods-FlappySwift-HTPressableButton.modulemap */,
-				1BAD2E7E0960A91BDD27F155 /* Pods-FlappySwift-HTPressableButton.xcconfig */,
-				FDD5BB1CBFEE6B40139138FD /* Pods-FlappySwift-HTPressableButton-Private.xcconfig */,
-				2FECF97D1BA5DC8355C055D1 /* Pods-FlappySwift-HTPressableButton-dummy.m */,
-				DDEAC5195AD9D11CFFF12741 /* Pods-FlappySwift-HTPressableButton-prefix.pch */,
-				08D68689A0AD930E7EB33BC8 /* Pods-FlappySwift-HTPressableButton-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-FlappySwift-HTPressableButton";
-			sourceTree = "<group>";
-		};
-		B96DF42C404E5346591F24C9 /* HTPressableButton */ = {
-			isa = PBXGroup;
-			children = (
-				2CE07ABD43E61F0B1E1D13A3 /* All */,
-				644F263C6298542BED871324 /* Support Files */,
-			);
-			path = HTPressableButton;
-			sourceTree = "<group>";
-		};
-		BDBFE2A6A6E310B0A7870C7C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D70FB615E0DD435C7EB7141C /* Cartography.framework */,
-				EBFA4C39AED2DF365B3CCFDF /* HTPressableButton.framework */,
-				06897036F6989B070468499B /* Pods_FlappySwift.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C211BDFCF93C539200C1727D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				033D2A3C1E269E6248C7BEF4 /* Info.plist */,
-				14EFA184F2208AD5790080CA /* Pods-FlappySwift-Cartography.modulemap */,
-				5FAB3008BFCD075CA4535060 /* Pods-FlappySwift-Cartography.xcconfig */,
-				DA4DE292ABCCF2DE42950C69 /* Pods-FlappySwift-Cartography-Private.xcconfig */,
-				0D2E8B7FF1C117AE19E8F5CB /* Pods-FlappySwift-Cartography-dummy.m */,
-				C90963AF22236DC193BB9E28 /* Pods-FlappySwift-Cartography-prefix.pch */,
-				0A28A64D0A32AEBE2540F397 /* Pods-FlappySwift-Cartography-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-FlappySwift-Cartography";
-			sourceTree = "<group>";
-		};
-		CC403CE6D6DCD3D8D4238C83 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4B4E8B5A39D640A10C27F652 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E380FA30E90FD6AA4E3AB176 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0B3B0272133E912DEC01957F /* Pods-FlappySwift */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9C8B7EA2EF5221608A723911 /* Headers */ = {
+		193A53152E497233993627A098F7E3E3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10C93093E3A1BF6F117F110 /* HTPressableButton.h in Headers */,
-				8AFE0041C2DB5D42D35CF81F /* HTPressableButtonPrefs.h in Headers */,
-				6CC1BB8B0B5BA2D82CD3FE66 /* Pods-FlappySwift-HTPressableButton-umbrella.h in Headers */,
-				DE6575FF42E029586B3BAB18 /* UIColor+HTColor.h in Headers */,
-				04EC95DF7286DE97A8DCFFF3 /* UIImage+HTButton.h in Headers */,
+				C2D0484CBD140F0D9095338AC46F35CA /* Pods-FlappySwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4D2BB562F793D7C585A62FA /* Headers */ = {
+		26986A816D2A666EB6F823828ACF19EC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7D430F09313A3E724EE21C /* Pods-FlappySwift-umbrella.h in Headers */,
+				A2CD76F30A26D61507DB9A4C81A74D03 /* HTPressableButton-umbrella.h in Headers */,
+				AC0ACFB8904C068966EB1A84D4FFB65D /* HTPressableButton.h in Headers */,
+				AA0E218C1B036D8ED880758323EE36B5 /* HTPressableButtonPrefs.h in Headers */,
+				231F524F71AFC5604B0D969A4DF7593E /* UIColor+HTColor.h in Headers */,
+				58231F42F0B2E0BA4E1F47931E459761 /* UIImage+HTButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DADC1FE828E1C282F29E9CCA /* Headers */ = {
+		514705BF944036B79FA99816C564643C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F7BFB0B83EBF3CBB2472F6 /* Pods-FlappySwift-Cartography-umbrella.h in Headers */,
+				B90891688A088BC37455234028C2E993 /* Cartography-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		08C82A0EB55FD759800599AB /* Pods-FlappySwift-Cartography */ = {
+		7FEF77C304F58B4306F448A2D383D419 /* HTPressableButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5BC8B6C5EA47FBF62CBDCD24 /* Build configuration list for PBXNativeTarget "Pods-FlappySwift-Cartography" */;
+			buildConfigurationList = F52FFE4A22FFB2452BC661326BCCB950 /* Build configuration list for PBXNativeTarget "HTPressableButton" */;
 			buildPhases = (
-				09AF6A9B7420B6F56069E571 /* Sources */,
-				4B66C8E6F61405FE6D0834D6 /* Frameworks */,
-				DADC1FE828E1C282F29E9CCA /* Headers */,
+				C99688D57578384E2A806EB842DA1133 /* Sources */,
+				73FC55CEA04649FFD0B2C5048E69A333 /* Frameworks */,
+				26986A816D2A666EB6F823828ACF19EC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-FlappySwift-Cartography";
-			productName = "Pods-FlappySwift-Cartography";
-			productReference = D70FB615E0DD435C7EB7141C /* Cartography.framework */;
+			name = HTPressableButton;
+			productName = HTPressableButton;
+			productReference = 3B21ED76592D042FC23225BB00AC4CE6 /* HTPressableButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6D2F27EC798B59C8E25E9F39 /* Pods-FlappySwift-HTPressableButton */ = {
+		C3A04698AAE4D6124C20602D622956E5 /* Cartography */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32D029DA1AC5C9141FF67001 /* Build configuration list for PBXNativeTarget "Pods-FlappySwift-HTPressableButton" */;
+			buildConfigurationList = B22DC939D187391042315573DBEE7623 /* Build configuration list for PBXNativeTarget "Cartography" */;
 			buildPhases = (
-				864099800984552C65FF1142 /* Sources */,
-				D2A993826BBB1F20568B6E74 /* Frameworks */,
-				9C8B7EA2EF5221608A723911 /* Headers */,
+				E466AE1C78D477EE54F87614DF153E84 /* Sources */,
+				429A34DF3BBD7321C9C7D6FBF5F1E3FB /* Frameworks */,
+				514705BF944036B79FA99816C564643C /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-FlappySwift-HTPressableButton";
-			productName = "Pods-FlappySwift-HTPressableButton";
-			productReference = EBFA4C39AED2DF365B3CCFDF /* HTPressableButton.framework */;
+			name = Cartography;
+			productName = Cartography;
+			productReference = 13255452D73238487337548D722998DB /* Cartography.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		900804A36C5DD9AD0FB01E07 /* Pods-FlappySwift */ = {
+		D04B9336B3C2BD93B7B4A6E240327C86 /* Pods-FlappySwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 734931B084430FA277E5DE4A /* Build configuration list for PBXNativeTarget "Pods-FlappySwift" */;
+			buildConfigurationList = CAC5B69B7CB364F50F112FDC97490622 /* Build configuration list for PBXNativeTarget "Pods-FlappySwift" */;
 			buildPhases = (
-				663A77BA2617A54382BB34C2 /* Sources */,
-				3D023F7A1D5641AFDDC8C192 /* Frameworks */,
-				A4D2BB562F793D7C585A62FA /* Headers */,
+				B950795195D94646054FB20B7A9A5C7B /* Sources */,
+				78FC7F00B08F9BD89D457F90872486AE /* Frameworks */,
+				193A53152E497233993627A098F7E3E3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				72BD0B2E3EA8BBBCD1467938 /* PBXTargetDependency */,
-				3109D5932CD2D480F18CD6D6 /* PBXTargetDependency */,
+				B55A9673B5560FA81126EF9D1A079A3C /* PBXTargetDependency */,
+				BD28677CB93A0BDCD0CD44C1168793F2 /* PBXTargetDependency */,
 			);
 			name = "Pods-FlappySwift";
 			productName = "Pods-FlappySwift";
-			productReference = 06897036F6989B070468499B /* Pods_FlappySwift.framework */;
+			productReference = F305B2BA0220C277F528DC584ED2E719 /* Pods_FlappySwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1AFC1594F97DB0EB8DE38717 /* Project object */ = {
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = 6973D69A204809364A7C370A /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 528EF1C3FC4C35393BC2C1B7;
-			productRefGroup = BDBFE2A6A6E310B0A7870C7C /* Products */;
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A29C4B6ED017754583307424BCD821E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				900804A36C5DD9AD0FB01E07 /* Pods-FlappySwift */,
-				08C82A0EB55FD759800599AB /* Pods-FlappySwift-Cartography */,
-				6D2F27EC798B59C8E25E9F39 /* Pods-FlappySwift-HTPressableButton */,
+				C3A04698AAE4D6124C20602D622956E5 /* Cartography */,
+				7FEF77C304F58B4306F448A2D383D419 /* HTPressableButton */,
+				D04B9336B3C2BD93B7B4A6E240327C86 /* Pods-FlappySwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		09AF6A9B7420B6F56069E571 /* Sources */ = {
+		B950795195D94646054FB20B7A9A5C7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0ED3318E2C1CDF6B37EF22 /* Align.swift in Sources */,
-				ABA6482B853C9AF7FB994A71 /* Coefficients.swift in Sources */,
-				A1956425C717D8A52FD2972D /* Compound.swift in Sources */,
-				A50C6ABC9DCE7170ABFAAEC1 /* Constraint.swift in Sources */,
-				6ABE783933727AD5C4CFB26C /* ConstraintGroup.swift in Sources */,
-				D3570B13F66FA5E8F9F8051A /* Context.swift in Sources */,
-				760A5F460712C7FD698FB752 /* Dimension.swift in Sources */,
-				1A3CCABA25C60F73B81D145F /* Distribute.swift in Sources */,
-				12F9518CD3FD62E8342BF336 /* Edge.swift in Sources */,
-				979C00A269EE970D4792B6E7 /* Edges.swift in Sources */,
-				F1824652BAF0AC1262B9CAC3 /* Expression.swift in Sources */,
-				181C2D55DECC70B9EDC41281 /* Extensions.swift in Sources */,
-				97CC5D15679EB6BBFD94677F /* Layout.swift in Sources */,
-				40D1FD0F192A1AD45D1F7EEA /* LayoutProxy.swift in Sources */,
-				534772A817FE83063C9E65CC /* Pods-FlappySwift-Cartography-dummy.m in Sources */,
-				D6FF300ED24AFED737CA9A89 /* Point.swift in Sources */,
-				DEE2619063EA5B468BE8F623 /* Priority.swift in Sources */,
-				DA23A298B1A16A33B32EBB03 /* Property.swift in Sources */,
-				8B23108EBE88A6F93E45B99E /* Size.swift in Sources */,
-				3E98564086F0CCE559A7CC14 /* View.swift in Sources */,
-				D1DD7C16C456D9AF4C5192C9 /* ViewUtils.swift in Sources */,
+				6B287C44DBA80D295C853EB824C8883D /* Pods-FlappySwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		663A77BA2617A54382BB34C2 /* Sources */ = {
+		C99688D57578384E2A806EB842DA1133 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				337E4FFBB387C8C66606948E /* Pods-FlappySwift-dummy.m in Sources */,
+				DD993AF689ABEB3753FD97C58D96147C /* HTPressableButton-dummy.m in Sources */,
+				57FCF2003171B8EFE4AEAE5820ADFBE0 /* HTPressableButton.m in Sources */,
+				FFB3A44779D3AC5F0D415850BBB03F9A /* HTPressableButtonPrefs.m in Sources */,
+				8029B0AAF7180842CEAF557D457CD79C /* UIColor+HTColor.m in Sources */,
+				8867CE63C7E4029D8D6520D2D553CA95 /* UIImage+HTButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		864099800984552C65FF1142 /* Sources */ = {
+		E466AE1C78D477EE54F87614DF153E84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E540EF7E81B785AC05C3291F /* HTPressableButton.m in Sources */,
-				A9E3580955571A2449ABF98E /* HTPressableButtonPrefs.m in Sources */,
-				18DC6D66E0EC0892ECBA9FE4 /* Pods-FlappySwift-HTPressableButton-dummy.m in Sources */,
-				0DC64306C229366759E89877 /* UIColor+HTColor.m in Sources */,
-				D80B08E6813B58CB7A0D7242 /* UIImage+HTButton.m in Sources */,
+				32E0424A22426C26222FD41DC732DC4F /* Align.swift in Sources */,
+				DD4DCD3B3C9B3FCD4A84360344E24D7D /* Cartography-dummy.m in Sources */,
+				E98C7A1F5AEB818239DABA8B260E1F53 /* Coefficients.swift in Sources */,
+				7965459743D0A795D3F21CFDAB64FA20 /* Compound.swift in Sources */,
+				07A3AD4A2E9B4C79B66F6078A7212678 /* Constrain.swift in Sources */,
+				1EFED9DB0F470A72D989FBE9BEC51762 /* Constraint.swift in Sources */,
+				916F46BB97C5209C56F4227F6B8D197D /* ConstraintGroup.swift in Sources */,
+				77BA2D35B4E692991642B8A168CE7630 /* Context.swift in Sources */,
+				DEDCF7C856391A971429A7D22A16C141 /* Dimension.swift in Sources */,
+				9BD9D1F1DF91141C9450065FBFBF5F56 /* Distribute.swift in Sources */,
+				1458D7AD1A3F93930F89A8F4363CDE4C /* Edge.swift in Sources */,
+				50C88B95BE9D90657D27CEA4954C829A /* Edges.swift in Sources */,
+				69EC3FDA3F7EF8C8B9CF99EE6AE843F1 /* Expression.swift in Sources */,
+				0A6741A5C137D40614EC689D16C93F6F /* Extensions.swift in Sources */,
+				A60E28925C0DA0C0C240E4CEDE40CFE2 /* LayoutProxy.swift in Sources */,
+				568311479197016A4AF5194DB7C11D6D /* Point.swift in Sources */,
+				E2BC5D385B122DCECB6F8F302096706A /* Priority.swift in Sources */,
+				E7D2764025C159F0A06FDE51660DDAB0 /* Property.swift in Sources */,
+				DB1C049C6C66544A0C8766A92A429C5F /* Size.swift in Sources */,
+				70DC3A432095C1638864D1A71E0994EC /* View.swift in Sources */,
+				EA526FC603C6661538DB9B58EDF76392 /* ViewUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3109D5932CD2D480F18CD6D6 /* PBXTargetDependency */ = {
+		B55A9673B5560FA81126EF9D1A079A3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FlappySwift-HTPressableButton";
-			target = 6D2F27EC798B59C8E25E9F39 /* Pods-FlappySwift-HTPressableButton */;
-			targetProxy = 21969104C98D72B965D39CD6 /* PBXContainerItemProxy */;
+			name = Cartography;
+			target = C3A04698AAE4D6124C20602D622956E5 /* Cartography */;
+			targetProxy = 10FF5EF73E9DCEFFF1912A63444ACA17 /* PBXContainerItemProxy */;
 		};
-		72BD0B2E3EA8BBBCD1467938 /* PBXTargetDependency */ = {
+		BD28677CB93A0BDCD0CD44C1168793F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FlappySwift-Cartography";
-			target = 08C82A0EB55FD759800599AB /* Pods-FlappySwift-Cartography */;
-			targetProxy = 6926BABE8388ED6DF338D271 /* PBXContainerItemProxy */;
+			name = HTPressableButton;
+			target = 7FEF77C304F58B4306F448A2D383D419 /* HTPressableButton */;
+			targetProxy = DAADAD60D3C2BBF50C421023FBB2779E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2B3F2DE83B450FEC544FFAA2 /* Debug */ = {
+		3064CFF0CDADEF08C9B1409B51940600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FD056AD1B3E1445F398612DA2BFB1EA /* HTPressableButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HTPressableButton/HTPressableButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTPressableButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HTPressableButton/HTPressableButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = HTPressableButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		49A3DD7DF5026A6A67BE1C75B31F6105 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABCDF95F53214024D36949E0BB5B3DE7 /* Cartography.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5DBD62D9765E1784C07E023E34515890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABCDF95F53214024D36949E0BB5B3DE7 /* Cartography.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9EB645C612834738B99727720210C23E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -527,9 +604,9 @@
 			};
 			name = Debug;
 		};
-		4082392E5F83972E35DEE7DB /* Debug */ = {
+		A13371D4EDE430654DB4DE24CBC27DDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA4DE292ABCCF2DE42950C69 /* Pods-FlappySwift-Cartography-Private.xcconfig */;
+			baseConfigurationReference = 0FD056AD1B3E1445F398612DA2BFB1EA /* HTPressableButton.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -538,40 +615,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FlappySwift-Cartography/Pods-FlappySwift-Cartography-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FlappySwift-Cartography/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HTPressableButton/HTPressableButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTPressableButton/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FlappySwift-Cartography/Pods-FlappySwift-Cartography.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Cartography;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		643F9A728EBDD5EFBE4AFB4E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDD5BB1CBFEE6B40139138FD /* Pods-FlappySwift-HTPressableButton-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FlappySwift-HTPressableButton/Pods-FlappySwift-HTPressableButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FlappySwift-HTPressableButton/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FlappySwift-HTPressableButton/Pods-FlappySwift-HTPressableButton.modulemap";
+				MODULEMAP_FILE = "Target Support Files/HTPressableButton/HTPressableButton.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = HTPressableButton;
 				SDKROOT = iphoneos;
@@ -582,9 +631,9 @@
 			};
 			name = Release;
 		};
-		74E5D62F7DB2EB012F86B7A4 /* Release */ = {
+		CAC986D532AF2436AD5449CAF407B6F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5714BB9369391CAA0DA22FD /* Pods-FlappySwift.release.xcconfig */;
+			baseConfigurationReference = 6AFBFA9375A54B439B08EEB44ECA5812 /* Pods-FlappySwift.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -611,36 +660,9 @@
 			};
 			name = Release;
 		};
-		8D8991E88FAE6D79E90843E7 /* Debug */ = {
+		CB826554661972CD5DA3D066BE3FD885 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDD5BB1CBFEE6B40139138FD /* Pods-FlappySwift-HTPressableButton-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FlappySwift-HTPressableButton/Pods-FlappySwift-HTPressableButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FlappySwift-HTPressableButton/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FlappySwift-HTPressableButton/Pods-FlappySwift-HTPressableButton.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = HTPressableButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B55ABCACE9C147C40BACF342 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33E3280D297BED201160BE25 /* Pods-FlappySwift.debug.xcconfig */;
+			baseConfigurationReference = 75A1A820042112BCD42B7F28B6D53EF7 /* Pods-FlappySwift.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -668,7 +690,7 @@
 			};
 			name = Debug;
 		};
-		CC678ADED9EA52AB72ED0BD3 /* Release */ = {
+		E39CD1E764776175CB82EEC82A6C9948 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -702,73 +724,46 @@
 			};
 			name = Release;
 		};
-		EB45F2DDABCAD7B2EBC86241 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA4DE292ABCCF2DE42950C69 /* Pods-FlappySwift-Cartography-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FlappySwift-Cartography/Pods-FlappySwift-Cartography-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FlappySwift-Cartography/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FlappySwift-Cartography/Pods-FlappySwift-Cartography.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Cartography;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32D029DA1AC5C9141FF67001 /* Build configuration list for PBXNativeTarget "Pods-FlappySwift-HTPressableButton" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8D8991E88FAE6D79E90843E7 /* Debug */,
-				643F9A728EBDD5EFBE4AFB4E /* Release */,
+				9EB645C612834738B99727720210C23E /* Debug */,
+				E39CD1E764776175CB82EEC82A6C9948 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5BC8B6C5EA47FBF62CBDCD24 /* Build configuration list for PBXNativeTarget "Pods-FlappySwift-Cartography" */ = {
+		B22DC939D187391042315573DBEE7623 /* Build configuration list for PBXNativeTarget "Cartography" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4082392E5F83972E35DEE7DB /* Debug */,
-				EB45F2DDABCAD7B2EBC86241 /* Release */,
+				5DBD62D9765E1784C07E023E34515890 /* Debug */,
+				49A3DD7DF5026A6A67BE1C75B31F6105 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6973D69A204809364A7C370A /* Build configuration list for PBXProject "Pods" */ = {
+		CAC5B69B7CB364F50F112FDC97490622 /* Build configuration list for PBXNativeTarget "Pods-FlappySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B3F2DE83B450FEC544FFAA2 /* Debug */,
-				CC678ADED9EA52AB72ED0BD3 /* Release */,
+				CB826554661972CD5DA3D066BE3FD885 /* Debug */,
+				CAC986D532AF2436AD5449CAF407B6F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		734931B084430FA277E5DE4A /* Build configuration list for PBXNativeTarget "Pods-FlappySwift" */ = {
+		F52FFE4A22FFB2452BC661326BCCB950 /* Build configuration list for PBXNativeTarget "HTPressableButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B55ABCACE9C147C40BACF342 /* Debug */,
-				74E5D62F7DB2EB012F86B7A4 /* Release */,
+				3064CFF0CDADEF08C9B1409B51940600 /* Debug */,
+				A13371D4EDE430654DB4DE24CBC27DDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1AFC1594F97DB0EB8DE38717 /* Project object */;
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }
