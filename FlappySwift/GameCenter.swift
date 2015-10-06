@@ -21,7 +21,7 @@ class GameCenter: NSObject {
             } else if localPlayer.authenticated {
                 self.gameCenterEnabled = true
                 localPlayer.loadDefaultLeaderboardIdentifierWithCompletionHandler({ (leaderboardIdentifier, error) -> Void in
-                    self.leaderboardIdentifier = leaderboardIdentifier
+                    self.leaderboardIdentifier = leaderboardIdentifier!
                 })
             }
         }

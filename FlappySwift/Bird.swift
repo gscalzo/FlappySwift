@@ -49,7 +49,7 @@ private extension Bird {
 }
 
 // Startable
-extension Bird : Startable {
+extension Bird {
     func start() {
         animate()
     }

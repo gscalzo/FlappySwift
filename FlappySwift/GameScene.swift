@@ -31,10 +31,11 @@ class GameScene: SKScene {
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
 
         screenNode = SKSpriteNode(color: UIColor.clearColor(), size: self.size)
+        screenNode.anchorPoint = CGPoint(x: 0, y: 0)
         addChild(screenNode)
-        let sky = Background(textureNamed: "sky", duration:60.0).addTo(screenNode)
-        let city = Background(textureNamed: "city", duration:20.0).addTo(screenNode)
-        let ground = Background(textureNamed: "ground", duration:5.0).addTo(screenNode)
+        let sky = Background(textureNamed: "sky", duration:60.0).addTo(screenNode, zPosition: 0)
+        let city = Background(textureNamed: "city", duration:20.0).addTo(screenNode, zPosition: 1)
+        let ground = Background(textureNamed: "ground", duration:5.0).addTo(screenNode, zPosition: 2)
         ground.zPosition(5)
         screenNode.addChild(bodyTextureName("ground"))
         bird = Bird(textureNames: ["bird1.png", "bird2.png"]).addTo(screenNode)
@@ -43,7 +44,7 @@ class GameScene: SKScene {
         score.addTo(screenNode)
         
         actors = [sky, city, ground, bird, pipes]
-        
+
         for actor in actors {
             actor.start()
         }
@@ -51,8 +52,8 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         bird.update()
     }
-
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         runAction(SKAction.playSoundFileNamed("flap.wav", waitForCompletion: false))
         bird.flap()
     }
@@ -83,11 +84,11 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.pipe.rawValue |  BodyType.bird.rawValue:
-            println("Contact with a pipe")
+            print("Contact with a pipe")
             runAction(SKAction.playSoundFileNamed("punch.wav", waitForCompletion: false))
             bird.pushDown()
         case BodyType.ground.rawValue | BodyType.bird.rawValue:
-            println("Contact with ground")
+            print("Contact with ground")
             runAction(SKAction.playSoundFileNamed("punch.wav", waitForCompletion: false))
             for actor in actors {
                 actor.stop()
@@ -111,7 +112,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch (contactMask) {
         case BodyType.gap.rawValue |  BodyType.bird.rawValue:
-            println("Contact with gap")
+            print("Contact with gap")
             runAction(SKAction.playSoundFileNamed("yeah.mp3", waitForCompletion: false))
             score.increase()
         default:

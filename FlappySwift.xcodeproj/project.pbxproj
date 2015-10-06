@@ -26,7 +26,6 @@
 		EEBF6FC41A954FF100C6D0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FC21A954FF100C6D0D2 /* Main.storyboard */; };
 		EEBF6FC61A954FF100C6D0D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FC51A954FF100C6D0D2 /* Images.xcassets */; };
 		EEBF6FC91A954FF100C6D0D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FC71A954FF100C6D0D2 /* LaunchScreen.xib */; };
-		EEBF6FD51A954FF100C6D0D2 /* FlappySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FD41A954FF100C6D0D2 /* FlappySwiftTests.swift */; };
 		EECD56931A963F4000EAFC65 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD568F1A963F4000EAFC65 /* Background.swift */; };
 		EECD56951A963F4000EAFC65 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD56911A963F4000EAFC65 /* Startable.swift */; };
 		EECD56991A96400D00EAFC65 /* ParallaxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD56981A96400D00EAFC65 /* ParallaxNode.swift */; };
@@ -35,16 +34,6 @@
 		EEE472D21A9BDEF600EB6916 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE472D11A9BDEF600EB6916 /* Pipes.swift */; };
 		EEE472D41A9BE08500EB6916 /* PipesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE472D31A9BE08500EB6916 /* PipesNode.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		EEBF6FCF1A954FF100C6D0D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EEBF6FAD1A954FF100C6D0D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEBF6FB41A954FF100C6D0D2;
-			remoteInfo = FlappySwift;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		70A734709FCDBABAB12ADEDF /* Pods_FlappySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +59,6 @@
 		EEBF6FC31A954FF100C6D0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEBF6FC51A954FF100C6D0D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EEBF6FC81A954FF100C6D0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EEBF6FCE1A954FF100C6D0D2 /* FlappySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBF6FD31A954FF100C6D0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEBF6FD41A954FF100C6D0D2 /* FlappySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappySwiftTests.swift; sourceTree = "<group>"; };
 		EECD568F1A963F4000EAFC65 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
@@ -89,13 +77,6 @@
 			files = (
 				BC2D00B83189F43C52911733 /* Pods_FlappySwift.framework in Frameworks */,
 				EE4A00901AABB07900925811 /* GameKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEBF6FCB1A954FF100C6D0D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */,
-				EEBF6FCE1A954FF100C6D0D2 /* FlappySwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,31 +224,13 @@
 			productReference = EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EEBF6FCD1A954FF100C6D0D2 /* FlappySwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EEBF6FDB1A954FF100C6D0D2 /* Build configuration list for PBXNativeTarget "FlappySwiftTests" */;
-			buildPhases = (
-				EEBF6FCA1A954FF100C6D0D2 /* Sources */,
-				EEBF6FCB1A954FF100C6D0D2 /* Frameworks */,
-				EEBF6FCC1A954FF100C6D0D2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EEBF6FD01A954FF100C6D0D2 /* PBXTargetDependency */,
-			);
-			name = FlappySwiftTests;
-			productName = FlappySwiftTests;
-			productReference = EEBF6FCE1A954FF100C6D0D2 /* FlappySwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EEBF6FAD1A954FF100C6D0D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Effective Code";
 				TargetAttributes = {
 					EEBF6FB41A954FF100C6D0D2 = {
@@ -279,10 +241,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					EEBF6FCD1A954FF100C6D0D2 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = EEBF6FB41A954FF100C6D0D2;
 					};
 				};
 			};
@@ -300,7 +258,6 @@
 			projectRoot = "";
 			targets = (
 				EEBF6FB41A954FF100C6D0D2 /* FlappySwift */,
-				EEBF6FCD1A954FF100C6D0D2 /* FlappySwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -318,13 +275,6 @@
 				EE4A008A1AAB9F5F00925811 /* yeah.mp3 in Resources */,
 				EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */,
 				EEBF6FC41A954FF100C6D0D2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEBF6FCC1A954FF100C6D0D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,23 +352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEBF6FCA1A954FF100C6D0D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEBF6FD51A954FF100C6D0D2 /* FlappySwiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EEBF6FD01A954FF100C6D0D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EEBF6FB41A954FF100C6D0D2 /* FlappySwift */;
-			targetProxy = EEBF6FCF1A954FF100C6D0D2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EEBF6FC21A954FF100C6D0D2 /* Main.storyboard */ = {
@@ -460,6 +394,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -526,6 +461,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlappySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.EffectiveCode.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -540,42 +476,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlappySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.EffectiveCode.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		EEBF6FDC1A954FF100C6D0D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FlappySwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlappySwift.app/FlappySwift";
-			};
-			name = Debug;
-		};
-		EEBF6FDD1A954FF100C6D0D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FlappySwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlappySwift.app/FlappySwift";
 			};
 			name = Release;
 		};
@@ -596,15 +499,6 @@
 			buildConfigurations = (
 				EEBF6FD91A954FF100C6D0D2 /* Debug */,
 				EEBF6FDA1A954FF100C6D0D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EEBF6FDB1A954FF100C6D0D2 /* Build configuration list for PBXNativeTarget "FlappySwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EEBF6FDC1A954FF100C6D0D2 /* Debug */,
-				EEBF6FDD1A954FF100C6D0D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
