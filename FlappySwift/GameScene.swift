@@ -34,8 +34,8 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         bird.update()
     }
-
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         bird.flap()
     }
 }
