@@ -13,13 +13,19 @@ import Cartography
 class MenuViewController: UIViewController {
     private let playButton = HTPressableButton(frame: CGRectMake(0, 0, 260, 50), buttonStyle: .Rect)
     private let gameCenterButton = HTPressableButton(frame: CGRectMake(0, 0, 260, 50), buttonStyle: .Rect)
-    private let player = MusicPlayer(filename: "Pamgaea", type: "mp3")
+    private var player: MusicPlayer?
     private let gameCenter = GameCenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gameCenter.authenticateLocalPlayer()
-        player?.play()
+        do {
+             player = try MusicPlayer(filename: "Pamgaea", type: "mp3")
+             player!.play()
+        } catch _ {
+            print("Error playing soundtrack")
+        }
+        
         setup()
         layoutView()
         style()
@@ -44,7 +50,7 @@ private extension MenuViewController{
     }
     
     @objc func onGameCenterPressed(sender: UIButton) {
-        println("onGameCenterPressed")
+        print("onGameCenterPressed")
         gameCenter.showLeaderboard()
     }
 }
@@ -52,13 +58,13 @@ private extension MenuViewController{
 // MARK: Layout
 extension MenuViewController{
     func layoutView() {
-        layout(playButton) { view in
+        constrain(playButton) { view in
             view.bottom == view.superview!.centerY - 60
             view.centerX == view.superview!.centerX
             view.height == 80
             view.width == view.superview!.width - 40
         }
-        layout(gameCenterButton) { view in
+        constrain(gameCenterButton) { view in
             view.bottom == view.superview!.centerY + 60
             view.centerX == view.superview!.centerX
             view.height == 80
