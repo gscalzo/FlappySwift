@@ -95,9 +95,7 @@ extension GameScene: SKPhysicsContactDelegate {
             }
             let shakeAction = SKAction.shake(0.1, amplitudeX: 20, amplitudeY: 20)
             screenNode.runAction(shakeAction)
-            if let gameCenter = gameCenter{
-                gameCenter.reportScore(score.currentScore)
-            }
+            gameCenter?.reportScore(score.currentScore)
             execAfter(1) {
                 self.askToPlayAgain()
             }
