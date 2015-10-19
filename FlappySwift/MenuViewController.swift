@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
         do {
              player = try MusicPlayer(filename: "Pamgaea", type: "mp3")
              player!.play()
-        } catch _ {
+        } catch {
             print("Error playing soundtrack")
         }
         
