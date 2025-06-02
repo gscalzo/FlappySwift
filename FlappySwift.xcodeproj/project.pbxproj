@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CB65C492421446332C32825 /* Pods_FlappySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760C5C021DA3753B5196430B /* Pods_FlappySwift.framework */; };
 		EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E50821A9561D100CC5198 /* MenuViewController.swift */; };
 		EE4A00821AAB98C400925811 /* punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00811AAB98C400925811 /* punch.wav */; };
 		EE4A00841AAB9B9700925811 /* flap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00831AAB9B9700925811 /* flap.wav */; };
@@ -36,9 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		760C5C021DA3753B5196430B /* Pods_FlappySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B145D6EA009A3B8408B766D6 /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.release.xcconfig"; path = "Target Support Files/Pods-FlappySwift/Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
-		DAC0BA07C9DE186B6D438729 /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.debug.xcconfig"; path = "Target Support Files/Pods-FlappySwift/Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3E50821A9561D100CC5198 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EE4A00811AAB98C400925811 /* punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch.wav; sourceTree = "<group>"; };
 		EE4A00831AAB9B9700925811 /* flap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flap.wav; sourceTree = "<group>"; };
@@ -76,7 +72,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4A00901AABB07900925811 /* GameKit.framework in Frameworks */,
-				2CB65C492421446332C32825 /* Pods_FlappySwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,18 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				EE4A008F1AABB07900925811 /* GameKit.framework */,
-				760C5C021DA3753B5196430B /* Pods_FlappySwift.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B577C3F7D1C0FB1F5B15A9EC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DAC0BA07C9DE186B6D438729 /* Pods-FlappySwift.debug.xcconfig */,
-				B145D6EA009A3B8408B766D6 /* Pods-FlappySwift.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		EE4A00801AAB98B700925811 /* sounds */ = {
@@ -119,7 +104,6 @@
 				EEBF6FD11A954FF100C6D0D2 /* FlappySwiftTests */,
 				EEBF6FB61A954FF100C6D0D2 /* Products */,
 				27DF251E19E9AE78106BB040 /* Frameworks */,
-				B577C3F7D1C0FB1F5B15A9EC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,11 +192,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEBF6FD81A954FF100C6D0D2 /* Build configuration list for PBXNativeTarget "FlappySwift" */;
 			buildPhases = (
-				4018EE7F4C3C5E3861C45D95 /* [CP] Check Pods Manifest.lock */,
 				EEBF6FB11A954FF100C6D0D2 /* Sources */,
 				EEBF6FB21A954FF100C6D0D2 /* Frameworks */,
 				EEBF6FB31A954FF100C6D0D2 /* Resources */,
-				25E1116B702C0C682FF64860 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,49 +260,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		25E1116B702C0C682FF64860 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlappySwift/Pods-FlappySwift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SIAlertView/SIAlertView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SIAlertView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlappySwift/Pods-FlappySwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4018EE7F4C3C5E3861C45D95 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FlappySwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEBF6FB11A954FF100C6D0D2 /* Sources */ = {
@@ -451,7 +390,6 @@
 		};
 		EEBF6FD91A954FF100C6D0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAC0BA07C9DE186B6D438729 /* Pods-FlappySwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -468,7 +406,6 @@
 		};
 		EEBF6FDA1A954FF100C6D0D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B145D6EA009A3B8408B766D6 /* Pods-FlappySwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
