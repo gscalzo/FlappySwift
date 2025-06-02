@@ -11,7 +11,6 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     private let skView = SKView()
-    var gameCenter: GameCenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()

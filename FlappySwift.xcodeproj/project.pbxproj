@@ -17,12 +17,10 @@
 		EE4A008C1AABA26D00925811 /* SKAction+FlappySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A008B1AABA26D00925811 /* SKAction+FlappySwift.swift */; };
 		EE4A008E1AABA37F00925811 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A008D1AABA37F00925811 /* utilities.swift */; };
 		EE4A00901AABB07900925811 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4A008F1AABB07900925811 /* GameKit.framework */; };
-		EE4A00921AABB97500925811 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A00911AABB97500925811 /* GameCenter.swift */; };
 		EEB24C1F2DEE359700EBD4FF /* FSPressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */; };
 		EEB24C212DEE373900EBD4FF /* AlertWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB24C202DEE373900EBD4FF /* AlertWrapper.swift */; };
 		EEB782B91A9D448C00811E2B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB782B81A9D448C00811E2B /* Score.swift */; };
 		EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */; };
-		EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */; };
 		EEBF6FBF1A954FF100C6D0D2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBE1A954FF100C6D0D2 /* GameScene.swift */; };
 		EEBF6FC11A954FF100C6D0D2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FC01A954FF100C6D0D2 /* GameViewController.swift */; };
 		EEBF6FC41A954FF100C6D0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FC21A954FF100C6D0D2 /* Main.storyboard */; };
@@ -50,14 +48,12 @@
 		EE4A008B1AABA26D00925811 /* SKAction+FlappySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+FlappySwift.swift"; sourceTree = "<group>"; };
 		EE4A008D1AABA37F00925811 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		EE4A008F1AABB07900925811 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		EE4A00911AABB97500925811 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPressableButton.swift; sourceTree = "<group>"; };
 		EEB24C202DEE373900EBD4FF /* AlertWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapper.swift; sourceTree = "<group>"; };
 		EEB782B81A9D448C00811E2B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBF6FB91A954FF100C6D0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		EEBF6FBE1A954FF100C6D0D2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EEBF6FC01A954FF100C6D0D2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EEBF6FC31A954FF100C6D0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,14 +136,12 @@
 			children = (
 				EEB24C202DEE373900EBD4FF /* AlertWrapper.swift */,
 				EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */,
-				EE4A00911AABB97500925811 /* GameCenter.swift */,
 				EE4A008D1AABA37F00925811 /* utilities.swift */,
 				EE4A008B1AABA26D00925811 /* SKAction+FlappySwift.swift */,
 				EE4A00851AAB9CDC00925811 /* MusicPlayer.swift */,
 				EECD568E1A963F2A00EAFC65 /* Actors */,
 				EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */,
 				EE3E50821A9561D100CC5198 /* MenuViewController.swift */,
-				EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */,
 				EEBF6FBE1A954FF100C6D0D2 /* GameScene.swift */,
 				EEBF6FC01A954FF100C6D0D2 /* GameViewController.swift */,
 				EEBF6FC21A954FF100C6D0D2 /* Main.storyboard */,
@@ -279,7 +273,6 @@
 				EE4A00881AAB9E8900925811 /* Pamgaea.mp3 in Resources */,
 				EE4A00841AAB9B9700925811 /* flap.wav in Resources */,
 				EE4A008A1AAB9F5F00925811 /* yeah.mp3 in Resources */,
-				EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */,
 				EEBF6FC41A954FF100C6D0D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +334,6 @@
 				EE4A008C1AABA26D00925811 /* SKAction+FlappySwift.swift in Sources */,
 				EEE231841A9ABDA400F248BA /* SKPhysicsBody+FlappySwift.swift in Sources */,
 				EEBF6FBF1A954FF100C6D0D2 /* GameScene.swift in Sources */,
-				EE4A00921AABB97500925811 /* GameCenter.swift in Sources */,
 				EE4A008E1AABA37F00925811 /* utilities.swift in Sources */,
 				EEBF6FC11A954FF100C6D0D2 /* GameViewController.swift in Sources */,
 				EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */,
