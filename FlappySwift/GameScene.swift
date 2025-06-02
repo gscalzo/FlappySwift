@@ -32,14 +32,51 @@ class GameScene: SKScene {
         screenNode = SKSpriteNode(color: .clear, size: self.size)
         screenNode.anchorPoint = CGPoint(x: 0, y: 0)
         addChild(screenNode)
-        let sky = Background(textureNamed: "sky", duration: 60.0).addTo(screenNode, zPosition: 0)
-        let city = Background(textureNamed: "city", duration: 20.0).addTo(screenNode, zPosition: 1)
-        let ground = Background(textureNamed: "ground", duration: 5.0).addTo(screenNode, zPosition: 2)
-        ground.zPosition(5)
+
+        // Add sky color fill at the top
+        let skyColor = UIColor(red: 143.0/255.0, green: 233.0/255.0, blue: 227.0/255.0, alpha: 1.0) // #8FE9E3
+        let skyFill = SKSpriteNode(color: skyColor, size: CGSize(width: self.size.width, height: self.size.height))
+        skyFill.anchorPoint = CGPoint(x: 0, y: 0)
+        skyFill.position = CGPoint(x: 0, y: 0)
+        skyFill.zPosition = -2
+        screenNode.addChild(skyFill)
+
+        // Add ground color fill at the bottom
+        let groundColor = UIColor(red: 164.0/255.0, green: 121.0/255.0, blue: 65.0/255.0, alpha: 1.0) // #A47941
+        let groundFillHeight: CGFloat = 80
+        let groundFill = SKSpriteNode(color: groundColor, size: CGSize(width: self.size.width, height: groundFillHeight))
+        groundFill.anchorPoint = CGPoint(x: 0, y: 0)
+        groundFill.position = CGPoint(x: 0, y: 0)
+        groundFill.zPosition = 9
+        screenNode.addChild(groundFill)
+
+        // Move backgrounds up by 40 points
+        let backgroundYOffset: CGFloat = 40
+        let sky = Background(textureNamed: "sky", duration: 60.0)
+        sky.zPosition(0)
+        sky.addTo(screenNode, zPosition: 0)
+        sky.parallaxNodePositionYOffset(backgroundYOffset)
+
+        let city = Background(textureNamed: "city", duration: 20.0)
+        city.zPosition(1)
+        city.addTo(screenNode, zPosition: 1)
+        city.parallaxNodePositionYOffset(backgroundYOffset)
+
+        let ground = Background(textureNamed: "ground", duration: 5.0)
+        ground.zPosition(10)
+        ground.addTo(screenNode, zPosition: 10)
+        ground.parallaxNodePositionYOffset(backgroundYOffset)
+
         screenNode.addChild(bodyTextureName("ground"))
         bird = Bird(textureNames: ["bird1.png", "bird2.png"]).addTo(screenNode)
         bird.position = CGPoint(x: 30.0, y: 400.0)
         let pipes = Pipes(topPipeTexture: "topPipe.png", bottomPipeTexture: "bottomPipe").addTo(screenNode)
+        // Ensure all pipes are below the ground
+        for child in screenNode.children {
+            if child.name == "PIPES" {
+                child.zPosition = 5
+            }
+        }
         score.addTo(screenNode)
         actors = [sky, city, ground, bird, pipes]
         for actor in actors {

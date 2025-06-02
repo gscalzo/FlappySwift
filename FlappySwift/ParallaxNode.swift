@@ -37,6 +37,10 @@ class ParallaxNode {
         node.zPosition = zPosition
         return self
     }
+    
+    func setYOffset(_ yOffset: CGFloat) {
+        node.position.y = yOffset
+    }
 }
 
 // MARK: Startable

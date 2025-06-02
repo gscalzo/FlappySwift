@@ -16,6 +16,10 @@ class Background {
         parallaxNode.zPosition(zPosition)
     }
     
+    func parallaxNodePositionYOffset(_ yOffset: CGFloat) {
+        parallaxNode.setYOffset(yOffset)
+    }
+    
     init(textureNamed textureName: String, duration: Double) {
         parallaxNode = ParallaxNode(textureNamed: textureName)
         self.duration = duration
