@@ -24,7 +24,7 @@ class GameScene: SKScene {
     
     var onPlayAgainPressed: (() -> Void)!
     var onCancelPressed: (() -> Void)!
-    
+
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)

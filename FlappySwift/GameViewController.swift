@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         skView.frame = view.bounds
         view.addSubview(skView)
+        skView.showsPhysics = true
         createTheScene()
     }
     
