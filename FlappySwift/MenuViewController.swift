@@ -10,13 +10,10 @@ import UIKit
 
 class MenuViewController: UIViewController {
     private let playButton = FSPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), style: .grapefruit)
-    private let gameCenterButton = FSPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), style: .aqua)
     private var player: MusicPlayer?
-    private let gameCenter = GameCenter()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameCenter.authenticateLocalPlayer()
         do {
              player = try MusicPlayer(filename: "Pamgaea", type: "mp3")
              player!.play()
@@ -44,10 +41,6 @@ private extension MenuViewController {
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
     }
-    
-    @objc func onGameCenterPressed(_ sender: UIButton) {
-        print("onGameCenterPressed")
-    }
 }
 
 // MARK: Layout
@@ -67,7 +60,6 @@ extension MenuViewController {
 private extension MenuViewController {
     func style() {
         playButton.setTitle("Play", for: .normal)
-        gameCenterButton.setTitle("Game Center", for: .normal)
     }
 }
 
