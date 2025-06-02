@@ -39,6 +39,7 @@ private extension MenuViewController {
     @objc func onPlayPressed(_ sender: UIButton) {
         let vc = GameViewController()
         vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
 }
