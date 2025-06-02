@@ -33,7 +33,7 @@ graph TD
 
 ## 📝 About
 
-- **Author:** Gi Scalzo
+- **Author:** Gio Scalzo
 - **Original Year:** 2014
 - **Renewed Year:** 2025
 - **Language:** Swift
