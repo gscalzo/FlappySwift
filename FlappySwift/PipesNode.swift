@@ -7,6 +7,15 @@
 //
 
 import SpriteKit
+import Foundation
+
+// Add BodyType enum here to resolve scope issues
+enum BodyType: UInt32 {
+    case bird   = 1  // (1 << 0)
+    case ground = 2  // (1 << 1)
+    case pipe   = 4  // (1 << 2)
+    case gap    = 8  // (1 << 3)
+}
 
 class PipesNode {
     class var kind: String { return "PIPES" }
@@ -63,26 +72,24 @@ class PipesNode {
 // Creators
 private func createPipe(imageNamed: String) -> SKSpriteNode {
     let pipeNode = SKSpriteNode(imageNamed: imageNamed)
-    let size = CGSize(width: pipeNode.size.width, height: pipeNode.size.height)
-    pipeNode.physicsBody = SKPhysicsBody.rectSize(size) {
-        body in
-        body.isDynamic           = false
-        body.affectedByGravity = false
-        body.categoryBitMask   = BodyType.pipe.rawValue
-        body.collisionBitMask  = BodyType.pipe.rawValue
-    }
+    let bodyWidth = pipeNode.size.width * 0.7
+    let bodyHeight = pipeNode.size.height * 0.99
+    let size = CGSize(width: bodyWidth, height: bodyHeight)
+    pipeNode.physicsBody = SKPhysicsBody(rectangleOf: size)
+    pipeNode.physicsBody?.isDynamic = false
+    pipeNode.physicsBody?.affectedByGravity = false
+    pipeNode.physicsBody?.categoryBitMask = BodyType.pipe.rawValue
+    pipeNode.physicsBody?.collisionBitMask = BodyType.pipe.rawValue
     return pipeNode
 }
 
 private func createGap(size: CGSize) -> SKSpriteNode {
     let gapNode = SKSpriteNode(color: .clear, size: size)
     gapNode.zPosition = 6
-    gapNode.physicsBody = SKPhysicsBody.rectSize(size) {
-        body in
-        body.isDynamic = false
-        body.affectedByGravity = false
-        body.categoryBitMask = BodyType.gap.rawValue
-        body.collisionBitMask = BodyType.gap.rawValue
-    }
+    gapNode.physicsBody = SKPhysicsBody(rectangleOf: size)
+    gapNode.physicsBody?.isDynamic = false
+    gapNode.physicsBody?.affectedByGravity = false
+    gapNode.physicsBody?.categoryBitMask = BodyType.gap.rawValue
+    gapNode.physicsBody?.collisionBitMask = BodyType.gap.rawValue
     return gapNode
 }
