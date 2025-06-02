@@ -10,13 +10,12 @@ import UIKit
 import SpriteKit
 
 extension SKNode {
-    class func unarchiveFromFile(file : NSString) throws -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
-            let sceneData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
-            let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
-            
+    class func unarchiveFromFile(_ file: String) throws -> SKNode? {
+        if let path = Bundle.main.path(forResource: file, ofType: "sks") {
+            let sceneData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let archiver = try NSKeyedUnarchiver(forReadingFrom: sceneData)
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
+            let scene = archiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as! GameScene
             archiver.finishDecoding()
             return scene
         } else {
@@ -44,18 +43,18 @@ class GameViewController: UIViewController {
                 skView.showsFPS = true
                 skView.showsNodeCount = true
                 skView.ignoresSiblingOrder = true
-                scene.scaleMode = .AspectFill
+                scene.scaleMode = .aspectFill
                 
-                scene.onPlayAgainPressed = {[weak self] in
+                scene.onPlayAgainPressed = { [weak self] in
                     self?.createTheScene()
                 }
                 
-                scene.onCancelPressed = {[weak self] in
-                    self?.dismissViewControllerAnimated(true, completion: nil)
+                scene.onCancelPressed = { [weak self] in
+                    self?.dismiss(animated: true, completion: nil)
                 }
                 skView.presentScene(scene)
             }
-        }catch (let error) {
+        } catch {
             fatalError("Error \(error) while unarchiving 'GameScene'")
         }
     }

@@ -12,6 +12,7 @@ class Score {
     private let score = SKLabelNode(text: "0")
     var currentScore = 0
     
+    @discardableResult
     func addTo(parentNode: SKSpriteNode) -> Score {
         score.fontName = "MarkerFelt-Wide"
         score.fontSize = 30

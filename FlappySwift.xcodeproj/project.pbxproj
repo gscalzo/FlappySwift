@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC2D00B83189F43C52911733 /* Pods_FlappySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A734709FCDBABAB12ADEDF /* Pods_FlappySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7530922E680E0F4E33B9F8FE /* Pods_FlappySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601FEA2D12D782E864AA7389 /* Pods_FlappySwift.framework */; };
 		EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E50821A9561D100CC5198 /* MenuViewController.swift */; };
 		EE4A00821AAB98C400925811 /* punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00811AAB98C400925811 /* punch.wav */; };
 		EE4A00841AAB9B9700925811 /* flap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE4A00831AAB9B9700925811 /* flap.wav */; };
@@ -36,9 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70A734709FCDBABAB12ADEDF /* Pods_FlappySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86C3B2B182562AE17329E6B8 /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
-		8B89CB76BB132EC06824620F /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
+		601FEA2D12D782E864AA7389 /* Pods_FlappySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75B7BA6B49D0AB29735F9917 /* Pods-FlappySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.release.xcconfig"; path = "Target Support Files/Pods-FlappySwift/Pods-FlappySwift.release.xcconfig"; sourceTree = "<group>"; };
+		97AD7B6268C744607446DAA0 /* Pods-FlappySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappySwift.debug.xcconfig"; path = "Target Support Files/Pods-FlappySwift/Pods-FlappySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3E50821A9561D100CC5198 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EE4A00811AAB98C400925811 /* punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch.wav; sourceTree = "<group>"; };
 		EE4A00831AAB9B9700925811 /* flap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flap.wav; sourceTree = "<group>"; };
@@ -75,19 +75,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC2D00B83189F43C52911733 /* Pods_FlappySwift.framework in Frameworks */,
 				EE4A00901AABB07900925811 /* GameKit.framework in Frameworks */,
+				7530922E680E0F4E33B9F8FE /* Pods_FlappySwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02152D9AC678FB6903AE3F93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97AD7B6268C744607446DAA0 /* Pods-FlappySwift.debug.xcconfig */,
+				75B7BA6B49D0AB29735F9917 /* Pods-FlappySwift.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		27DF251E19E9AE78106BB040 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				EE4A008F1AABB07900925811 /* GameKit.framework */,
-				70A734709FCDBABAB12ADEDF /* Pods_FlappySwift.framework */,
+				601FEA2D12D782E864AA7389 /* Pods_FlappySwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,23 +113,14 @@
 			name = sounds;
 			sourceTree = "<group>";
 		};
-		EEB5B3EA25B29D4CA9A7A111 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8B89CB76BB132EC06824620F /* Pods-FlappySwift.debug.xcconfig */,
-				86C3B2B182562AE17329E6B8 /* Pods-FlappySwift.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		EEBF6FAC1A954FF100C6D0D2 = {
 			isa = PBXGroup;
 			children = (
 				EEBF6FB71A954FF100C6D0D2 /* FlappySwift */,
 				EEBF6FD11A954FF100C6D0D2 /* FlappySwiftTests */,
 				EEBF6FB61A954FF100C6D0D2 /* Products */,
-				EEB5B3EA25B29D4CA9A7A111 /* Pods */,
 				27DF251E19E9AE78106BB040 /* Frameworks */,
+				02152D9AC678FB6903AE3F93 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,12 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEBF6FD81A954FF100C6D0D2 /* Build configuration list for PBXNativeTarget "FlappySwift" */;
 			buildPhases = (
-				F8845EAB39C117D523F772EE /* Check Pods Manifest.lock */,
+				2C42C5EC351C4F4D414642A1 /* [CP] Check Pods Manifest.lock */,
 				EEBF6FB11A954FF100C6D0D2 /* Sources */,
 				EEBF6FB21A954FF100C6D0D2 /* Frameworks */,
 				EEBF6FB31A954FF100C6D0D2 /* Resources */,
-				EE08379E1CD8E2D494E7C37E /* Copy Pods Resources */,
-				6154A37D3BE89A94AAF8A34D /* Embed Pods Frameworks */,
+				95C85D776147554C2A8C1077 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,49 +281,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6154A37D3BE89A94AAF8A34D /* Embed Pods Frameworks */ = {
+		2C42C5EC351C4F4D414642A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlappySwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE08379E1CD8E2D494E7C37E /* Copy Pods Resources */ = {
+		95C85D776147554C2A8C1077 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlappySwift/Pods-FlappySwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HTPressableButton/HTPressableButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SIAlertView/SIAlertView.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTPressableButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SIAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlappySwift/Pods-FlappySwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8845EAB39C117D523F772EE /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlappySwift/Pods-FlappySwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,7 +451,7 @@
 		};
 		EEBF6FD91A954FF100C6D0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B89CB76BB132EC06824620F /* Pods-FlappySwift.debug.xcconfig */;
+			baseConfigurationReference = 97AD7B6268C744607446DAA0 /* Pods-FlappySwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -469,7 +466,7 @@
 		};
 		EEBF6FDA1A954FF100C6D0D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C3B2B182562AE17329E6B8 /* Pods-FlappySwift.release.xcconfig */;
+			baseConfigurationReference = 75B7BA6B49D0AB29735F9917 /* Pods-FlappySwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

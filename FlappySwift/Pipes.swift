@@ -9,7 +9,7 @@
 import SpriteKit
 
 class Pipes {
-    private class var createActionKey : String { get {return "createActionKey"} }
+    private class var createActionKey: String { return "createActionKey" }
     private var parentNode: SKSpriteNode!
     private let topPipeTexture: String
     private let bottomPipeTexture: String
@@ -19,30 +19,31 @@ class Pipes {
         self.bottomPipeTexture = bottomPipeTexture
     }
     
-    func addTo(parentNode: SKSpriteNode) -> Pipes {
+    @discardableResult
+    func addTo(_ parentNode: SKSpriteNode) -> Pipes {
         self.parentNode = parentNode
         return self
     }
 }
 
-//MARK: Startable
-extension Pipes : Startable {
+// MARK: Startable
+extension Pipes: Startable {
     func start() {
-        let createAction = SKAction.repeatActionForever(
+        let createAction = SKAction.repeatForever(
             SKAction.sequence(
                 [
-                    SKAction.runBlock {
-                        self.createNewPipesNode()
+                    SKAction.run { [weak self] in
+                        self?.createNewPipesNode()
                     },
-                    SKAction.waitForDuration(3)
+                    SKAction.wait(forDuration: 3)
                 ]
             ) )
         
-        parentNode.runAction(createAction, withKey: Pipes.createActionKey)
+        parentNode.run(createAction, withKey: Pipes.createActionKey)
     }
     
     func stop() {
-        parentNode.removeActionForKey(Pipes.createActionKey)
+        parentNode.removeAction(forKey: Pipes.createActionKey)
         
         let pipeNodes = parentNode.children.filter {
             $0.name == PipesNode.kind
@@ -53,10 +54,10 @@ extension Pipes : Startable {
     }
 }
 
-//MARK: Private
+// MARK: Private
 private extension Pipes {
     func createNewPipesNode() {
-        PipesNode(topPipeTexture: topPipeTexture, bottomPipeTexture:bottomPipeTexture, centerY: centerPipes()).addTo(parentNode).start()
+        PipesNode(topPipeTexture: topPipeTexture, bottomPipeTexture: bottomPipeTexture, centerY: centerPipes()).addTo(parentNode).start()
     }
     
     func centerPipes() -> CGFloat {

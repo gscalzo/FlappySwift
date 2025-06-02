@@ -9,11 +9,11 @@
 import SpriteKit
 
 extension SKPhysicsBody {
-    typealias BodyBuilderClosure = (SKPhysicsBody) -> ()
+    typealias BodyBuilderClosure = (SKPhysicsBody) -> Void
     
-    class func rectSize(size: CGSize,
+    class func rectSize(_ size: CGSize,
         builderClosure: BodyBuilderClosure) -> SKPhysicsBody {
-            let body = SKPhysicsBody(rectangleOfSize: size)
+            let body = SKPhysicsBody(rectangleOf: size)
             builderClosure(body)
             return body
     }

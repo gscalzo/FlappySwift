@@ -8,11 +8,10 @@
 
 import UIKit
 import HTPressableButton
-import Cartography
 
 class MenuViewController: UIViewController {
-    private let playButton = HTPressableButton(frame: CGRectMake(0, 0, 260, 50), buttonStyle: .Rect)
-    private let gameCenterButton = HTPressableButton(frame: CGRectMake(0, 0, 260, 50), buttonStyle: .Rect)
+    private let playButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)
+    private let gameCenterButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)
     private var player: MusicPlayer?
     private let gameCenter = GameCenter()
     
@@ -22,7 +21,7 @@ class MenuViewController: UIViewController {
         do {
              player = try MusicPlayer(filename: "Pamgaea", type: "mp3")
              player!.play()
-        } catch _ {
+        } catch {
             print("Error playing soundtrack")
         }
         
@@ -34,49 +33,52 @@ class MenuViewController: UIViewController {
 }
 
 // MARK: Setup
-private extension MenuViewController{
-    func setup(){
-        playButton.addTarget(self, action: "onPlayPressed:", forControlEvents: .TouchUpInside)
+private extension MenuViewController {
+    func setup() {
+        playButton.addTarget(self, action: #selector(onPlayPressed(_:)), for: .touchUpInside)
+        playButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(playButton)
-        gameCenterButton.addTarget(self, action: "onGameCenterPressed:", forControlEvents: .TouchUpInside)
+        gameCenterButton.addTarget(self, action: #selector(onGameCenterPressed(_:)), for: .touchUpInside)
+        gameCenterButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gameCenterButton)
     }
     
-    @objc func onPlayPressed(sender: UIButton) {
+    @objc func onPlayPressed(_ sender: UIButton) {
         let vc = GameViewController()
         vc.gameCenter = gameCenter
-        vc.modalTransitionStyle = .CrossDissolve
-        presentViewController(vc, animated: true, completion: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
     
-    @objc func onGameCenterPressed(sender: UIButton) {
+    @objc func onGameCenterPressed(_ sender: UIButton) {
         print("onGameCenterPressed")
         gameCenter.showLeaderboard()
     }
 }
 
 // MARK: Layout
-extension MenuViewController{
+extension MenuViewController {
     func layoutView() {
-        constrain(playButton) { view in
-            view.bottom == view.superview!.centerY - 60
-            view.centerX == view.superview!.centerX
-            view.height == 80
-            view.width == view.superview!.width - 40
-        }
-        constrain(gameCenterButton) { view in
-            view.bottom == view.superview!.centerY + 60
-            view.centerX == view.superview!.centerX
-            view.height == 80
-            view.width == view.superview!.width - 40
-        }
+        // Play Button Constraints
+        NSLayoutConstraint.activate([
+            playButton.heightAnchor.constraint(equalToConstant: 80),
+            playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            playButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
+            playButton.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -60)
+        ])
+        // Game Center Button Constraints
+        NSLayoutConstraint.activate([
+            gameCenterButton.heightAnchor.constraint(equalToConstant: 80),
+            gameCenterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            gameCenterButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
+            gameCenterButton.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 60)
+        ])
     }
 }
 
-
 // MARK: Style
-private extension MenuViewController{
-    func style(){
+private extension MenuViewController {
+    func style() {
         playButton.buttonColor = UIColor.ht_grapeFruitColor()
         playButton.shadowColor = UIColor.ht_grapeFruitDarkColor()
         gameCenterButton.buttonColor = UIColor.ht_aquaColor()
@@ -85,10 +87,10 @@ private extension MenuViewController{
 }
 
 // MARK: Render
-private extension MenuViewController{
-    func render(){
-        playButton.setTitle("Play", forState: .Normal)
-        gameCenterButton.setTitle("Game Center", forState: .Normal)
+private extension MenuViewController {
+    func render() {
+        playButton.setTitle("Play", for: .normal)
+        gameCenterButton.setTitle("Game Center", for: .normal)
     }
 }
 

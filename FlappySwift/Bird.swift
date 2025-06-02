@@ -8,12 +8,12 @@
 
 import SpriteKit
 
-class Bird : Startable {
+class Bird: Startable {
     private var node: SKSpriteNode!
     private let textureNames: [String]
     private var dying = false
 
-    var position : CGPoint {
+    var position: CGPoint {
         set { node.position = newValue }
         get { return node.position }
     }
@@ -23,7 +23,8 @@ class Bird : Startable {
         node = createNode()
     }
     
-    func addTo(scene: SKSpriteNode) -> Bird{
+    @discardableResult
+    func addTo(_ scene: SKSpriteNode) -> Bird {
         scene.addChild(node)
         return self
     }
@@ -34,16 +35,15 @@ private extension Bird {
     func createNode() -> SKSpriteNode {
         let birdNode = SKSpriteNode(imageNamed: textureNames.first!)
         birdNode.zPosition = 2.0
-        birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size.scale(0.8)) {
+        birdNode.physicsBody = SKPhysicsBody.rectSize(birdNode.size.scale(factor: 0.8)) {
             body in
-            body.dynamic = true
+            body.isDynamic = true
             body.categoryBitMask    = BodyType.bird.rawValue
             body.collisionBitMask   = BodyType.bird.rawValue
             body.contactTestBitMask = BodyType.ground.rawValue |
                 BodyType.pipe.rawValue |
                 BodyType.gap.rawValue
         }
-
         return birdNode
     }
 }
@@ -55,7 +55,7 @@ extension Bird {
     }
     
     func stop() {
-        node.physicsBody!.dynamic = false
+        node.physicsBody!.isDynamic = false
         node.removeAllActions()
     }
 }
@@ -88,14 +88,13 @@ extension Bird {
 
 // Private
 extension Bird {
-    private func animate(){
+    private func animate() {
         let animationFrames = textureNames.map { texName in
             SKTexture(imageNamed: texName)
         }
-        
-        node.runAction(
-            SKAction.repeatActionForever(
-                SKAction.animateWithTextures(animationFrames, timePerFrame: 0.5)
+        node.run(
+            SKAction.repeatForever(
+                SKAction.animate(with: animationFrames, timePerFrame: 0.5)
             ))
     }
 }
