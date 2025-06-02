@@ -7,14 +7,16 @@
 //
 
 import UIKit
-import HTPressableButton
 
 class MenuViewController: UIViewController {
-    private let playButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)!
+    private let playButton = FSPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), style: .grapefruit)
+    private let gameCenterButton = FSPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), style: .aqua)
     private var player: MusicPlayer?
+    private let gameCenter = GameCenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameCenter.authenticateLocalPlayer()
         do {
              player = try MusicPlayer(filename: "Pamgaea", type: "mp3")
              player!.play()
@@ -64,8 +66,8 @@ extension MenuViewController {
 // MARK: Style
 private extension MenuViewController {
     func style() {
-        playButton.buttonColor = UIColor.ht_grapeFruit()
-        playButton.shadowColor = UIColor.ht_grapeFruitDark()
+        playButton.setTitle("Play", for: .normal)
+        gameCenterButton.setTitle("Game Center", for: .normal)
     }
 }
 

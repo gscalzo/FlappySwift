@@ -18,6 +18,7 @@
 		EE4A008E1AABA37F00925811 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A008D1AABA37F00925811 /* utilities.swift */; };
 		EE4A00901AABB07900925811 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4A008F1AABB07900925811 /* GameKit.framework */; };
 		EE4A00921AABB97500925811 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A00911AABB97500925811 /* GameCenter.swift */; };
+		EEB24C1F2DEE359700EBD4FF /* FSPressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */; };
 		EEB782B91A9D448C00811E2B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB782B81A9D448C00811E2B /* Score.swift */; };
 		EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */; };
 		EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */; };
@@ -49,6 +50,7 @@
 		EE4A008D1AABA37F00925811 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		EE4A008F1AABB07900925811 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		EE4A00911AABB97500925811 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
+		EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPressableButton.swift; sourceTree = "<group>"; };
 		EEB782B81A9D448C00811E2B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBF6FB91A954FF100C6D0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +100,6 @@
 				DAC0BA07C9DE186B6D438729 /* Pods-FlappySwift.debug.xcconfig */,
 				B145D6EA009A3B8408B766D6 /* Pods-FlappySwift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -135,6 +136,7 @@
 		EEBF6FB71A954FF100C6D0D2 /* FlappySwift */ = {
 			isa = PBXGroup;
 			children = (
+				EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */,
 				EE4A00911AABB97500925811 /* GameCenter.swift */,
 				EE4A008D1AABA37F00925811 /* utilities.swift */,
 				EE4A008B1AABA26D00925811 /* SKAction+FlappySwift.swift */,
@@ -249,6 +251,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -341,6 +344,7 @@
 				EEBF6FC11A954FF100C6D0D2 /* GameViewController.swift in Sources */,
 				EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */,
 				EE3E50831A9561D100CC5198 /* MenuViewController.swift in Sources */,
+				EEB24C1F2DEE359700EBD4FF /* FSPressableButton.swift in Sources */,
 				EECD56951A963F4000EAFC65 /* Startable.swift in Sources */,
 				EEE472D41A9BE08500EB6916 /* PipesNode.swift in Sources */,
 				EEE231821A9AB72100F248BA /* Bird.swift in Sources */,
