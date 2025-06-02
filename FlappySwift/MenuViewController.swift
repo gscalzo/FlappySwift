@@ -10,8 +10,8 @@ import UIKit
 import HTPressableButton
 
 class MenuViewController: UIViewController {
-    private let playButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)
-    private let gameCenterButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)
+    private let playButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)!
+    private let gameCenterButton = HTPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), buttonStyle: .rect)!
     private var player: MusicPlayer?
     private let gameCenter = GameCenter()
     
@@ -79,10 +79,10 @@ extension MenuViewController {
 // MARK: Style
 private extension MenuViewController {
     func style() {
-        playButton.buttonColor = UIColor.ht_grapeFruitColor()
-        playButton.shadowColor = UIColor.ht_grapeFruitDarkColor()
-        gameCenterButton.buttonColor = UIColor.ht_aquaColor()
-        gameCenterButton.shadowColor = UIColor.ht_aquaDarkColor()
+        playButton.buttonColor = UIColor.ht_grapeFruit()
+        playButton.shadowColor = UIColor.ht_grapeFruitDark()
+        gameCenterButton.buttonColor = UIColor.ht_aqua()
+        gameCenterButton.shadowColor = UIColor.ht_aquaDark()
     }
 }
 

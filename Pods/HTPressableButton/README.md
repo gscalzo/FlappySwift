@@ -7,12 +7,12 @@ HTPressableButton is designed for iOS developers to be able to spend time develo
 
 **Compatible with:**  iOS 6.0 and above
 
-**Current Version:** 1.3.2
+**Current Version:** 1.3.3
 
-You can check out our documentation [here](http://cocoadocs.org/docsets/HTPressableButton/1.3.0/). 
+You can check out our documentation [here](http://cocoadocs.org/docsets/HTPressableButton/1.3.3/). 
 Installation
 -------------------
-HTPressableButton can be installed via [Cocoapods](http://cocoapods.org/)
+HTPressableButton can be installed via [CocoaPods](http://cocoapods.org/)
 
 ```ruby
 pod 'HTPressableButton'
@@ -147,10 +147,18 @@ The different types of buttons have different default value set for its corner r
     buttonNameHere.cornerRadius = 20;
 ```
 
+To change the font of the button:
+
+```objective-c  
+    //Set button font
+    buttonNameHere.titleFont = [UIFont fontWithName:@"Avenir" size:18];
+```
+
+
 <br>
 
 ###Additional Colors
-You can freely use the additional colors in the file *UIColors+HTColor* anywhere in your project by:
+You can freely use the additional colors in the file `UIColors+HTColor` anywhere in your project by:
 ```objective-c
     [UIColor ht_colorNameHere]
     
@@ -176,6 +184,7 @@ Welcome contributors! Please don't hesitate to make an issue or pull request :)
 [![Manoj Mahapatra](https://avatars3.githubusercontent.com/u/2066984?s=80)](https://github.com/indideveloper)
 [![Pitiphong Phongpattranont](https://avatars2.githubusercontent.com/u/426153?s=80)](https://github.com/pitiphong-p)
 [![Alexsander Akers](https://avatars3.githubusercontent.com/u/241156?s=80)](https://github.com/a2)
+[![Naji Dmeiri](https://avatars2.githubusercontent.com/u/8139148?v=3&s=96)](https://github.com/ndmeiri)
 
 
 Showcase

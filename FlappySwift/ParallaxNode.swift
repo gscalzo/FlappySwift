@@ -40,7 +40,8 @@ class ParallaxNode {
 }
 
 // MARK: Startable
-extension ParallaxNode: Startable {
+extension ParallaxNode {
+    
     func start(duration: TimeInterval) {
         node.run(SKAction.repeatForever(SKAction.sequence(
             [

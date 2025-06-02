@@ -13,7 +13,7 @@ class Score {
     var currentScore = 0
     
     @discardableResult
-    func addTo(parentNode: SKSpriteNode) -> Score {
+    func addTo(_ parentNode: SKSpriteNode) -> Score {
         score.fontName = "MarkerFelt-Wide"
         score.fontSize = 30
         score.position = CGPoint(x: parentNode.size.width/2, y: parentNode.size.height - 40)

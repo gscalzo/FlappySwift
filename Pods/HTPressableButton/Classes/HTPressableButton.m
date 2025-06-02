@@ -48,6 +48,7 @@
 {
     _shadowHeight = shadowHeight;
     [super setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 0.0f, shadowHeight, 0.0f)];
+    [super setImageEdgeInsets:UIEdgeInsetsMake(0.0f, 0.0f, shadowHeight, 0.0f)];
     [self createButton];
 }
 
@@ -66,7 +67,7 @@
             _cornerRadius = self.frame.size.height/2;
             self.clipsToBounds = YES;
             break;
-
+            
         default:
             _cornerRadius = 0.0;
             break;
@@ -92,6 +93,12 @@
     [self createButton];
 }
 
+- (void) setTitleFont:(UIFont *)titleFont
+{
+    _titleFont = titleFont;
+    [self createButton];
+}
+
 #pragma mark - Set Button Default Style
 
 - (UIColor *) buttonColorOrDefault
@@ -114,6 +121,11 @@
     return _disabledShadowColor ?: [UIColor ht_mediumDarkColor];
 }
 
+- (UIFont *) titleFontOrDefault
+{
+    return _titleFont ?: [UIFont fontWithName:@"Avenir" size:18];
+}
+
 - (void) setDefaultShadowHeightForStyle:(HTPressableButtonStyle)style
 {
     if (style == HTPressableButtonStyleCircular)
@@ -125,6 +137,7 @@
         _shadowHeight = self.frame.size.height * HTShadowDefaultHeightPercentage;
     }
     [super setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 0.0f, _shadowHeight, 0.0f)];
+    [super setImageEdgeInsets:UIEdgeInsetsMake(0.0f, 0.0f, _shadowHeight, 0.0f)];
 }
 
 
@@ -137,16 +150,19 @@
         if (self.style == HTPressableButtonStyleCircular)
         {
             [super setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, -((_shadowHeight/4) * HTShadowOffsetWhenPressed), 0)];
+            [super setImageEdgeInsets:UIEdgeInsetsMake(0, 0, -((_shadowHeight/4) * HTShadowOffsetWhenPressed), 0)];
         }
         else
         {
             [super setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, -(_shadowHeight * HTShadowOffsetWhenPressed), 0)];
+            [super setImageEdgeInsets:UIEdgeInsetsMake(0, 0, -(_shadowHeight * HTShadowOffsetWhenPressed), 0)];
         }
         
     }
     else
     {
         [super setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, _shadowHeight, 0)];
+        [super setImageEdgeInsets:UIEdgeInsetsMake(0, 0, _shadowHeight, 0)];
     }
     [super setHighlighted:highlighted];
 }
@@ -174,9 +190,9 @@
                                              shadowColor:[self disabledShadowColorOrDefault]
                                             cornerRadius:_cornerRadius];
         }
-
+        
         [self setBackgroundImage:buttonDisabled forState:UIControlStateDisabled];
-
+        
     }
 }
 
@@ -185,11 +201,11 @@
 
 - (void) createButton
 {
-    [self.titleLabel setFont:[UIFont fontWithName:@"Avenir" size:18]];
+    [self.titleLabel setFont:[self titleFontOrDefault]];
     
     UIImage *buttonNormal;
     UIImage *buttonHighlighted;
-
+    
     if (self.style == HTPressableButtonStyleCircular)
     {
         buttonNormal = [UIImage ht_circularButtonWithColor:[self buttonColorOrDefault]
