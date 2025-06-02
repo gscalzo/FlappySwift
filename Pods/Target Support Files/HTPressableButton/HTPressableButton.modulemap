@@ -1,6 +1,0 @@
-framework module HTPressableButton {
-  umbrella header "HTPressableButton-umbrella.h"
-
-  export *
-  module * { export * }
-}

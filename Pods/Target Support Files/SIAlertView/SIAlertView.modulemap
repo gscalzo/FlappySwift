@@ -1,6 +1,0 @@
-framework module SIAlertView {
-  umbrella header "SIAlertView-umbrella.h"
-
-  export *
-  module * { export * }
-}

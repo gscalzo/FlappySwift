@@ -7,22 +7,17 @@
 //
 
 import UIKit
-import HTPressableButton
-import Cartography
 
 class MenuViewController: UIViewController {
-    private let playButton = HTPressableButton(frame: CGRectMake(0, 0, 260, 50), buttonStyle: .Rect)
-    private let gameCenterButton = HTPressableButton(frame: CGRectMake(0, 0, 260, 50), buttonStyle: .Rect)
+    private let playButton = FSPressableButton(frame: CGRect(x: 0, y: 0, width: 260, height: 50), style: .grapefruit)
     private var player: MusicPlayer?
-    private let gameCenter = GameCenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameCenter.authenticateLocalPlayer()
         do {
              player = try MusicPlayer(filename: "Pamgaea", type: "mp3")
              player!.play()
-        } catch _ {
+        } catch {
             print("Error playing soundtrack")
         }
         
@@ -34,61 +29,45 @@ class MenuViewController: UIViewController {
 }
 
 // MARK: Setup
-private extension MenuViewController{
-    func setup(){
-        playButton.addTarget(self, action: "onPlayPressed:", forControlEvents: .TouchUpInside)
+private extension MenuViewController {
+    func setup() {
+        playButton.addTarget(self, action: #selector(onPlayPressed(_:)), for: .touchUpInside)
+        playButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(playButton)
-        gameCenterButton.addTarget(self, action: "onGameCenterPressed:", forControlEvents: .TouchUpInside)
-        view.addSubview(gameCenterButton)
     }
     
-    @objc func onPlayPressed(sender: UIButton) {
+    @objc func onPlayPressed(_ sender: UIButton) {
         let vc = GameViewController()
-        vc.gameCenter = gameCenter
-        vc.modalTransitionStyle = .CrossDissolve
-        presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    @objc func onGameCenterPressed(sender: UIButton) {
-        print("onGameCenterPressed")
-        gameCenter.showLeaderboard()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 
 // MARK: Layout
-extension MenuViewController{
+extension MenuViewController {
     func layoutView() {
-        constrain(playButton) { view in
-            view.bottom == view.superview!.centerY - 60
-            view.centerX == view.superview!.centerX
-            view.height == 80
-            view.width == view.superview!.width - 40
-        }
-        constrain(gameCenterButton) { view in
-            view.bottom == view.superview!.centerY + 60
-            view.centerX == view.superview!.centerX
-            view.height == 80
-            view.width == view.superview!.width - 40
-        }
+        // Play Button Constraints
+        NSLayoutConstraint.activate([
+            playButton.heightAnchor.constraint(equalToConstant: 80),
+            playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            playButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
+            playButton.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -60)
+        ])
     }
 }
 
-
 // MARK: Style
-private extension MenuViewController{
-    func style(){
-        playButton.buttonColor = UIColor.ht_grapeFruitColor()
-        playButton.shadowColor = UIColor.ht_grapeFruitDarkColor()
-        gameCenterButton.buttonColor = UIColor.ht_aquaColor()
-        gameCenterButton.shadowColor = UIColor.ht_aquaDarkColor()
+private extension MenuViewController {
+    func style() {
+        playButton.setTitle("Play", for: .normal)
     }
 }
 
 // MARK: Render
-private extension MenuViewController{
-    func render(){
-        playButton.setTitle("Play", forState: .Normal)
-        gameCenterButton.setTitle("Game Center", forState: .Normal)
+private extension MenuViewController {
+    func render() {
+        playButton.setTitle("Play", for: .normal)
     }
 }
 

@@ -12,8 +12,12 @@ class Background {
     private let parallaxNode: ParallaxNode
     private let duration: Double
     
-    func zPosition(zPosition: CGFloat) {
+    func zPosition(_ zPosition: CGFloat) {
         parallaxNode.zPosition(zPosition)
+    }
+    
+    func parallaxNodePositionYOffset(_ yOffset: CGFloat) {
+        parallaxNode.setYOffset(yOffset)
     }
     
     init(textureNamed textureName: String, duration: Double) {
@@ -21,14 +25,15 @@ class Background {
         self.duration = duration
     }
     
-    func addTo(parentNode: SKSpriteNode, zPosition: CGFloat) -> Self {
+    @discardableResult
+    func addTo(_ parentNode: SKSpriteNode, zPosition: CGFloat) -> Self {
         parallaxNode.addTo(parentNode, zPosition: zPosition)
         return self
     }
 }
 
 // Startable
-extension Background : Startable {
+extension Background: Startable {
     func start() {
         parallaxNode.start(duration: duration)
     }
