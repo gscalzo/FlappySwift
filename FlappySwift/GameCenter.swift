@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Effective Code. All rights reserved.
 //
 import GameKit
-import SIAlertView
 import UIKit
 
 class GameCenter: NSObject {
@@ -41,9 +40,7 @@ class GameCenter: NSObject {
     
     func showLeaderboard() {
         if !gameCenterEnabled {
-            let alertView = SIAlertView(title: "Game Center Unavailable", andMessage: "Player is not signed in")
-            alertView?.addButton(withTitle: "OK", type: .default, handler: { _ in })
-            alertView?.show()
+            AlertWrapper.showAlertOnTop(title: "Game Center Unavailable", message: "Player is not signed in", buttonTitle: "OK")
             return
         }
         let gcViewController = GKGameCenterViewController()

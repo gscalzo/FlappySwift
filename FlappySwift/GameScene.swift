@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import SIAlertView
 import UIKit
 
 enum BodyType: UInt32 {
@@ -118,9 +117,13 @@ extension GameScene: SKPhysicsContactDelegate {
 // Private
 private extension GameScene {
     func askToPlayAgain() {
-        let alertView = SIAlertView(title: "Ouch!!", andMessage: "Congratulations! Your score is \(score.currentScore). Play again?")
-        alertView?.addButton(withTitle: "OK", type: .default, handler: { _ in self.onPlayAgainPressed() })
-        alertView?.addButton(withTitle: "Cancel", type: .default, handler: { _ in self.onCancelPressed() })
-        alertView?.show()
+        AlertWrapper.showAlertWithActionsOnTop(
+            title: "Ouch!!",
+            message: "Congratulations! Your score is \(score.currentScore). Play again?",
+            actions: [
+                AlertWrapper.Action(title: "OK", style: .default, handler: { [weak self] in self?.onPlayAgainPressed() }),
+                AlertWrapper.Action(title: "Cancel", style: .cancel, handler: { [weak self] in self?.onCancelPressed() })
+            ]
+        )
     }
 }

@@ -19,6 +19,7 @@
 		EE4A00901AABB07900925811 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4A008F1AABB07900925811 /* GameKit.framework */; };
 		EE4A00921AABB97500925811 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A00911AABB97500925811 /* GameCenter.swift */; };
 		EEB24C1F2DEE359700EBD4FF /* FSPressableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */; };
+		EEB24C212DEE373900EBD4FF /* AlertWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB24C202DEE373900EBD4FF /* AlertWrapper.swift */; };
 		EEB782B91A9D448C00811E2B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB782B81A9D448C00811E2B /* Score.swift */; };
 		EEBF6FBB1A954FF100C6D0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF6FBA1A954FF100C6D0D2 /* AppDelegate.swift */; };
 		EEBF6FBD1A954FF100C6D0D2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEBF6FBC1A954FF100C6D0D2 /* GameScene.sks */; };
@@ -51,6 +52,7 @@
 		EE4A008F1AABB07900925811 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		EE4A00911AABB97500925811 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPressableButton.swift; sourceTree = "<group>"; };
+		EEB24C202DEE373900EBD4FF /* AlertWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapper.swift; sourceTree = "<group>"; };
 		EEB782B81A9D448C00811E2B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EEBF6FB51A954FF100C6D0D2 /* FlappySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBF6FB91A954FF100C6D0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		EEBF6FB71A954FF100C6D0D2 /* FlappySwift */ = {
 			isa = PBXGroup;
 			children = (
+				EEB24C202DEE373900EBD4FF /* AlertWrapper.swift */,
 				EEB24C1E2DEE359700EBD4FF /* FSPressableButton.swift */,
 				EE4A00911AABB97500925811 /* GameCenter.swift */,
 				EE4A008D1AABA37F00925811 /* utilities.swift */,
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB24C212DEE373900EBD4FF /* AlertWrapper.swift in Sources */,
 				EE4A00861AAB9CDC00925811 /* MusicPlayer.swift in Sources */,
 				EECD56991A96400D00EAFC65 /* ParallaxNode.swift in Sources */,
 				EEE472D21A9BDEF600EB6916 /* Pipes.swift in Sources */,
@@ -408,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -445,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
@@ -461,7 +465,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlappySwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.EffectiveCode.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +482,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlappySwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.EffectiveCode.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
