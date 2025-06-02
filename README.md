@@ -6,7 +6,7 @@ FlappySwift is a modern, clean, and modular implementation of the classic Flappy
 
 ## 📽️ Demo Video
 
-[![FlappySwift Gameplay](doc/FlappyTrim.mp4)](doc/FlappyTrim.mp4)
+[![FlappySwift Gameplay](FlappyTrim.mov)](FlappyTrim.mov)
 
 ---
 
